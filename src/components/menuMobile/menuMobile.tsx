@@ -1,18 +1,19 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export const MenuMobile = () => {
     const Menus = [
         { name: "Perfil", icon: "perfil.png", dis: "translate-x-0", id: '/perfil'},
         { name: "Dashboard", icon: "dashboard.png", dis: "translate-x-16", id: '/dashboard'},
-        { name: "Projetos", icon: "projetos.png", dis: "translate-x-32", id: '/projetos'},
+        { name: "Projetos", icon: "projetos.png", dis: "translate-x-32", id: '/'},
         { name: "Parceiros", icon: "parceiros.png", dis: "translate-x-48", id: '/parceiros'},
         { name: "Configurações", icon: "configuracoes.png", dis: "translate-x-64", id: '/configuracoes'},
     ];
 
-    const [active, setActive] = useState(0);
+    const [active, setActive] = useState(2);
 
     return (
-        <div className="w-full fixed bottom-0 bg-gradient-to-r from-azulPrimario to-azulPrimario2 px-6 rounded-t-xl lg:max-w-20 lg:h-screen lg:bg-gradient-to-b lg:rounded-none">
+        <div className="w-full bg-gradient-to-r items-end relative bottom-0 from-azulPrimario to-azulPrimario2 px-6 rounded-t-xl lg:max-w-20 lg:h-screen lg:bg-gradient-to-b lg:rounded-none">
             <div className="flex justify-center">
                 <ul className="flex relative lg:flex-col lg:justify-evenly lg:h-screen">
                     <span
@@ -23,9 +24,9 @@ export const MenuMobile = () => {
                     </span>
                     {Menus.map((menu, i) => (
                         <li key={i} className="w-16 relative">
-                            <a
-                                id={menu.id}
-                                className="flex flex-col items-center pt-6"
+                            <Link
+                                to={menu.id}
+                                className="flex flex-col items-center pt-6 pb-6"
                                 onClick={() => {
                                     setActive(i);
                                 }}
@@ -41,16 +42,7 @@ export const MenuMobile = () => {
                                         alt="djkalsjf"
                                     />
                                 </span>
-                                <span
-                                    className={`${
-                                        active === i
-                                            ? "translate-y-5 duration-700 text-white opacity-100"
-                                            : "opacity-0 translate-y-10"
-                                    } lg:hidden`}
-                                >
-                                    {menu.name}
-                                </span>
-                            </a>
+                            </Link>
                         </li>
                     ))}
                 </ul>
