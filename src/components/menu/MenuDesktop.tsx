@@ -3,10 +3,10 @@ import Projetos from './assets/projetos.png';
 import Parceiros from './assets/parceiros.png';
 import Configuracao from './assets/configuracao.png';
 import Sair from './assets/sair.png';
-import SetaMenu from './assets/seta-menu.png';
 import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import clsx from 'clsx';
+import { ButtonMenu } from '../button-menu/ButtonMenu';
 
 type MenuItems = {
     name?: string,
@@ -108,22 +108,7 @@ export const MenuDesktop = () => {
                         </button>
                     </div>
                 </div>
-                <button
-                    className={clsx(
-                        'w-14 h-14 rounded-tr-xl rounded-br-xl bg-gradient-to-l from-colorMenuPrimary to-colorMenuSecondary flex items-center justify-center absolute top-10 transition-all duration-500',
-                        menu ? 'left-72' : 'left-28'
-                    )}
-                    onClick={toggleMenu}
-                >
-                    <img
-                        src={SetaMenu}
-                        alt="Ícone da seta do menu"
-                        className={clsx(
-                            'transform transition-transform duration-500',
-                            menu ? '' : 'rotate-180'
-                        )}
-                    />
-                </button>
+                <ButtonMenu menu={menu} toggleMenu={toggleMenu} />
             </div>
         </>
     );
