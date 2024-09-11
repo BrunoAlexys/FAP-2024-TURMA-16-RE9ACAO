@@ -27,10 +27,7 @@ export const Menu = () => {
 
     const [menu, setMenu] = useState(true);
 
-    const toggleMenu = () => {
-        setMenu(!menu);
-        console.log(menu);
-    }
+    const toggleMenu = () => setMenu(!menu);
 
     return (
         <>
