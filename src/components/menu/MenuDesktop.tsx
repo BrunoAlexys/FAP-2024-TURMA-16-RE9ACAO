@@ -19,7 +19,7 @@ export const MenuDesktop = () => {
     const [selected, setSelected] = useState(location.pathname);
 
     const menuItens: MenuItems[] = [
-        { name: 'Dashbord', icon: Dashbord, path: '/dashbord' },
+        { name: 'Dashbord', icon: Dashbord, path: '/dashboard' },
         { name: 'Projetos', icon: Projetos, path: '/projetos' },
         { name: 'Parceiros', icon: Parceiros, path: '/parceiros' },
         { name: 'Configuração', icon: Configuracao, path: '/configuracao' },

@@ -8,8 +8,10 @@ import { MainRouter } from './routers/MainRouter'
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
-      <Menu />
-      <MainRouter />
+      <div className='flex'>
+        <Menu />
+        <MainRouter />
+      </div>
     </BrowserRouter>
   </StrictMode>,
 )
