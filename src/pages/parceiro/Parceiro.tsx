@@ -1,0 +1,7 @@
+export const Parceiro = () => {
+    return (
+        <>
+
+        </>
+    );
+};
