@@ -3,8 +3,8 @@ import Projetos from './assets/projetos.png';
 import Parceiros from './assets/parceiros.png';
 import Configuracao from './assets/configuracao.png';
 import Sair from './assets/sair.png';
-import { Link, useLocation } from 'react-router-dom';
-import { useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import { ButtonMenu } from '../button-menu/ButtonMenu';
 
@@ -28,6 +28,14 @@ export const MenuDesktop = () => {
     const [menu, setMenu] = useState(true);
 
     const toggleMenu = () => setMenu(!menu);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (location.pathname === '/') {
+            setSelected('/dashboard');
+            navigate('/dashboard');
+        }
+    }, [location.pathname]);
 
     return (
         <>

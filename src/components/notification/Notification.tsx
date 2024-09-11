@@ -7,8 +7,8 @@ export const Notification = () => {
 
     const notifications: NotificationType[] = [
         { id: 1, name: "Autor", description: "Descrição da notificação 1" },
-        { id: 1, name: "Autor", description: "Descrição da notificação 2" },
-        { id: 1, name: "Autor", description: "Descrição da notificação 3" },
+        { id: 2, name: "Autor", description: "Descrição da notificação 2" },
+        { id: 3, name: "Autor", description: "Descrição da notificação 3" },
     ];
 
     const [notification, setNotification] = useState(false);
