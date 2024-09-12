@@ -87,7 +87,7 @@ export const MenuDesktop = () => {
                             <p
                                 className={clsx(
                                     'leading-none transition-opacity duration-500',
-                                    menu ? 'opacity-100' : 'opacity-0'
+                                    menu ? 'opacity-100' : 'hidden'
                                 )}
                             >
                                 {item.name}
