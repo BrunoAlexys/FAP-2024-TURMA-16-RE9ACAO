@@ -1,8 +1,27 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export const MenuMobile = () => {
-    const [active, setActive] = useState(0);
+
+    const location = useLocation()
+
+    function setarSelecionado(location: string){
+        switch(location){
+            case "/dashboard":
+                return 0
+            case "/projetos":
+                return 1
+            case "/parceiros":
+                return 2
+            case "/notificacoes":
+                return 3
+            case "/perfil":
+                return 4
+            default:
+                return 0
+        }
+    }
+    const [active, setActive] = useState(setarSelecionado(location.pathname));
     const Menus = [
         {
             name: "Dashboard",
@@ -35,6 +54,7 @@ export const MenuMobile = () => {
             id: "/perfil",
         },
     ];
+
     return (
         <div className="w-full bg-gradient-to-r items-end relative bottom-0 from-colorMenuPrimary to-colorMenuSecondary px-6 mt-1.5 rounded-t-xl lg:hidden">
             <div className="flex justify-center">
