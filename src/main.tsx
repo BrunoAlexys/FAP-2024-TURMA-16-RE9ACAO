@@ -13,7 +13,9 @@ createRoot(document.getElementById("root")!).render(
         <BrowserRouter>
             <div className={clsx("lg:flex")}>
                 <Menu />
-                <MainRouter />
+                <section id="mainContent" className="w-full h-[calc(100vh-72px)] overflow-auto px-4 py-4 lg:px-16 lg:h-screen">
+                    <MainRouter />
+                </section>
                 <MenuMobile />
                 <Notification />
             </div>

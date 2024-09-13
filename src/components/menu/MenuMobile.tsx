@@ -36,7 +36,7 @@ export const MenuMobile = () => {
         },
     ];
     return (
-        <div className="w-full bg-gradient-to-r items-end relative bottom-0 from-colorMenuPrimary to-colorMenuSecondary px-6 rounded-t-xl mt-7 lg:hidden">
+        <div className="w-full bg-gradient-to-r items-end relative bottom-0 from-colorMenuPrimary to-colorMenuSecondary px-6 mt-1.5 rounded-t-xl lg:hidden">
             <div className="flex justify-center">
                 <ul className="flex relative">
                     <span

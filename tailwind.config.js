@@ -9,6 +9,7 @@ export default {
       boxShadow:{
         cantoEsquerdo: '4.1px -5px 0 0 white',
         cantoDireito: '-4.1px -5px 0 0 white',
+        cardShadow: '3px 3px 9px -3px rgba(0,0,0,0.71)',
       },
       colors: {
         colorMenuPrimary: '#0C3EA6',
