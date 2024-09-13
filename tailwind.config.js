@@ -17,7 +17,8 @@ export default {
         colorBackground: '#ECE9E9',
         colorCardPrimary: '#259821',
         colorCardSecondary: '#FFC300',
-        colorCardTerciary: '#FF7200'
+        colorCardTerciary: '#FF7200',
+        colorSearch: '#D9D9D9'
       }
     },
   },
