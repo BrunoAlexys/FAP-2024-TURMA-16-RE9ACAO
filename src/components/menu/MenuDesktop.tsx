@@ -35,7 +35,7 @@ export const MenuDesktop = () => {
             setSelected('/dashboard');
             navigate('/dashboard');
         }
-    }, [location.pathname]);
+    }, [location.pathname, navigate]);
 
     return (
         <div className='hidden lg:block'>

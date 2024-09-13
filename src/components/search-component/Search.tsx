@@ -21,7 +21,7 @@ export const Search = () => {
             >
                 <input
                     id="inputSearch"
-                    className={clsx("w-full h-10 bg-colorSearch outline-none rounded-2xl duration-500", searchOpen?"w-full px-3":"w-0 p-0")}
+                    className={clsx("h-10 bg-colorSearch outline-none lg:px-3 lg:w-full rounded-2xl duration-500", searchOpen?"w-full px-3":"w-0 p-0")}
                     type="search"
                     name="search"
                     onChange={handleChange}
