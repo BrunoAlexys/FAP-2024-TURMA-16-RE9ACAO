@@ -16,7 +16,7 @@ export const Search = () => {
         <div className="w-full">
             <form
                 className={clsx(
-                    "w-1/2 flex gap-2"
+                    "w-full flex gap-2 lg:w-full"
                 )}
             >
                 <input
