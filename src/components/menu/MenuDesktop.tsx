@@ -1,4 +1,4 @@
-import Dashbord from './assets/dashbord.png';
+import Dashbord from './assets/dashboard.png';
 import Projetos from './assets/projetos.png';
 import Parceiros from './assets/parceiros.png';
 import Configuracao from './assets/configuracao.png';
@@ -38,7 +38,7 @@ export const MenuDesktop = () => {
     }, [location.pathname]);
 
     return (
-        <>
+        <div className='hidden lg:block'>
             <div
                 className={clsx(
                     'transition-all duration-500 ease-in-out h-screen bg-gradient-to-b from-colorMenuPrimary to-colorMenuSecondary flex flex-col',
@@ -118,7 +118,7 @@ export const MenuDesktop = () => {
                 </div>
                 <ButtonMenu menu={menu} toggleMenu={toggleMenu} />
             </div>
-        </>
+        </div>
     );
 };
 

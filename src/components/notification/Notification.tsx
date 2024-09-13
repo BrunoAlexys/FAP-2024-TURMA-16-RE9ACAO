@@ -14,7 +14,7 @@ export const Notification = () => {
     const [notification, setNotification] = useState(false);
 
     return (
-        <>
+        <div className="hidden lg:block">
             <div className={clsx(
                 'fixed right-0 bottom-0 w-[320px] h-[80vh] bg-colorBackground rounded-tl-2xl transition-all duration-500 ease-in-out',
                 notification ? 'translate-x-0' : 'translate-x-[320px]'
@@ -46,6 +46,6 @@ export const Notification = () => {
                     )}
                 />
             </div>
-        </>
+        </div>
     );
 };

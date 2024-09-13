@@ -1,11 +1,7 @@
-import { Notification } from "../../components/notification/Notification";
-
 export const Projeto = () => {
     return (
-        <>
-            <div>
-                <Notification />
-            </div>
-        </>
+        <section id="projetos">
+            <p>Projetos</p>
+        </section>
     );
 };
