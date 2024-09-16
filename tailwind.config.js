@@ -10,6 +10,7 @@ export default {
         colorMenuPrimary: '#0C3EA6',
         colorMenuSecondary: '#051840',
         colorBackground: '#ECE9E9',
+        popup: '#D9D9D9',
       }
     },
   },
