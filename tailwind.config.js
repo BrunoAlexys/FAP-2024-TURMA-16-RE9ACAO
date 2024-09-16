@@ -18,7 +18,8 @@ export default {
         colorCardPrimary: '#259821',
         colorCardSecondary: '#FFC300',
         colorCardTerciary: '#FF7200',
-        colorSearch: '#D9D9D9'
+        colorSearch: '#D9D9D9',
+        popup: '#D9D9D9',
       }
     },
   },
