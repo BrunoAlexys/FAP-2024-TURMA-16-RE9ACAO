@@ -1,16 +1,21 @@
 import clsx from "clsx";
 import search from "./assets/search.png";
-import { useState } from "react";
+import React, { useState } from "react";
 
-export const Search = () => {
+interface SearchProps{
+    onSearchChange: (value:string) => void
+}
+
+export const Search = (props: SearchProps) => {
 
     const [searchOpen, setSearchOpen] = useState<boolean>(false);
     const [inputFilled, setInputFilled] = useState<string>('');
 
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) =>{
-        setInputFilled(event.target.value)
+    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>)=>{
+        const value = event.target.value
+        setInputFilled(value)
+        props.onSearchChange(value)
     }
-
 
     return (
         <div className="w-full">
@@ -24,7 +29,8 @@ export const Search = () => {
                     className={clsx("h-10 bg-colorSearch outline-none lg:px-3 lg:w-full rounded-2xl duration-500", searchOpen?"w-full px-3":"w-0 p-0")}
                     type="search"
                     name="search"
-                    onChange={handleChange}
+                    value={inputFilled}
+                    onChange={handleInputChange}
                 />
                 <button type="submit" onClick={(e)=>{
                     e.preventDefault()
