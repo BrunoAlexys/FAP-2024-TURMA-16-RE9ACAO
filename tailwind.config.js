@@ -20,6 +20,7 @@ export default {
         colorCardTerciary: '#FF7200',
         colorSearch: '#D9D9D9',
         popup: '#D9D9D9',
+        delete: '#D30000'
       }
     },
   },
