@@ -1,17 +1,28 @@
-import { useState } from "react";
-import { NotificationType } from "../../types/Notification";
+import { useEffect, useState } from "react";
 import { ButtonMenu } from "../button-menu/ButtonMenu";
 import clsx from "clsx";
+import axios from "axios";
 
 export const Notification = () => {
-
-    const notifications: NotificationType[] = [
-        { id: 1, name: "Autor", description: "Descrição da notificação 1" },
-        { id: 2, name: "Autor", description: "Descrição da notificação 2" },
-        { id: 3, name: "Autor", description: "Descrição da notificação 3" },
-    ];
+    interface NotificationsProps{
+        id: number,
+        name: string,
+        description: string
+    }
 
     const [notification, setNotification] = useState(false);
+
+    const [notifications, setNotifications] = useState<NotificationsProps[]>([])
+
+    useEffect(()=>{
+        axios.get("http://localhost:3001/notifications")
+        .then((response)=>{
+            setNotifications(response.data)
+        })
+        .catch((error)=>{
+            console.error(error)
+        })
+    }, [])
 
     return (
         <div className="hidden lg:block">

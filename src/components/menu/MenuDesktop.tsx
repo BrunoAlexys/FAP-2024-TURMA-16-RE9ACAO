@@ -95,7 +95,7 @@ export const MenuDesktop = () => {
                         </Link>
                     ))}
                 </div>
-                <div className="flex justify-start items-end mb-10 px-9 gap-4 flex-1 text-white font-bold">
+                <div className="flex justify-start items-end mb-10 px-8 gap-4 flex-1 text-white font-bold">
                     <div>
                         <button className="flex items-center gap-6">
                             <img
