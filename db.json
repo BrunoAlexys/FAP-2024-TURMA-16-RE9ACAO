@@ -1,124 +1,124 @@
 {
-    "projects": [
-        {
-            "id": 1,
-            "tipo": 3,
-            "projectName": "Projeto 1",
-            "children": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio, nam illum, voluptatem a ipsam minus debitis repellendus excepturi natus eveniet quia cumque optio mollitia nemo magnam libero et possimus vero."
-        },
-        {
-            "id": 2,
-            "tipo": 1,
-            "projectName": "Projeto 2",
-            "children": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio, nam illum, voluptatem a ipsam minus debitis repellendus excepturi natus eveniet quia cumque optio mollitia nemo magnam libero et possimus vero."
-        },
-        {
-            "id": 3,
-            "tipo": 4,
-            "projectName": "Projeto 3",
-            "children": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio, nam illum, voluptatem a ipsam minus debitis repellendus excepturi natus eveniet quia cumque optio mollitia nemo magnam libero et possimus vero."
-        },
-        {
-            "id": 4,
-            "tipo": 2,
-            "projectName": "Projeto 4",
-            "children": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio, nam illum, voluptatem a ipsam minus debitis repellendus excepturi natus eveniet quia cumque optio mollitia nemo magnam libero et possimus vero."
-        },
-        {
-            "id": 5,
-            "tipo": 1,
-            "projectName": "Projeto 5",
-            "children": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio, nam illum, voluptatem a ipsam minus debitis repellendus excepturi natus eveniet quia cumque optio mollitia nemo magnam libero et possimus vero."
-        },
-        {
-            "id": 6,
-            "tipo": 4,
-            "projectName": "Projeto 6",
-            "children": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio, nam illum, voluptatem a ipsam minus debitis repellendus excepturi natus eveniet quia cumque optio mollitia nemo magnam libero et possimus vero."
-        },
-        {
-            "id": 7,
-            "tipo": 2,
-            "projectName": "Projeto 7",
-            "children": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio, nam illum, voluptatem a ipsam minus debitis repellendus excepturi natus eveniet quia cumque optio mollitia nemo magnam libero et possimus vero."
-        },
-        {
-            "id": 8,
-            "tipo": 3,
-            "projectName": "Projeto 8",
-            "children": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio, nam illum, voluptatem a ipsam minus debitis repellendus excepturi natus eveniet quia cumque optio mollitia nemo magnam libero et possimus vero."
-        },
-        {
-            "id": 9,
-            "tipo": 1,
-            "projectName": "Projeto 9",
-            "children": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio, nam illum, voluptatem a ipsam minus debitis repellendus excepturi natus eveniet quia cumque optio mollitia nemo magnam libero et possimus vero."
-        },
-        {
-            "id": 10,
-            "tipo": 4,
-            "projectName": "Projeto 10",
-            "children": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio, nam illum, voluptatem a ipsam minus debitis repellendus excepturi natus eveniet quia cumque optio mollitia nemo magnam libero et possimus vero."
-        },
-        {
-            "id": 11,
-            "tipo": 2,
-            "projectName": "Projeto 11",
-            "children": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio, nam illum, voluptatem a ipsam minus debitis repellendus excepturi natus eveniet quia cumque optio mollitia nemo magnam libero et possimus vero."
-        },
-        {
-            "id": 12,
-            "tipo": 3,
-            "projectName": "Projeto 12",
-            "children": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio, nam illum, voluptatem a ipsam minus debitis repellendus excepturi natus eveniet quia cumque optio mollitia nemo magnam libero et possimus vero."
-        },
-        {
-            "id": 13,
-            "tipo": 1,
-            "projectName": "Projeto 13",
-            "children": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio, nam illum, voluptatem a ipsam minus debitis repellendus excepturi natus eveniet quia cumque optio mollitia nemo magnam libero et possimus vero."
-        },
-        {
-            "id": 14,
-            "tipo": 4,
-            "projectName": "Projeto 14",
-            "children": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio, nam illum, voluptatem a ipsam minus debitis repellendus excepturi natus eveniet quia cumque optio mollitia nemo magnam libero et possimus vero."
-        },
-        {
-            "id": 15,
-            "tipo": 2,
-            "projectName": "Projeto 15",
-            "children": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio, nam illum, voluptatem a ipsam minus debitis repellendus excepturi natus eveniet quia cumque optio mollitia nemo magnam libero et possimus vero."
-        },
-        {
-            "id": 16,
-            "tipo": 3,
-            "projectName": "Projeto 16",
-            "children": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio, nam illum, voluptatem a ipsam minus debitis repellendus excepturi natus eveniet quia cumque optio mollitia nemo magnam libero et possimus vero."
-        },
-        {
-            "id": 17,
-            "tipo": 1,
-            "projectName": "Projeto 17",
-            "children": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio, nam illum, voluptatem a ipsam minus debitis repellendus excepturi natus eveniet quia cumque optio mollitia nemo magnam libero et possimus vero."
-        },
-        {
-            "id": 18,
-            "tipo": 4,
-            "projectName": "Projeto 18",
-            "children": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio, nam illum, voluptatem a ipsam minus debitis repellendus excepturi natus eveniet quia cumque optio mollitia nemo magnam libero et possimus vero."
-        },
-        {
-            "id": 19,
-            "tipo": 2,
-            "projectName": "Projeto 19",
-            "children": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio, nam illum, voluptatem a ipsam minus debitis repellendus excepturi natus eveniet quia cumque optio mollitia nemo magnam libero et possimus vero."
-        },
-        {
-            "id": 20,
-            "tipo": 3,
-            "projectName": "Projeto 20",
-            "children": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio, nam illum, voluptatem a ipsam minus debitis repellendus excepturi natus eveniet quia cumque optio mollitia nemo magnam libero et possimus vero."
-        }
-    ]
+  "projects": [
+    {
+      "id": 1,
+      "tipo": 3,
+      "projectName": "Aplicativo de Gestão Financeira",
+      "children": "Desenvolvimento de um aplicativo para gerenciamento de finanças pessoais com gráficos interativos e integração bancária."
+    },
+    {
+      "id": 2,
+      "tipo": 1,
+      "projectName": "E-commerce de Moda",
+      "children": "Plataforma online de vendas de roupas e acessórios com sistema de recomendação baseado em inteligência artificial."
+    },
+    {
+      "id": 3,
+      "tipo": 4,
+      "projectName": "Sistema de Automação Residencial",
+      "children": "Projeto de controle remoto de dispositivos eletrônicos da casa utilizando IoT, permitindo automação de luzes e temperatura."
+    },
+    {
+      "id": 4,
+      "tipo": 2,
+      "projectName": "Portal de Notícias",
+      "children": "Desenvolvimento de um portal de notícias com suporte a múltiplas categorias e atualização em tempo real."
+    },
+    {
+      "id": 5,
+      "tipo": 1,
+      "projectName": "Marketplace de Serviços Locais",
+      "children": "Plataforma que conecta profissionais locais, como encanadores e eletricistas, a clientes que necessitam de serviços específicos."
+    },
+    {
+      "id": 6,
+      "tipo": 4,
+      "projectName": "Jogo Mobile de Estratégia",
+      "children": "Criação de um jogo para smartphones com batalhas em tempo real e estratégia, onde os jogadores controlam exércitos em batalhas épicas."
+    },
+    {
+      "id": 7,
+      "tipo": 2,
+      "projectName": "Blog de Tecnologia",
+      "children": "Plataforma de blog voltada para notícias e tutoriais de tecnologia, com foco em desenvolvimento de software e inovações."
+    },
+    {
+      "id": 8,
+      "tipo": 3,
+      "projectName": "Sistema de Gerenciamento de Estoque",
+      "children": "Desenvolvimento de um sistema para controlar o estoque de lojas de pequeno porte, com relatórios de vendas e alertas de reposição."
+    },
+    {
+      "id": 9,
+      "tipo": 1,
+      "projectName": "Plataforma de Doações",
+      "children": "Criação de uma plataforma para conectar doadores com causas sociais, oferecendo transparência nas transações e metas atingidas."
+    },
+    {
+      "id": 10,
+      "tipo": 4,
+      "projectName": "Aplicativo de Exercícios em Casa",
+      "children": "Desenvolvimento de um app de fitness que orienta usuários em exercícios que podem ser feitos em casa, com planos personalizados."
+    },
+    {
+      "id": 11,
+      "tipo": 2,
+      "projectName": "Portal Educacional",
+      "children": "Plataforma online para cursos de diversas áreas, com funcionalidades de fórum, quizzes e certificação para alunos."
+    },
+    {
+      "id": 12,
+      "tipo": 3,
+      "projectName": "Sistema de Gestão Escolar",
+      "children": "Aplicação para gerenciar informações acadêmicas, financeiras e administrativas de escolas, incluindo controle de alunos e professores."
+    },
+    {
+      "id": 13,
+      "tipo": 1,
+      "projectName": "Aplicativo de Entregas",
+      "children": "Plataforma de entrega de alimentos, onde restaurantes locais podem se cadastrar e os usuários fazem pedidos com acompanhamento em tempo real."
+    },
+    {
+      "id": 14,
+      "tipo": 4,
+      "projectName": "Software de Design Gráfico Online",
+      "children": "Criação de um editor de design gráfico diretamente no navegador, permitindo criar banners, logos e posts para redes sociais."
+    },
+    {
+      "id": 15,
+      "tipo": 2,
+      "projectName": "Site de Consultoria Jurídica",
+      "children": "Plataforma que oferece serviços jurídicos online, conectando advogados a clientes para consultas e resolução de questões legais."
+    },
+    {
+      "id": 16,
+      "tipo": 3,
+      "projectName": "Aplicativo de Saúde Mental",
+      "children": "Desenvolvimento de um aplicativo focado em saúde mental, com acompanhamento de humor, meditação guiada e chat com psicólogos."
+    },
+    {
+      "id": 17,
+      "tipo": 1,
+      "projectName": "Plataforma de Freelancer",
+      "children": "Marketplace para freelancers oferecerem seus serviços, permitindo que clientes publiquem trabalhos e selecionem profissionais."
+    },
+    {
+      "id": 18,
+      "tipo": 4,
+      "projectName": "Aplicativo de Realidade Aumentada para Turismo",
+      "children": "Criação de um app que utiliza realidade aumentada para fornecer informações históricas e culturais sobre pontos turísticos."
+    },
+    {
+      "id": 19,
+      "tipo": 2,
+      "projectName": "Revista Online de Ciência",
+      "children": "Plataforma de artigos científicos e notícias sobre avanços em tecnologia e ciência, com suporte a autores e revisores."
+    },
+    {
+      "id": 20,
+      "tipo": 3,
+      "projectName": "Sistema de Controle de Pacientes",
+      "children": "Desenvolvimento de um sistema para hospitais monitorarem o histórico médico de pacientes e organizarem consultas e exames."
+    }
+  ]
 }
