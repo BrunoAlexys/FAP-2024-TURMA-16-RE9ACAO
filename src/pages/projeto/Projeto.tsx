@@ -51,7 +51,7 @@ export const Projeto = () => {
                 </div>
                 <BotaoPadrao nome="Criar" icone="add"></BotaoPadrao>
             </div>
-            <div id="projetosContainer" className="flex flex-col gap-6 lg:flex-row lg:flex-wrap lg:justify-center">
+            <div id="projetosContainer" className="flex flex-col w-full gap-6 lg:flex-row lg:flex-wrap lg:justify-center">
                 {filteredCards.map((card)=>(
                     <Card key={card.id} img={imagem} projectName={card.projectName} tipo={card.tipo}>
                         {card.children}
