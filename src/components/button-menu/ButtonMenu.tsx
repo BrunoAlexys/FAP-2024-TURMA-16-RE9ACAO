@@ -1,5 +1,6 @@
 import { twMerge } from 'tailwind-merge';
 import SetaMenu from './assets/seta-menu.png';
+// import { useState } from 'react';
 
 type ButtonMenuProps = {
     menu?: boolean;
@@ -8,6 +9,8 @@ type ButtonMenuProps = {
     buttonStyle?: string;
     imageStyle?: string;
 };
+
+// const [isOpen, setIsOpen] = useState(false)
 
 export const ButtonMenu = ({ menu, toggleMenu, target = 'both', buttonStyle, imageStyle }: ButtonMenuProps) => {
     return (
