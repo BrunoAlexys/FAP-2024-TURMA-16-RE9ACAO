@@ -1,5 +1,6 @@
 import { twMerge } from 'tailwind-merge';
 import SetaMenu from './assets/seta-menu.png';
+import SetaNotificacao from './assets/arrowsRed.png'
 // import { useState } from 'react';
 
 type ButtonMenuProps = {
@@ -8,11 +9,25 @@ type ButtonMenuProps = {
     target?: 'button' | 'image' | 'both'; // Define o alvo das alterações
     buttonStyle?: string;
     imageStyle?: string;
+    temNotificacao: boolean;
+    tipo: string;
 };
 
 // const [isOpen, setIsOpen] = useState(false)
 
-export const ButtonMenu = ({ menu, toggleMenu, target = 'both', buttonStyle, imageStyle }: ButtonMenuProps) => {
+function setarTipoBotão(tipo: string, temNotificacao: boolean){
+    if(tipo == "notificacao"){
+        if(temNotificacao){
+            return SetaNotificacao
+        }else{
+            return SetaMenu
+        }
+    }else{
+        return SetaMenu
+    }
+}
+
+export const ButtonMenu = ({ menu, toggleMenu, target = 'both', buttonStyle, imageStyle, tipo, temNotificacao }: ButtonMenuProps) => {
     return (
         <>
             <button
@@ -25,7 +40,7 @@ export const ButtonMenu = ({ menu, toggleMenu, target = 'both', buttonStyle, ima
                 onClick={toggleMenu}
             >
                 <img
-                    src={SetaMenu}
+                    src={setarTipoBotão(tipo, temNotificacao)}
                     alt="Ícone da seta do menu"
                     className={twMerge(
                         'transform transition-transform duration-500',

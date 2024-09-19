@@ -3,26 +3,29 @@ import { ButtonMenu } from "../button-menu/ButtonMenu";
 import clsx from "clsx";
 import axios from "axios";
 
+interface NotificationsProps {
+    id: number;
+    name: string;
+    description: string;
+}
+
 export const Notification = () => {
-    interface NotificationsProps{
-        id: number,
-        name: string,
-        description: string
-    }
-
     const [notification, setNotification] = useState(false);
+    const [notifications, setNotifications] = useState<NotificationsProps[]>([]);
+    const [temNotificacao, setTemNotificacao] = useState(false);
 
-    const [notifications, setNotifications] = useState<NotificationsProps[]>([])
-
-    useEffect(()=>{
+    useEffect(() => {
         axios.get("http://localhost:3001/notifications")
-        .then((response)=>{
-            setNotifications(response.data)
-        })
-        .catch((error)=>{
-            console.error(error)
-        })
-    }, [])
+            .then((response) => {
+                setNotifications(response.data);
+                if (response.data.length > 0) {
+                    setTemNotificacao(true);
+                }
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    }, []);
 
     return (
         <div className="hidden lg:block">
@@ -48,6 +51,8 @@ export const Notification = () => {
                     ))}
                 </div>
                 <ButtonMenu
+                    tipo="notificacao"
+                    temNotificacao={temNotificacao}
                     menu={notification}
                     toggleMenu={() => setNotification(!notification)}
                     target="button"
