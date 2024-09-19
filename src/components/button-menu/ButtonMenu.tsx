@@ -9,8 +9,8 @@ type ButtonMenuProps = {
     target?: 'button' | 'image' | 'both'; // Define o alvo das alterações
     buttonStyle?: string;
     imageStyle?: string;
-    temNotificacao: boolean;
-    tipo: string;
+    temNotificacao?: boolean;
+    tipo?: string;
 };
 
 // const [isOpen, setIsOpen] = useState(false)
@@ -40,7 +40,7 @@ export const ButtonMenu = ({ menu, toggleMenu, target = 'both', buttonStyle, ima
                 onClick={toggleMenu}
             >
                 <img
-                    src={setarTipoBotão(tipo, temNotificacao)}
+                    src={setarTipoBotão(tipo || "menu", temNotificacao || false)}
                     alt="Ícone da seta do menu"
                     className={twMerge(
                         'transform transition-transform duration-500',
