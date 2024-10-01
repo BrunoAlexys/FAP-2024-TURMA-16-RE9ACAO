@@ -1,5 +1,4 @@
-export const Dashboard = () => {
-
+export const CadastroEmpresa = () => {
     return (
         <div>
 

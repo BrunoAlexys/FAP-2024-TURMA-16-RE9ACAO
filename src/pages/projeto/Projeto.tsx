@@ -5,40 +5,34 @@ import { Filter } from "../../components/filter-component/Filter";
 import { Search } from "../../components/search-component/Search";
 import imagem from './assets/perfil.png'
 import axios from "axios";
+import { CardData } from "../../types/CardData";
 
 export const Projeto = () => {
-    
-    interface CardData{
-        id: number,
-        projectName: string,
-        tipo: number,
-        children?: React.ReactNode
-    }
 
     const [cards, setCards] = useState<CardData[]>([])
     const [search, setSearch] = useState("")
     const [filterTipo, setFilterTipo] = useState(0)
 
-    const handleSearchChange = (value: string)=>{
+    const handleSearchChange = (value: string) => {
         setSearch(value)
     }
-    const handleFilter = (filter: string)=>{
+    const handleFilter = (filter: string) => {
         const filterNumber = Number(filter)
         setFilterTipo(filterNumber)
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         axios.get("http://localhost:3001/projects")
-        .then((response)=>{
-            setCards(response.data)
-        })
-        .catch((error)=>{
-            console.error(error)
-        })
+            .then((response) => {
+                setCards(response.data)
+            })
+            .catch((error) => {
+                throw new Error(error);
+            })
     }, [])
 
     let filteredCards = cards.filter(card => card.projectName.toLowerCase().includes(search.toLowerCase()))
-    if(filterTipo != 0){
+    if (filterTipo != 0) {
         filteredCards = filteredCards.filter(card => card.tipo.toString().includes(filterTipo.toString()))
     }
 
@@ -52,7 +46,7 @@ export const Projeto = () => {
                 <BotaoPadrao nome="Criar" icone="add"></BotaoPadrao>
             </div>
             <div id="projetosContainer" className="flex flex-col w-full gap-6 lg:flex-row lg:flex-wrap lg:justify-center">
-                {filteredCards.map((card)=>(
+                {filteredCards.map((card) => (
                     <Card key={card.id} img={imagem} projectName={card.projectName} tipo={card.tipo}>
                         {card.children}
                     </Card>

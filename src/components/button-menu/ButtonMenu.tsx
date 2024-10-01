@@ -1,7 +1,6 @@
 import { twMerge } from 'tailwind-merge';
 import SetaMenu from './assets/seta-menu.png';
 import SetaNotificacao from './assets/arrowsRed.png'
-// import { useState } from 'react';
 
 type ButtonMenuProps = {
     menu?: boolean;
@@ -13,16 +12,14 @@ type ButtonMenuProps = {
     tipo?: string;
 };
 
-// const [isOpen, setIsOpen] = useState(false)
-
-function setarTipoBotão(tipo: string, temNotificacao: boolean){
-    if(tipo == "notificacao"){
-        if(temNotificacao){
+function setarTipoBotão(tipo: string, temNotificacao: boolean) {
+    if (tipo == "notificacao") {
+        if (temNotificacao) {
             return SetaNotificacao
-        }else{
+        } else {
             return SetaMenu
         }
-    }else{
+    } else {
         return SetaMenu
     }
 }
