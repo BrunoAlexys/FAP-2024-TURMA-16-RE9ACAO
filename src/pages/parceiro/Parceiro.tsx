@@ -4,22 +4,15 @@ import { Card } from "../../components/card-component/Card";
 import { Parceiro } from "../../types/Parceiros";
 import Imagem from "./assets/perfil.png";
 import { Search } from "../../components/search-component/Search";
-import { Filter } from "../../components/filter-component/Filter";
 import { BotaoPadrao } from "../../components/botao-component/BotaoPadrao";
 
 export const ParceiroComponent = () => {
 
     const [cards, setCards] = useState<Parceiro[]>([]);
     const [search, setSearch] = useState('');
-    const [filterTipo, setFilterTipo] = useState(0);
 
     const handleSearchChange = (value: string) => {
         setSearch(value);
-    };
-
-    const handleFilter = (filter: string) => {
-        const filterNumber = Number(filter);
-        setFilterTipo(filterNumber);
     };
 
     useEffect(() => {
@@ -32,10 +25,7 @@ export const ParceiroComponent = () => {
             });
     }, []);
 
-    let filterCards = cards.filter(card => card.name.toLocaleLowerCase().includes(search.toLocaleLowerCase()));
-    if (filterTipo != 0) {
-        filterCards = filterCards.filter(card => card.tipo.toString().includes(filterTipo.toString()));
-    }
+    const filterCards = cards.filter(card => card.name.toLocaleLowerCase().includes(search.toLocaleLowerCase()));
 
     return (
         <section id="parceiros" className="flex flex-col items-center gap-6">
