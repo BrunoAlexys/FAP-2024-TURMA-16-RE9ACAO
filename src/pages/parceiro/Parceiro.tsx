@@ -42,7 +42,6 @@ export const ParceiroComponent = () => {
             <div className="w-full lg:w-[84%] flex justify-between items-center gap-2" id="filters">
                 <div className="flex justify-between items-center w-full lg:w-1/2 gap-2">
                     <Search onSearchChange={handleSearchChange} />
-                    <Filter onFilter={handleFilter} />
                 </div>
                 <BotaoPadrao nome="Criar" icone="add"></BotaoPadrao>
             </div>
