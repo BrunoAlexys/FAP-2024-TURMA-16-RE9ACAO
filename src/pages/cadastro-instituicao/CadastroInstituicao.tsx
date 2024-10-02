@@ -1,19 +1,19 @@
 import { SubmitHandler, useForm } from "react-hook-form";
-import { DiagonalSection } from "../../components/diagonal-section/DiagonalSection";
-import { Input } from "../../components/input/input";
-import { InputType } from "../../enum/input-type";
-import { Button } from "../../components/button/button";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
 import { schemaForm } from "../../utils/SchemaForm";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { InputType } from "../../enum/input-type";
+import { Input } from "../../components/input/input";
+import { Button } from "../../components/button/button";
+import { DiagonalSection } from "../../components/diagonal-section/DiagonalSection";
 
-export const CadastroEmpresa = () => {
+export const CadastroInstituicao = () => {
+
+    type SechemaType = z.infer<typeof schemaForm>
 
     const { register, handleSubmit, formState: { errors } } = useForm<SechemaType>({
         resolver: zodResolver(schemaForm)
     });
-
-    type SechemaType = z.infer<typeof schemaForm>
 
     const handleSubmitForm: SubmitHandler<SechemaType> = (data: SechemaType) => {
         console.log(data)
@@ -22,7 +22,7 @@ export const CadastroEmpresa = () => {
 
     return (
         <div className="flex flex-col mb-6">
-            <DiagonalSection text='Cadastro' subtext="Empresarial" />
+            <DiagonalSection text='Cadastro' subtext="Instituição de Ensino" />
             <div className="mt-72 mx-10">
                 <form
                     className="flex flex-col gap-8"

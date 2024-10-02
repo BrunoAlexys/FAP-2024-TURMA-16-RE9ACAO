@@ -5,5 +5,6 @@ export enum InputType {
     CPF = "cpf",
     CEP = "cep",
     Password = "password",
-    Phone = "tel"
+    Phone = "tel",
+    UF = 'UF'
 }

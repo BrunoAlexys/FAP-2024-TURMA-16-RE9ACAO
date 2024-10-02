@@ -3,28 +3,42 @@
 @tailwind utilities;
 
 ::-webkit-scrollbar {
-    width: 10px;
+  width: 10px;
 }
- 
+
 /* Track */
 ::-webkit-scrollbar-track {
-    background: white;
-    border-radius: 5px;
+  background: white;
+  border-radius: 5px;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #0C3EA6;
-    border-radius: 5px;
+  background: #0c3ea6;
+  border-radius: 5px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #051840;
+  background: #051840;
 }
 
-@media (max-width: 1024px){
-    ::-webkit-scrollbar{
-        width: 0;
-    }
+@media (max-width: 1024px) {
+  ::-webkit-scrollbar {
+    width: 0;
+  }
+}
+
+.clip-path-inverted {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 60%);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.custom-select {
+  background-image: url("components/input/assets/seta-baixo.png"); /* Adicione o ícone desejado */
+  background-position: right 1rem center; /* Posiciona a seta */
+  background-repeat: no-repeat;
+  background-size: 16px;
 }

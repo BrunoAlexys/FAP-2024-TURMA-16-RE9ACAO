@@ -5,6 +5,8 @@ import { ParceiroComponent } from "../pages/parceiro/Parceiro";
 import { Configuracao } from "../pages/configuracao/Configuracao";
 import { Perfil } from "../pages/perfil/Perfil";
 import { NotificacoesMobile } from "../pages/notificacoesMobile/NotificacoesMobile";
+import { CadastroEmpresa } from "../pages/cadastro-empresa/CadastroEmpresa";
+import { CadastroInstituicao } from "../pages/cadastro-instituicao/CadastroInstituicao";
 
 export const MainRouter = () => {
     const routes = useRoutes([
@@ -14,6 +16,8 @@ export const MainRouter = () => {
         { path: "/configuracao", element: <Configuracao /> },
         { path: "/perfil", element: <Perfil /> },
         { path: "/notificacoes", element: <NotificacoesMobile /> },
+        { path: "/cadastro-empresa", element: <CadastroEmpresa /> },
+        { path: "/cadastro-instituicao", element: <CadastroInstituicao /> }
     ]);
 
     return routes;
