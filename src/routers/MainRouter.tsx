@@ -7,6 +7,7 @@ import { Perfil } from "../pages/perfil/Perfil";
 import { NotificacoesMobile } from "../pages/notificacoesMobile/NotificacoesMobile";
 import { CadastroEmpresa } from "../pages/cadastro-empresa/CadastroEmpresa";
 import { CadastroInstituicao } from "../pages/cadastro-instituicao/CadastroInstituicao";
+import { Login } from "../pages/login/Login";
 
 export const MainRouter = () => {
     const routes = useRoutes([
@@ -17,7 +18,8 @@ export const MainRouter = () => {
         { path: "/perfil", element: <Perfil /> },
         { path: "/notificacoes", element: <NotificacoesMobile /> },
         { path: "/cadastro-empresa", element: <CadastroEmpresa /> },
-        { path: "/cadastro-instituicao", element: <CadastroInstituicao /> }
+        { path: "/cadastro-instituicao", element: <CadastroInstituicao /> },
+        { path: "/login", element: <Login /> },
     ]);
 
     return routes;
