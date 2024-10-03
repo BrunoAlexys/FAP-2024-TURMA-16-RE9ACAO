@@ -39,19 +39,19 @@ export const Input = ({ type, placeholder, label, error, register }: InputProps)
     ];
 
     return (
-        <div className="flex flex-col gap-2">
+        <div className="w-full flex flex-col gap-2">
             <label className={'px-2 text-lg font-bold'}>
                 {label}
             </label>
             {type === "UF" ? (
                 <select
                     className={twMerge(
-                        'border border-colorMenuPrimary rounded-full px-4 py-2 w-80 focus:outline-none focus:border-2 focus:border-colorMenuPrimary appearance-none relative',
+                        'border-2 border-colorMenuSecondary rounded-full px-4 py-2 w-full focus:outline-none focus:border-2 focus:border-colorMenuPrimary appearance-none relative',
                         'custom-select'
                     )}
                     {...register}
                 >
-                    <option value="">Selecione o estado</option>
+                    <option value="">Selecione o Estado</option>
                     {ufOptions.map(uf => (
                         <option key={uf} value={uf}>
                             {uf}
@@ -64,7 +64,7 @@ export const Input = ({ type, placeholder, label, error, register }: InputProps)
                     mask={mask}
                     placeholder={placeholder}
                     className={twMerge(
-                        'border border-colorMenuPrimary rounded-full px-4 py-2 w-80 focus:outline-none focus:border-2 focus:border-colorMenuPrimary',
+                        'border-2 border-colorMenuSecondary rounded-full px-4 py-2 w-full focus:outline-none focus:border-2 focus:border-colorMenuPrimary',
                     )}
                     {...register}
                 />
@@ -74,7 +74,7 @@ export const Input = ({ type, placeholder, label, error, register }: InputProps)
                     ref={inputRef}
                     placeholder={placeholder}
                     className={twMerge(
-                        'border border-colorMenuPrimary rounded-full px-4 py-2 w-80 focus:outline-none focus:border-2 focus:border-colorMenuPrimary',
+                        'border-2 border-colorMenuSecondary rounded-full px-4 py-2 w-full focus:outline-none focus:border-2 focus:border-colorMenuPrimary',
                     )}
                     {...register}
                 />
