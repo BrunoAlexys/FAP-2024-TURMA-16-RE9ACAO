@@ -1,11 +1,37 @@
+import { useState } from "react";
 import { Button } from "../../components/button/button";
 import { DiagonalSection } from "../../components/diagonal-section/DiagonalSection";
 import { Input } from "../../components/input/input";
 import { InputType } from "../../enum/input-type";
 import Logo from './assets/logo.png';
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../contexts/AuthProvider";
 
 export const Login = () => {
+
+    const [selectedOption, setSelectedOption] = useState('');
+    const navigate = useNavigate();
     const options = ['Aluno', 'Professor', 'Empresa', 'Instituição de Ensino'];
+    const [login, setLogin] = useState('');
+    const [password, setPassword] = useState('');
+    const { login: authenticate } = useAuth();
+
+    const handleLogin = async () => {
+        await authenticate({ login, password });
+        navigate('/dashbord');
+    }
+
+    const handleRegisterRedirect = () => {
+        if (selectedOption === 'Aluno') {
+            navigate('/cadastro-aluno');
+        } else if (selectedOption === 'Professor') {
+            navigate('/cadastro-professor');
+        } else if (selectedOption === 'Empresa') {
+            navigate('/cadastro-empresa');
+        } else {
+            navigate('/cadastro-instituicao')
+        }
+    };
 
     return (
         <div>
@@ -18,7 +44,10 @@ export const Login = () => {
                     </div>
 
                     <div className="mt-4">
-                        <select className="bg-colorMenuPrimary p-2 rounded-lg text-white appearance-none relative custom-select">
+                        <select className="bg-colorMenuPrimary p-2 rounded-lg text-white appearance-none relative custom-select"
+                            value={selectedOption}
+                            onChange={e => setSelectedOption(e.target.value)}
+                        >
                             {options.map(option => (
                                 <option key={option} value={option}>
                                     {option}
@@ -29,17 +58,17 @@ export const Login = () => {
 
                     <div>
                         <div>
-                            <Input label="Login" type={InputType.Text} />
+                            <Input label="Login" type={InputType.Text} value={login} onChange={e => setLogin(e.target.value)} />
                         </div>
                         <div>
-                            <Input label="Senha" type={InputType.Password} />
+                            <Input label="Senha" type={InputType.Password} value={password} onChange={e => setPassword(e.target.value)} />
                             <a href="#" className="text-xs ml-4">Esqueceu sua senha?</a>
                         </div>
                     </div>
 
                     <div className="flex flex-col items-center gap-2">
-                        <Button type="button" variant="solid" children="Login" size="large" />
-                        <a href="#" className="text-[10px]">ou cadastre-se</a>
+                        <Button type="button" variant="solid" children="Login" size="large" onClick={handleLogin} />
+                        <button className="text-[10px]" onClick={handleRegisterRedirect}>ou cadastre-se</button>
                     </div>
                 </div>
 

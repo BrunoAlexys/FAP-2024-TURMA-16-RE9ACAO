@@ -1,7 +1,7 @@
 import { twMerge } from "tailwind-merge";
 import { InputType } from "../../enum/input-type";
 import InputMask from "react-input-mask";
-import { InputHTMLAttributes, useRef } from "react";
+import { ChangeEvent, InputHTMLAttributes, useRef } from "react";
 import { UseFormRegisterReturn } from "react-hook-form";
 
 type InputProps = {
@@ -9,10 +9,12 @@ type InputProps = {
     placeholder?: string
     label: string,
     error?: string,
-    register?: UseFormRegisterReturn
+    register?: UseFormRegisterReturn,
+    value: string,
+    onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 } & InputHTMLAttributes<HTMLInputElement>;
 
-export const Input = ({ type, placeholder, label, error, register }: InputProps) => {
+export const Input = ({ type, placeholder, label, error, register, value, onChange }: InputProps) => {
     const inputRef = useRef(null);
 
     const getMask = (type: string) => {
@@ -67,6 +69,8 @@ export const Input = ({ type, placeholder, label, error, register }: InputProps)
                         'border border-colorMenuPrimary rounded-full px-4 py-2 w-80 focus:outline-none focus:border-2 focus:border-colorMenuPrimary',
                     )}
                     {...register}
+                    value={value}
+                    onChange={onChange}
                 />
             ) : (
                 <input
@@ -77,6 +81,8 @@ export const Input = ({ type, placeholder, label, error, register }: InputProps)
                         'border border-colorMenuPrimary rounded-full px-4 py-2 w-80 focus:outline-none focus:border-2 focus:border-colorMenuPrimary',
                     )}
                     {...register}
+                    value={value}
+                    onChange={onChange}
                 />
             )}
             {error && (

@@ -8,18 +8,19 @@ import { NotificacoesMobile } from "../pages/notificacoesMobile/NotificacoesMobi
 import { CadastroEmpresa } from "../pages/cadastro-empresa/CadastroEmpresa";
 import { CadastroInstituicao } from "../pages/cadastro-instituicao/CadastroInstituicao";
 import { Login } from "../pages/login/Login";
+import PrivateRoute from "./PrivateRoute";
 
 export const MainRouter = () => {
     const routes = useRoutes([
-        { path: "/dashboard", element: <Dashboard /> },
-        { path: "/projetos", element: <Projeto /> },
-        { path: "/parceiros", element: <ParceiroComponent /> },
-        { path: "/configuracao", element: <Configuracao /> },
-        { path: "/perfil", element: <Perfil /> },
-        { path: "/notificacoes", element: <NotificacoesMobile /> },
-        { path: "/cadastro-empresa", element: <CadastroEmpresa /> },
-        { path: "/cadastro-instituicao", element: <CadastroInstituicao /> },
-        { path: "/login", element: <Login /> },
+        { path: "/dashboard", element: <PrivateRoute element={<Dashboard />} /> },
+        { path: "/projetos", element: <PrivateRoute element={<Projeto />} /> },
+        { path: "/parceiros", element: <PrivateRoute element={<ParceiroComponent />} /> },
+        { path: "/configuracao", element: <PrivateRoute element={<Configuracao />} /> },
+        { path: "/perfil", element: <PrivateRoute element={<Perfil />} /> },
+        { path: "/notificacoes", element: <PrivateRoute element={<NotificacoesMobile />} /> },
+        { path: "/cadastro-empresa", element: <CadastroEmpresa /> },  // Rota pública
+        { path: "/cadastro-instituicao", element: <CadastroInstituicao /> }, // Rota pública
+        { path: "/", element: <Login /> }, // Rota pública
     ]);
 
     return routes;

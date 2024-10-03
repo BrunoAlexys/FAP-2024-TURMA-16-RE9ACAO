@@ -6,9 +6,10 @@ type ButtonProps = {
     children: ReactNode;
     type?: 'submit' | 'button';
     size?: 'small' | 'medium' | 'large'; // nova prop de tamanho
+    onClick?: () => void;
 };
 
-export const Button = ({ children, variant, type, size = 'medium' }: ButtonProps) => {
+export const Button = ({ children, variant, type, size = 'medium', onClick }: ButtonProps) => {
     const baseStyles = 'rounded-xl font-semibold';
     const solidStyles = 'bg-blue-600 text-white hover:bg-blue-700';
     const outlineStyles = 'bg-transparent text-blue-600';
@@ -27,6 +28,7 @@ export const Button = ({ children, variant, type, size = 'medium' }: ButtonProps
                 variant === 'solid' ? solidStyles : outlineStyles
             )}
             type={type}
+            onClick={onClick}
         >
             {children}
         </button>

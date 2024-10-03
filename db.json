@@ -235,5 +235,13 @@
       "description": "Descrição do Parceiro 10",
       "tipo": 0
     }
+  ],
+
+  "users": [
+    {
+      "id": 1,
+      "login": "123456789",
+      "senha": "123"
+    }
   ]
 }

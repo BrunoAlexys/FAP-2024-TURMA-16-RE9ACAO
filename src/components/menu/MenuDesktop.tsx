@@ -7,6 +7,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import { ButtonMenu } from '../button-menu/ButtonMenu';
+import { useAuth } from '../../contexts/AuthProvider';
 
 type MenuItems = {
     name?: string,
@@ -17,6 +18,8 @@ type MenuItems = {
 export const MenuDesktop = () => {
     const location = useLocation();
     const [selected, setSelected] = useState(location.pathname);
+    const navigate = useNavigate();
+    const { logout } = useAuth();
 
     const menuItens: MenuItems[] = [
         { name: 'Dashbord', icon: Dashbord, path: '/dashboard' },
@@ -28,7 +31,6 @@ export const MenuDesktop = () => {
     const [menu, setMenu] = useState(true);
 
     const toggleMenu = () => setMenu(!menu);
-    const navigate = useNavigate();
 
     useEffect(() => {
         if (location.pathname === '/') {
@@ -97,7 +99,12 @@ export const MenuDesktop = () => {
                 </div>
                 <div className="flex justify-start items-end mb-10 px-8 gap-4 flex-1 text-white font-bold">
                     <div>
-                        <button className="flex items-center gap-6">
+                        <button className="flex items-center gap-6"
+                            onClick={() => {
+                                logout();
+                                navigate('/');
+                            }}
+                        >
                             <img
                                 className="flex-shrink-0"
                                 src={Sair}
