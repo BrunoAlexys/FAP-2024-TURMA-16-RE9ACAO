@@ -1,7 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+<<<<<<< HEAD
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+=======
+>>>>>>> ba4f9ba6b7533ae3ab9710b2303b2c91d5907007
 
 ::-webkit-scrollbar {
   width: 5px;
