@@ -56,7 +56,7 @@ export const Login = () => {
                         </select>
                     </div>
 
-                    <div>
+                    <div className="lg:w-[60%]">
                         <div>
                             <Input label="Login" type={InputType.Text} value={login} onChange={e => setLogin(e.target.value)} />
                         </div>
