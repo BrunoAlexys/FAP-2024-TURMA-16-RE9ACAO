@@ -10,8 +10,8 @@ type InputProps = {
     label: string,
     error?: string,
     register?: UseFormRegisterReturn,
-    value: string,
-    onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+    value?: string,
+    onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 } & InputHTMLAttributes<HTMLInputElement>;
 
 export const Input = ({ type, placeholder, label, error, register, value, onChange }: InputProps) => {

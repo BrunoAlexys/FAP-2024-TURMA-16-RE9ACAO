@@ -7,7 +7,7 @@ type DiagonalSectionProps = {
 
 export const DiagonalSection = ({ text, subtext }: DiagonalSectionProps) => {
     return (
-        <div className="relative h-24 lg:h-52 w-full bg-gradient-to-l from-colorMenuPrimary to-colorMenuSecondary clip-path-inverted">
+        <div className="relative h-24 lg:h-52 w-full m-0 p-0 bg-gradient-to-l from-colorMenuPrimary to-colorMenuSecondary clip-path-inverted z-10">
             <div
                 className="w-full h-full flex justify-end items-center pr-14 mb-2"
             >

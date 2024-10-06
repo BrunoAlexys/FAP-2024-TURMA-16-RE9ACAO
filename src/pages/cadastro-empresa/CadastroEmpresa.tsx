@@ -6,8 +6,12 @@ import { Button } from "../../components/button/button";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { schemaForm } from "../../utils/SchemaForm";
+import { useNavigate } from "react-router-dom";
 
 export const CadastroEmpresa = () => {
+
+    const navigate = useNavigate();
+
     const {
         register,
         handleSubmit,
@@ -26,14 +30,14 @@ export const CadastroEmpresa = () => {
     };
 
     return (
-        <div className="flex flex-col mb-6">
+        <div className="flex flex-col items-center ">
             <DiagonalSection text="Cadastro" subtext="Empresarial" />
-            <div className="mt-24 lg:mt-40 mx-10">
+            <div className="absolute w-[90%] mt-28 lg:ml-2 lg:mt-[245px] lg:mr-20 flex flex-col">
                 <form
-                    className="flex flex-col gap-8"
+                    className="flex flex-col gap-6 mb-6"
                     onSubmit={handleSubmit(handleSubmitForm)}
                 >
-                    <div className="w-full lg:w-1/3">
+                    <div className="lg:hidden">
                         <Input
                             type={InputType.Text}
                             label="Nome da Empresa"
@@ -42,30 +46,39 @@ export const CadastroEmpresa = () => {
                         />
                     </div>
 
-                    <div className="flex gap-8 flex-wrap">
-                        <div className="w-full flex gap-2 lg:w-1/2 lg:gap-8">
-                            <div className="w-1/2">
-                                <Input
-                                    type={InputType.CNPJ}
-                                    label="CNPJ"
-                                    placeholder="12.345.678/0001-90"
-                                    error={errors.cnpj?.message}
-                                    register={{ ...register("cnpj") }}
-                                />
-                            </div>
-
-                            <div className="w-1/2">
-                                <Input
-                                    type={InputType.Phone}
-                                    label="Telefone"
-                                    placeholder="(00) 0 0000-0000"
-                                    error={errors.phone?.message}
-                                    register={{ ...register("phone") }}
-                                />
-                            </div>
+                    <div className="flex flex-col lg:flex-row gap-4">
+                        <div className="lg:w-full">
+                            <Input
+                                type={InputType.Text}
+                                label="Nome da Empresa"
+                                error={errors.name?.message}
+                                register={{ ...register("name") }}
+                            />
                         </div>
 
-                        <div className="w-full lg:w-1/3">
+                        <div className="lg:w-full">
+                            <Input
+                                type={InputType.CNPJ}
+                                label="CNPJ"
+                                placeholder="12.345.678/0001-90"
+                                error={errors.cnpj?.message}
+                                register={{ ...register("cnpj") }}
+                            />
+                        </div>
+
+                        <div className="lg:w-full">
+                            <Input
+                                type={InputType.Phone}
+                                label="Telefone"
+                                placeholder="(00) 0 0000-0000"
+                                error={errors.phone?.message}
+                                register={{ ...register("phone") }}
+                            />
+                        </div>
+                    </div>
+
+                    <div className="flex flex-col lg:flex-row gap-4">
+                        <div className="lg:w-full lg:flex-1">
                             <Input
                                 type={InputType.Email}
                                 label="Email"
@@ -73,19 +86,20 @@ export const CadastroEmpresa = () => {
                                 register={{ ...register("email") }}
                             />
                         </div>
+
+                        <div className="lg:w-full lg:flex-1">
+                            <Input
+                                type={InputType.Email}
+                                label="Confirmar Email"
+                                error={errors.confirmEmail?.message}
+                                register={{ ...register("confirmEmail") }}
+                            />
+                        </div>
+                        <div className="lg:flex-1 lg:block hidden"></div>
                     </div>
 
-                    <div className="w-full lg:w-1/4">
-                        <Input
-                            type={InputType.Email}
-                            label="Confirmar Email"
-                            error={errors.confirmEmail?.message}
-                            register={{ ...register("confirmEmail") }}
-                        />
-                    </div>
-
-                    <div className="flex gap-8 lg:gap-20 flex-wrap lg:flex-nowrap">
-                        <div className="w-full lg:w-1/3">
+                    <div className="flex flex-col lg:flex-row gap-4">
+                        <div className="lg:w-full">
                             <Input
                                 type={InputType.UF}
                                 label="UF"
@@ -94,16 +108,7 @@ export const CadastroEmpresa = () => {
                             />
                         </div>
 
-                        <div className="w-full">
-                            <Input
-                                type={InputType.Text}
-                                label="Cidade"
-                                error={errors.city?.message}
-                                register={{ ...register("city") }}
-                            />
-                        </div>
-
-                        <div className="w-full">
+                        <div className="lg:w-full">
                             <Input
                                 type={InputType.CEP}
                                 label="CEP"
@@ -113,10 +118,18 @@ export const CadastroEmpresa = () => {
                             />
                         </div>
 
+                        <div className="lg:w-full">
+                            <Input
+                                type={InputType.Text}
+                                label="Cidade"
+                                error={errors.city?.message}
+                                register={{ ...register("city") }}
+                            />
+                        </div>
                     </div>
 
-                    <div className="flex gap-8 flex-wrap lg:flex-nowrap lg:gap-20">
-                        <div className="w-full">
+                    <div className="flex flex-col lg:flex-row gap-4">
+                        <div className="lg:w-full lg:flex-1">
                             <Input
                                 type={InputType.Text}
                                 label="Bairro"
@@ -125,7 +138,7 @@ export const CadastroEmpresa = () => {
                             />
                         </div>
 
-                        <div className="w-full">
+                        <div className="lg:w-full lg:flex-1">
                             <Input
                                 type={InputType.Text}
                                 label="Rua"
@@ -133,10 +146,12 @@ export const CadastroEmpresa = () => {
                                 register={{ ...register("road") }}
                             />
                         </div>
+
+                        <div className="lg:flex-1 lg:block hidden"></div>
                     </div>
 
-                    <div className="flex gap-8 flex-wrap lg:flex-nowrap lg:gap-20">
-                        <div className="w-full">
+                    <div className="flex flex-col lg:flex-row gap-4">
+                        <div className="lg:w-full lg:flex-1">
                             <Input
                                 type={InputType.Password}
                                 label="Senha"
@@ -145,7 +160,7 @@ export const CadastroEmpresa = () => {
                             />
                         </div>
 
-                        <div className="w-full">
+                        <div className="lg:w-full lg:flex-1">
                             <Input
                                 type={InputType.Password}
                                 label="Confirmar senha"
@@ -153,11 +168,13 @@ export const CadastroEmpresa = () => {
                                 register={{ ...register("confirmPassword") }}
                             />
                         </div>
+
+                        <div className="lg:flex-1 lg:block hidden"></div>
                     </div>
 
-                    <div className="flex justify-end gap-2 mr-10">
+                    <div className="flex items-center lg:justify-end justify-center mt-4">
                         <div>
-                            <Button children="Cancelar" variant="transparent" />
+                            <Button children="Cancelar" variant="transparent" onClick={() => navigate('/')} />
                         </div>
 
                         <div>

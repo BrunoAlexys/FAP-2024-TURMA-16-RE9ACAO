@@ -37,7 +37,7 @@ export const Login = () => {
         <div>
             <DiagonalSection text="Login" />
 
-            <div className="flex mt-[275px] mx-6">
+            <div className="absolute flex mt-[245px] mx-6">
                 <div className="flex flex-col justify-center items-center flex-1 gap-4 border-r-2 border-gray-400">
                     <div>
                         <img src={Logo} alt="Logo da empresa" width={250} />
