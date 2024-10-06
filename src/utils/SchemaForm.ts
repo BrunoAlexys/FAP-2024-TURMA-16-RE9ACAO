@@ -11,6 +11,8 @@ const validateCNPJ = (cnpj: string) => {
 export const schemaForm = z.object({
     name: z.string().min(2, { message: "* Nome é obrigatório" }),
 
+    registration: z.string().min(1, { message: "* Preencher o campo da matrícula é obrigatório" }),
+
     email: z.string()
         .min(1, { message: "* Email é obrigatório" })
         .email({ message: "Email inválido" }),
@@ -52,7 +54,13 @@ export const schemaForm = z.object({
         .min(8, { message: "A senha deve conter pelo menos 8 caracteres" }),
 
     confirmPassword: z.string()
-        .min(6, { message: "* A confirmação de senha é obrigatória" })
+        .min(6, { message: "* A confirmação de senha é obrigatória" }),
+
+    periodo: z.string().min(1, { message: "* Informar o período é obrigatório" }),
+
+    curso: z.string().min(1, { message: "* Nome do Curso é obrigatório" })
+
+
 })
     .superRefine((data, ctx) => {
         if (data.email !== data.confirmEmail) {
