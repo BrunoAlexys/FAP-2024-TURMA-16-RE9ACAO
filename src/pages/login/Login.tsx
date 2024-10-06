@@ -11,7 +11,7 @@ export const Login = () => {
 
     const [selectedOption, setSelectedOption] = useState('');
     const navigate = useNavigate();
-    const options = ['Aluno', 'Professor', 'Empresa', 'Instituição de Ensino'];
+    const options = ['Aluno', 'Professor', 'Empresa', 'Instituição'];
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
     const { login: authenticate } = useAuth();
@@ -44,7 +44,7 @@ export const Login = () => {
                     </div>
 
                     <div className="mt-4">
-                        <select className="bg-colorMenuPrimary p-2 rounded-lg text-white appearance-none relative custom-select"
+                        <select className="bg-colorMenuPrimary p-2 w-48 rounded-lg text-white appearance-none relative custom-select"
                             value={selectedOption}
                             onChange={e => setSelectedOption(e.target.value)}
                         >
@@ -56,7 +56,7 @@ export const Login = () => {
                         </select>
                     </div>
 
-                    <div className="lg:w-[60%]">
+                    <div className="lg:w-[60%] flex flex-col gap-2">
                         <div>
                             <Input label="Login" type={InputType.Text} value={login} onChange={e => setLogin(e.target.value)} />
                         </div>
