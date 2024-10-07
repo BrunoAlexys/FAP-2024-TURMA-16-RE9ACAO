@@ -14,7 +14,7 @@ export const DiagonalSection = ({ text, subtext }: DiagonalSectionProps) => {
                 <div className="flex flex-col">
                     <div className="flex flex-col items-end">
                         <h1 className="text-2xl lg:text-5xl text-white font-bold">{text}</h1>
-                        <p className="text-sm lg:text-xl text-white font-medium mr-1">{subtext}</p>
+                        <p className="text-sm lg:text-lg text-white font-medium mr-1">{subtext}</p>
                     </div>
                 </div>
             </div>

@@ -12,6 +12,7 @@ import PrivateRoute from "./PrivateRoute";
 import { CadastroAluno } from "../pages/cadastro-aluno/CadastroAluno";
 import { CadastroProfessor } from "../pages/cadastro-professor/CadastroProfessor";
 
+
 export const MainRouter = () => {
     const routes = useRoutes([
         { path: "/dashboard", element: <PrivateRoute element={<Dashboard />} /> },

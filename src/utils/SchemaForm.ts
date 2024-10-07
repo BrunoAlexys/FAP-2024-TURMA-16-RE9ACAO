@@ -58,7 +58,9 @@ export const schemaForm = z.object({
 
     periodo: z.string().min(1, { message: "* Informar o período é obrigatório" }),
 
-    curso: z.string().min(1, { message: "* Nome do Curso é obrigatório" })
+    curso: z.string().min(1, { message: "* Nome do Curso é obrigatório" }),
+
+    matricula: z.string().min(1, { message: "* Matrícula é obrigatória" }),
 
 
 })

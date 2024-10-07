@@ -60,7 +60,7 @@ export const CadastroAluno = () => {
                             <Input
                                 type={InputType.CPF}
                                 label="CPF"
-                                placeholder="123.456.789-01"
+                                placeholder="000.000.000-00"
                                 error={errors.cpf?.message}
                                 register={{ ...register("cpf") }}
                             />
@@ -176,7 +176,7 @@ export const CadastroAluno = () => {
                                 register={{ ...register("registration") }}
                             />
                         </div>
-                        </div>
+                    </div>
 
                     <div className="flex flex-col lg:flex-row gap-4">
                         <div className="lg:w-full lg:flex-1">
