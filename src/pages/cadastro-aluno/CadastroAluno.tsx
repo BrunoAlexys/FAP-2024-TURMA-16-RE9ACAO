@@ -7,6 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { schemaForm } from "../../utils/SchemaForm";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export const CadastroAluno = () => {
 
@@ -22,11 +23,9 @@ export const CadastroAluno = () => {
 
     type SechemaType = z.infer<typeof schemaForm>;
 
-    const handleSubmitForm: SubmitHandler<SechemaType> = (
-        data: SechemaType
-    ) => {
-        console.log(data);
-        console.log(errors);
+    const handleSubmitForm: SubmitHandler<SechemaType> = async (data: SechemaType) => {
+        const response = await axios.post('http://localhost:3001/aluno', data);
+        console.log(response.data);  // Aqui você verá os dados retornados, incluindo o ID gerado automaticamente
     };
 
     return (
@@ -162,7 +161,7 @@ export const CadastroAluno = () => {
 
                         <div className="lg:w-full lg:flex-1">
                             <Input
-                                type={InputType.Password}
+                                type={InputType.Text}
                                 label="Período"
                                 error={errors.periodo?.message}
                                 register={{ ...register("periodo") }}
@@ -170,7 +169,7 @@ export const CadastroAluno = () => {
                         </div>
                         <div className="lg:w-full lg:flex-1">
                             <Input
-                                type={InputType.Password}
+                                type={InputType.Text}
                                 label="Matrícula"
                                 error={errors.registration?.message}
                                 register={{ ...register("registration") }}

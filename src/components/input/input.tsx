@@ -10,11 +10,10 @@ type InputProps = {
     label: string,
     error?: string,
     register?: UseFormRegisterReturn,
-    value?: string,
     onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 } & InputHTMLAttributes<HTMLInputElement>;
 
-export const Input = ({ type, placeholder, label, error, register, value, onChange }: InputProps) => {
+export const Input = ({ type, placeholder, label, error, register, onChange }: InputProps) => {
     const inputRef = useRef(null);
 
     const getMask = (type: string) => {
@@ -69,7 +68,6 @@ export const Input = ({ type, placeholder, label, error, register, value, onChan
                         'border-2 border-colorMenuSecondary rounded-full px-4 py-2 w-full focus:outline-none focus:border-2 focus:border-colorMenuPrimary',
                     )}
                     {...register}
-                    value={value}
                     onChange={onChange}
                 />
             ) : (
@@ -81,15 +79,12 @@ export const Input = ({ type, placeholder, label, error, register, value, onChan
                         'border-2 border-colorMenuSecondary rounded-full px-4 py-2 w-full focus:outline-none focus:border-2 focus:border-colorMenuPrimary',
                     )}
                     {...register}
-                    value={value}
                     onChange={onChange}
                 />
             )}
             {error && (
-                <p className="text-red-500 text-xs ml-4">{error}</p> // Exibição do erro
+                <p className="text-red-500 text-xs ml-4">{error}</p>
             )}
         </div>
     );
 };
-
-

@@ -27,7 +27,8 @@ export const schemaForm = z.object({
 
     cpf: z.string()
         .min(1, { message: "* CPF é obrigatório" })
-        .refine(value => validateCPF(value), { message: "CPF inválido" }),
+        .refine(value => validateCPF(value.replace(/[^\d]/g, '')), { message: "CPF inválido" }),
+
 
     phone: z.string()
         .refine(value => {
@@ -42,7 +43,8 @@ export const schemaForm = z.object({
 
     cep: z.string()
         .min(8, { message: "* CEP é obriatório" })
-        .max(8, { message: "CEP deve conter 8 dígitos" }),
+        .max(10, { message: "CEP deve conter no máximo 10 dígitos" })
+        .refine(value => value.replace(/[^\d]/g, ''), { message: "CEP inválido" }),
 
     city: z.string().min(1, { message: "* Cidade é obrigatória" }),
 
