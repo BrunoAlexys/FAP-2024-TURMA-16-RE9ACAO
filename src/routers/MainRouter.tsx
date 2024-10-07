@@ -9,6 +9,8 @@ import { CadastroEmpresa } from "../pages/cadastro-empresa/CadastroEmpresa";
 import { CadastroInstituicao } from "../pages/cadastro-instituicao/CadastroInstituicao";
 import { Login } from "../pages/login/Login";
 import PrivateRoute from "./PrivateRoute";
+import { CadastroAluno } from "../pages/cadastro-aluno/CadastroAluno";
+import { CadastroProfessor } from "../pages/cadastro-professor/CadastroProfessor";
 
 export const MainRouter = () => {
     const routes = useRoutes([
@@ -20,6 +22,8 @@ export const MainRouter = () => {
         { path: "/notificacoes", element: <PrivateRoute element={<NotificacoesMobile />} /> },
         { path: "/cadastro-empresa", element: <CadastroEmpresa /> },  // Rota pública
         { path: "/cadastro-instituicao", element: <CadastroInstituicao /> }, // Rota pública
+        { path: "/cadastro-aluno", element: <CadastroAluno /> }, // Rota pública
+        { path: "/cadastro-professor", element: <CadastroProfessor /> }, //Rota pública
         { path: "/", element: <Login /> }, // Rota pública
     ]);
 

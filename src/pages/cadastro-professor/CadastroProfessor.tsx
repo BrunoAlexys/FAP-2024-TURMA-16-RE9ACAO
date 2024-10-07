@@ -7,7 +7,7 @@ import { Button } from "../../components/button/button";
 import { Input } from "../../components/input/input";
 import { InputType } from "../../enum/input-type";
 
-export const CadastroAluno = () => {
+export const CadastroProfessor = () => {
 
     type SechemaType = z.infer<typeof schemaForm>
 
@@ -22,7 +22,7 @@ export const CadastroAluno = () => {
 
     return (
         <div className="flex flex-col mb-6">
-            <DiagonalSection text='Cadastro' subtext="Aluno" />
+            <DiagonalSection text='Cadastro' subtext="Professor" />
             <div className="mt-72 mx-10">
                 <form
                     className="flex flex-col gap-8"
@@ -45,7 +45,7 @@ export const CadastroAluno = () => {
                             <Input
                                 type={InputType.CPF}
                                 label="CPF"
-                                placeholder="123.456.789-01"    
+                                placeholder="123.456.789-01"
                                 error={errors.cpf?.message}
                                 register={{ ...register('cpf') }}
                             />

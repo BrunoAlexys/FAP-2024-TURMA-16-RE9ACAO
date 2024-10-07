@@ -9,7 +9,7 @@ import { useAuth } from "../../contexts/AuthProvider";
 
 export const Login = () => {
 
-    const [selectedOption, setSelectedOption] = useState('');
+    const [selectedOption, setSelectedOption] = useState('Aluno');
     const navigate = useNavigate();
     const options = ['Aluno', 'Professor', 'Empresa', 'Instituição'];
     const [login, setLogin] = useState('');
@@ -22,16 +22,20 @@ export const Login = () => {
     }
 
     const handleRegisterRedirect = () => {
-        if (selectedOption === 'Aluno') {
+        const option = selectedOption.toLowerCase();
+        if (option === 'aluno') {
             navigate('/cadastro-aluno');
-        } else if (selectedOption === 'Professor') {
+        } else if (option === 'professor') {
             navigate('/cadastro-professor');
-        } else if (selectedOption === 'Empresa') {
+        } else if (option === 'empresa') {
             navigate('/cadastro-empresa');
+        } else if (option === 'instituição') {
+            navigate('/cadastro-instituicao');
         } else {
-            navigate('/cadastro-instituicao')
+            alert('Selecione uma opção válida');
         }
     };
+
 
     return (
         <div>
@@ -44,16 +48,20 @@ export const Login = () => {
                     </div>
 
                     <div className="mt-4">
-                        <select className="bg-colorMenuPrimary p-2 w-48 rounded-lg text-white appearance-none relative custom-select"
+                        <select
+                            className="bg-colorMenuPrimary p-2 w-48 rounded-lg text-white appearance-none relative custom-select"
                             value={selectedOption}
-                            onChange={e => setSelectedOption(e.target.value)}
+                            onChange={e => {
+                                const value = e.target.value;
+                                console.log('Valor selecionado no select:', value); // Verificar o valor selecionado
+                                setSelectedOption(value);
+                            }}
                         >
                             {options.map(option => (
-                                <option key={option} value={option}>
-                                    {option}
-                                </option>
+                                <option key={option} value={option}>{option}</option>
                             ))}
                         </select>
+
                     </div>
 
                     <div className="lg:w-[60%] flex flex-col gap-2">
