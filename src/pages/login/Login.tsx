@@ -38,11 +38,11 @@ export const Login = () => {
 
 
     return (
-        <div>
+        <div className="flex justify-center">
             <DiagonalSection text="Login" />
 
-            <div className="absolute flex mt-[245px] mx-6">
-                <div className="flex flex-col justify-center items-center flex-1 gap-4 border-r-2 border-gray-400">
+            <div className="absolute flex mt-[150px] md:mt-[200px] lg:mt-[245px] w-full">
+                <div className="flex flex-col justify-center items-center flex-1 gap-4 lg:border-r-2 border-gray-400">
                     <div>
                         <img src={Logo} alt="Logo da empresa" width={250} />
                     </div>
@@ -64,7 +64,7 @@ export const Login = () => {
 
                     </div>
 
-                    <div className="lg:w-[60%] flex flex-col gap-2">
+                    <div className="md:w-1/2 lg:w-[60%] flex flex-col gap-2">
                         <div>
                             <Input label="Login" type={InputType.Text} value={login} onChange={e => setLogin(e.target.value)} />
                         </div>
@@ -80,7 +80,7 @@ export const Login = () => {
                     </div>
                 </div>
 
-                <div className="flex flex-col gap-6 flex-1 text-center py-8">
+                <div className="hidden lg:flex flex-col gap-6 flex-1 text-center py-8">
                     <h2 className="text-3xl font-semibold mb-4">Quem somos?</h2>
                     <p className="text-gray-600 text-2xl mx-10">
                         <strong className="block font-bold text-black">A Re9Ação - Soluções Integradas</strong>

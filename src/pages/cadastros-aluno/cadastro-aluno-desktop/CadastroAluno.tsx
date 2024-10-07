@@ -1,11 +1,11 @@
 import { SubmitHandler, useForm } from "react-hook-form";
-import { DiagonalSection } from "../../components/diagonal-section/DiagonalSection";
-import { Input } from "../../components/input/input";
-import { InputType } from "../../enum/input-type";
-import { Button } from "../../components/button/button";
+import { DiagonalSection } from "../../../components/diagonal-section/DiagonalSection";
+import { Input } from "../../../components/input/input";
+import { InputType } from "../../../enum/input-type";
+import { Button } from "../../../components/button/button";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { schemaForm } from "../../utils/SchemaForm";
+import { schemaForm } from "../../../utils/SchemaForm";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
