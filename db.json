@@ -235,14 +235,26 @@
       "tipo": 0
     }
   ],
-  "users": [
+  "aluno": [
     {
-      "id": "1",
-      "login": "123456789",
-      "senha": "123"
+      "id": "53df",
+      "name": "Bruno",
+      "cpf": "12722891417",
+      "email": "bruno@gmail.com",
+      "confirmEmail": "bruno@gmail.com",
+      "phone": "(00) 00000-0000",
+      "uf": "PE",
+      "cep": "55636000",
+      "city": "Chã Grande",
+      "neighborhood": "Dom helder camara",
+      "street": "Joaquim Francisco dos Santos",
+      "course": "Sistemas de informações",
+      "period": "6",
+      "registration": "1235468",
+      "password": "12345678Br@",
+      "confirmPassword": "12345678Br@"
     }
   ],
-  "aluno": [],
   "professor": [],
   "empresa": [],
   "instituicao": []

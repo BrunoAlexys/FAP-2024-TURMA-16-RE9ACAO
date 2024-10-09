@@ -15,9 +15,24 @@ export const Login = () => {
     const { login: authenticate } = useAuth();
 
     const handleLogin = async () => {
-        await authenticate({ login, password });
-        navigate('/dashbord');
-    }
+        try {
+            const isAuthenticated = await authenticate({ email: login, password, userType: selectedOption });
+
+            if (isAuthenticated) {
+                navigate('/dashbord'); // Navega apenas se autenticado com sucesso
+            } else {
+                setLogin('');
+                setPassword('');
+            }
+
+        } catch (error) {
+            console.error('Erro durante a autenticação:', error);
+            alert('Erro ao fazer login. Tente novamente mais tarde.');
+        }
+    };
+
+
+
 
     const handleRegisterRedirect = () => {
         const option = selectedOption.toLowerCase();
@@ -75,7 +90,7 @@ export const Login = () => {
                         <div className="flex flex-col gap-2">
                             <label className="text-xl font-bold ml-4">Senha</label>
                             <input
-                                type="text"
+                                type="password"
                                 value={password}
                                 onChange={e => setPassword(e.target.value)}
                                 className="border-2 border-colorMenuSecondary rounded-full px-4 py-2 w-full focus:outline-none focus:border-2 focus:border-colorMenuPrimary"
