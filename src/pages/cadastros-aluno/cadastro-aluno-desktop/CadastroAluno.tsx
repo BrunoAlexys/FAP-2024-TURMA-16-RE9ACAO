@@ -1,31 +1,44 @@
-import { SubmitHandler, useForm } from "react-hook-form";
+import { Button } from "../../../components/button/button";
 import { DiagonalSection } from "../../../components/diagonal-section/DiagonalSection";
+import { useNavigate } from "react-router-dom";
 import { Input } from "../../../components/input/input";
 import { InputType } from "../../../enum/input-type";
-import { Button } from "../../../components/button/button";
+import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
-import { schemaForm } from "../../../utils/SchemaForm";
-import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import { StudentScheme } from "../../../utils/StudentScheme";
+import { FormStudent } from "../../../types/FormStudent";
+import axios, { AxiosError } from "axios";
 
 export const CadastroAluno = () => {
 
     const navigate = useNavigate();
+    const API_URL = 'http://localhost:3001/aluno';
 
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-    } = useForm<SechemaType>({
-        resolver: zodResolver(schemaForm),
+    const { register, handleSubmit, formState: { errors }, reset } = useForm<FormStudent>({
+        resolver: zodResolver(StudentScheme)
     });
 
-    type SechemaType = z.infer<typeof schemaForm>;
+    const onSubmit = async (data: FormStudent) => {
+        try {
+            const response = await axios.post(API_URL, data);
+            if (response.status === 201) {
+                console.log('Formulário enviado com sucesso:', data);
+            } else {
+                throw new Error('Erro ao enviar o formulário');
+            }
+            reset();
+        } catch (error) {
+            const axiosError = error as AxiosError;
+            if (axiosError.response) {
+                console.error('Erro na resposta do servidor:', axiosError.response.data);
+            } else if (axiosError.request) {
+                console.error('Erro na requisição:', axiosError.request);
+            } else {
+                console.error('Erro ao configurar a requisição:', axiosError.message);
+            }
 
-    const handleSubmitForm: SubmitHandler<SechemaType> = async (data: SechemaType) => {
-        const response = await axios.post('http://localhost:3001/aluno', data);
-        console.log(response.data);  // Aqui você verá os dados retornados, incluindo o ID gerado automaticamente
+            throw error;
+        }
     };
 
     return (
@@ -34,24 +47,16 @@ export const CadastroAluno = () => {
             <div className="absolute w-[90%] mt-28 lg:ml-2 lg:mt-[245px] lg:mr-20 flex flex-col">
                 <form
                     className="flex flex-col gap-6 mb-6"
-                    onSubmit={handleSubmit(handleSubmitForm)}
+                    onSubmit={handleSubmit(onSubmit)}
                 >
-                    <div className="lg:hidden">
-                        <Input
-                            type={InputType.Text}
-                            label="Nome do Aluno"
-                            error={errors.name?.message}
-                            register={{ ...register("name") }}
-                        />
-                    </div>
-
                     <div className="flex flex-col lg:flex-row gap-4">
                         <div className="lg:w-full">
                             <Input
                                 type={InputType.Text}
-                                label="Nome do Aluno"
-                                error={errors.name?.message}
-                                register={{ ...register("name") }}
+                                label="Nome"
+                                error={errors}
+                                register={register}
+                                name="name"
                             />
                         </div>
 
@@ -59,9 +64,10 @@ export const CadastroAluno = () => {
                             <Input
                                 type={InputType.CPF}
                                 label="CPF"
+                                error={errors}
+                                register={register}
+                                name="cpf"
                                 placeholder="000.000.000-00"
-                                error={errors.cpf?.message}
-                                register={{ ...register("cpf") }}
                             />
                         </div>
 
@@ -69,9 +75,10 @@ export const CadastroAluno = () => {
                             <Input
                                 type={InputType.Phone}
                                 label="Telefone"
-                                placeholder="(00) 0 0000-0000"
-                                error={errors.phone?.message}
-                                register={{ ...register("phone") }}
+                                error={errors}
+                                register={register}
+                                name="phone"
+                                placeholder="(00) 00000-0000"
                             />
                         </div>
                     </div>
@@ -79,19 +86,21 @@ export const CadastroAluno = () => {
                     <div className="flex flex-col lg:flex-row gap-4">
                         <div className="lg:w-full lg:flex-1">
                             <Input
-                                type={InputType.Email}
+                                type={InputType.Text}
                                 label="Email"
-                                error={errors.email?.message}
-                                register={{ ...register("email") }}
+                                error={errors}
+                                register={register}
+                                name="email"
                             />
                         </div>
 
                         <div className="lg:w-full lg:flex-1">
                             <Input
-                                type={InputType.Email}
+                                type={InputType.Text}
                                 label="Confirmar Email"
-                                error={errors.confirmEmail?.message}
-                                register={{ ...register("confirmEmail") }}
+                                error={errors}
+                                register={register}
+                                name="confirmEmail"
                             />
                         </div>
                         <div className="lg:flex-1 lg:block hidden"></div>
@@ -102,8 +111,9 @@ export const CadastroAluno = () => {
                             <Input
                                 type={InputType.UF}
                                 label="UF"
-                                error={errors.uf?.message}
-                                register={{ ...register("uf") }}
+                                error={errors}
+                                register={register}
+                                name="uf"
                             />
                         </div>
 
@@ -111,9 +121,10 @@ export const CadastroAluno = () => {
                             <Input
                                 type={InputType.CEP}
                                 label="CEP"
+                                error={errors}
+                                register={register}
+                                name="cep"
                                 placeholder="00000-000"
-                                error={errors.cep?.message}
-                                register={{ ...register("cep") }}
                             />
                         </div>
 
@@ -121,8 +132,9 @@ export const CadastroAluno = () => {
                             <Input
                                 type={InputType.Text}
                                 label="Cidade"
-                                error={errors.city?.message}
-                                register={{ ...register("city") }}
+                                error={errors}
+                                register={register}
+                                name="city"
                             />
                         </div>
                     </div>
@@ -132,8 +144,9 @@ export const CadastroAluno = () => {
                             <Input
                                 type={InputType.Text}
                                 label="Bairro"
-                                error={errors.neighborhood?.message}
-                                register={{ ...register("neighborhood") }}
+                                error={errors}
+                                register={register}
+                                name="neighborhood"
                             />
                         </div>
 
@@ -141,8 +154,9 @@ export const CadastroAluno = () => {
                             <Input
                                 type={InputType.Text}
                                 label="Rua"
-                                error={errors.road?.message}
-                                register={{ ...register("road") }}
+                                error={errors}
+                                register={register}
+                                name="street"
                             />
                         </div>
 
@@ -154,8 +168,9 @@ export const CadastroAluno = () => {
                             <Input
                                 type={InputType.Text}
                                 label="Curso"
-                                error={errors.curso?.message}
-                                register={{ ...register("curso") }}
+                                error={errors}
+                                register={register}
+                                name="course"
                             />
                         </div>
 
@@ -163,16 +178,18 @@ export const CadastroAluno = () => {
                             <Input
                                 type={InputType.Text}
                                 label="Período"
-                                error={errors.periodo?.message}
-                                register={{ ...register("periodo") }}
+                                error={errors}
+                                register={register}
+                                name="period"
                             />
                         </div>
                         <div className="lg:w-full lg:flex-1">
                             <Input
                                 type={InputType.Text}
                                 label="Matrícula"
-                                error={errors.registration?.message}
-                                register={{ ...register("registration") }}
+                                error={errors}
+                                register={register}
+                                name="registration"
                             />
                         </div>
                     </div>
@@ -182,17 +199,19 @@ export const CadastroAluno = () => {
                             <Input
                                 type={InputType.Password}
                                 label="Senha"
-                                error={errors.password?.message}
-                                register={{ ...register("password") }}
+                                error={errors}
+                                register={register}
+                                name="password"
                             />
                         </div>
 
                         <div className="lg:w-full lg:flex-1">
                             <Input
                                 type={InputType.Password}
-                                label="Confirmar senha"
-                                error={errors.confirmPassword?.message}
-                                register={{ ...register("confirmPassword") }}
+                                label="Confirmar Senha"
+                                error={errors}
+                                register={register}
+                                name="confirmPassword"
                             />
                         </div>
 
@@ -201,11 +220,11 @@ export const CadastroAluno = () => {
 
                     <div className="flex items-center lg:justify-end justify-center mt-4">
                         <div>
-                            <Button children="Cancelar" variant="transparent" onClick={() => navigate('/')} />
+                            <Button children="Cancelar" variant="transparent" type="button" onClick={() => navigate('/')} />
                         </div>
 
                         <div>
-                            <Button children="Cadastrar" variant="solid" />
+                            <Button children="Cadastrar" variant="solid" type="submit" />
                         </div>
                     </div>
                 </form>

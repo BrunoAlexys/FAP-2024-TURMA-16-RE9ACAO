@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { Button } from "../../components/button/button";
 import { DiagonalSection } from "../../components/diagonal-section/DiagonalSection";
-import { Input } from "../../components/input/input";
-import { InputType } from "../../enum/input-type";
 import Logo from './assets/logo.png';
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthProvider";
@@ -65,11 +63,23 @@ export const Login = () => {
                     </div>
 
                     <div className="md:w-1/2 lg:w-[60%] flex flex-col gap-2">
-                        <div>
-                            <Input label="Login" type={InputType.Text} value={login} onChange={e => setLogin(e.target.value)} />
+                        <div className="flex flex-col gap-2">
+                            <label className="text-xl font-bold ml-4">Login</label>
+                            <input
+                                type="text"
+                                value={login}
+                                onChange={e => setLogin(e.target.value)}
+                                className="border-2 border-colorMenuSecondary rounded-full px-4 py-2 w-full focus:outline-none focus:border-2 focus:border-colorMenuPrimary"
+                            />
                         </div>
-                        <div>
-                            <Input label="Senha" type={InputType.Password} value={password} onChange={e => setPassword(e.target.value)} />
+                        <div className="flex flex-col gap-2">
+                            <label className="text-xl font-bold ml-4">Senha</label>
+                            <input
+                                type="text"
+                                value={password}
+                                onChange={e => setPassword(e.target.value)}
+                                className="border-2 border-colorMenuSecondary rounded-full px-4 py-2 w-full focus:outline-none focus:border-2 focus:border-colorMenuPrimary"
+                            />
                             <a href="#" className="text-xs ml-4">Esqueceu sua senha?</a>
                         </div>
                     </div>

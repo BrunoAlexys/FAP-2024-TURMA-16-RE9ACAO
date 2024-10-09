@@ -1,43 +1,61 @@
 import { useNavigate } from "react-router-dom";
-import { z } from "zod";
-import { schemaForm } from "../../utils/SchemaForm";
-import { SubmitHandler, useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { Button } from "../../components/button/button";
 import { DiagonalSection } from "../../components/diagonal-section/DiagonalSection";
 import { Input } from "../../components/input/input";
 import { InputType } from "../../enum/input-type";
-import { Button } from "../../components/button/button";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { FormTeacher } from "../../types/FormTeacher";
+import { TeacherScheme } from "../../utils/TeacherScheme";
+import axios, { AxiosError } from "axios";
 
 export const CadastroProfessor = () => {
 
     const navigate = useNavigate();
+    const API_URL = 'http://localhost:3001/professor';
 
-    type SechemaType = z.infer<typeof schemaForm>
-
-    const { register, handleSubmit, formState: { errors } } = useForm<SechemaType>({
-        resolver: zodResolver(schemaForm)
+    const { register, handleSubmit, formState: { errors }, reset } = useForm<FormTeacher>({
+        resolver: zodResolver(TeacherScheme)
     });
 
-    const handleSubmitForm: SubmitHandler<SechemaType> = (data: SechemaType) => {
-        console.log(data)
-        console.log(errors)
-    }
+    const onSubmit = async (data: FormTeacher) => {
+        try {
+            const response = await axios.post(API_URL, data);
+            if (response.status === 201) {
+                console.log('Formulário enviado com sucesso:', data);
+            } else {
+                throw new Error('Erro ao enviar o formulário');
+            }
+            reset();
+        } catch (error) {
+            const axiosError = error as AxiosError;
+            if (axiosError.response) {
+                console.error('Erro na resposta do servidor:', axiosError.response.data);
+            } else if (axiosError.request) {
+                console.error('Erro na requisição:', axiosError.request);
+            } else {
+                console.error('Erro ao configurar a requisição:', axiosError.message);
+            }
 
+            throw error;
+        }
+    };
     return (
         <div className="flex flex-col mb-6">
-            <DiagonalSection text='Cadastro' subtext="Instituição de Ensino" />
+            <DiagonalSection text='Cadastro' subtext="Professor" />
             <div className="absolute w-[90%] mt-28 lg:ml-2 lg:mt-[245px] lg:mr-20 flex flex-col">
                 <form
                     className="flex flex-col gap-6 mb-6"
-                    onSubmit={handleSubmit(handleSubmitForm)}
+                    onSubmit={handleSubmit(onSubmit)}
                 >
                     <div className="flex flex-col lg:flex-row gap-4">
                         <div className="lg:w-full">
                             <Input
                                 type={InputType.Text}
                                 label="Nome"
-                                error={errors.name?.message}
-                                register={{ ...register("name") }}
+                                error={errors}
+                                register={register}
+                                name="name"
                             />
                         </div>
 
@@ -45,9 +63,10 @@ export const CadastroProfessor = () => {
                             <Input
                                 type={InputType.CPF}
                                 label="CPF"
+                                error={errors}
+                                register={register}
+                                name="cpf"
                                 placeholder="000.000.000-00"
-                                error={errors.cnpj?.message}
-                                register={{ ...register("cpf") }}
                             />
                         </div>
 
@@ -55,9 +74,10 @@ export const CadastroProfessor = () => {
                             <Input
                                 type={InputType.Phone}
                                 label="Telefone"
-                                placeholder="(00) 0 0000-0000"
-                                error={errors.phone?.message}
-                                register={{ ...register("phone") }}
+                                error={errors}
+                                register={register}
+                                name="phone"
+                                placeholder="(00) 00000-0000"
                             />
                         </div>
                     </div>
@@ -65,19 +85,21 @@ export const CadastroProfessor = () => {
                     <div className="flex flex-col lg:flex-row gap-4">
                         <div className="lg:w-full lg:flex-1">
                             <Input
-                                type={InputType.Email}
+                                type={InputType.Text}
                                 label="Email"
-                                error={errors.email?.message}
-                                register={{ ...register("email") }}
+                                error={errors}
+                                register={register}
+                                name="email"
                             />
                         </div>
 
                         <div className="lg:w-full lg:flex-1">
                             <Input
-                                type={InputType.Email}
+                                type={InputType.Text}
                                 label="Confirmar Email"
-                                error={errors.confirmEmail?.message}
-                                register={{ ...register("confirmEmail") }}
+                                error={errors}
+                                register={register}
+                                name="confirmEmail"
                             />
                         </div>
                         <div className="lg:flex-1 lg:block hidden"></div>
@@ -88,8 +110,9 @@ export const CadastroProfessor = () => {
                             <Input
                                 type={InputType.UF}
                                 label="UF"
-                                error={errors.uf?.message}
-                                register={{ ...register("uf") }}
+                                error={errors}
+                                register={register}
+                                name="uf"
                             />
                         </div>
 
@@ -97,9 +120,10 @@ export const CadastroProfessor = () => {
                             <Input
                                 type={InputType.CEP}
                                 label="CEP"
+                                error={errors}
+                                register={register}
+                                name="cep"
                                 placeholder="00000-000"
-                                error={errors.cep?.message}
-                                register={{ ...register("cep") }}
                             />
                         </div>
 
@@ -107,8 +131,9 @@ export const CadastroProfessor = () => {
                             <Input
                                 type={InputType.Text}
                                 label="Cidade"
-                                error={errors.city?.message}
-                                register={{ ...register("city") }}
+                                error={errors}
+                                register={register}
+                                name="city"
                             />
                         </div>
                     </div>
@@ -118,8 +143,9 @@ export const CadastroProfessor = () => {
                             <Input
                                 type={InputType.Text}
                                 label="Bairro"
-                                error={errors.neighborhood?.message}
-                                register={{ ...register("neighborhood") }}
+                                error={errors}
+                                register={register}
+                                name="neighborhood"
                             />
                         </div>
 
@@ -127,8 +153,9 @@ export const CadastroProfessor = () => {
                             <Input
                                 type={InputType.Text}
                                 label="Rua"
-                                error={errors.road?.message}
-                                register={{ ...register("road") }}
+                                error={errors}
+                                register={register}
+                                name="street"
                             />
                         </div>
 
@@ -139,28 +166,32 @@ export const CadastroProfessor = () => {
                         <div className="lg:w-full lg:flex-1">
                             <Input
                                 type={InputType.Text}
-                                label="Curso"
-                                error={errors.curso?.message}
-                                register={{ ...register("curso") }}
+                                label="Formação"
+                                error={errors}
+                                register={register}
+                                name="formation"
                             />
                         </div>
+
                         <div className="lg:w-full lg:flex-1">
                             <Input
                                 type={InputType.Text}
-                                label="Período"
-                                error={errors.periodo?.message}
-                                register={{ ...register("periodo") }}
+                                label="Curso"
+                                error={errors}
+                                register={register}
+                                name="course"
                             />
                         </div>
+
                         <div className="lg:w-full lg:flex-1">
                             <Input
                                 type={InputType.Text}
                                 label="Matrícula"
-                                error={errors.matricula?.message}
-                                register={{ ...register("matricula") }}
+                                error={errors}
+                                register={register}
+                                name="registration"
                             />
                         </div>
-                        <div></div>
                     </div>
 
                     <div className="flex flex-col lg:flex-row gap-4">
@@ -168,17 +199,19 @@ export const CadastroProfessor = () => {
                             <Input
                                 type={InputType.Password}
                                 label="Senha"
-                                error={errors.password?.message}
-                                register={{ ...register("password") }}
+                                error={errors}
+                                register={register}
+                                name="password"
                             />
                         </div>
 
                         <div className="lg:w-full lg:flex-1">
                             <Input
                                 type={InputType.Password}
-                                label="Confirmar senha"
-                                error={errors.confirmPassword?.message}
-                                register={{ ...register("confirmPassword") }}
+                                label="Confirmar Senha"
+                                error={errors}
+                                register={register}
+                                name="confirmPassword"
                             />
                         </div>
 
@@ -187,11 +220,11 @@ export const CadastroProfessor = () => {
 
                     <div className="flex items-center lg:justify-end justify-center mt-4">
                         <div>
-                            <Button children="Cancelar" variant="transparent" onClick={() => navigate('/')} />
+                            <Button children="Cancelar" variant="transparent" type="button" onClick={() => navigate('/')} />
                         </div>
 
                         <div>
-                            <Button children="Cadastrar" variant="solid" />
+                            <Button children="Cadastrar" variant="solid" type="submit" />
                         </div>
                     </div>
                 </form>

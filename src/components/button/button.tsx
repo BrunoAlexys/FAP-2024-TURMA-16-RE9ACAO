@@ -4,8 +4,8 @@ import { twMerge } from 'tailwind-merge';
 type ButtonProps = {
     variant: 'solid' | 'transparent';
     children: ReactNode;
-    type?: 'submit' | 'button';
-    size?: 'small' | 'medium' | 'large'; // nova prop de tamanho
+    type: 'submit' | 'button';
+    size?: 'small' | 'medium' | 'large';
     onClick?: () => void;
 };
 

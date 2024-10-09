@@ -1,20 +1,17 @@
 import { twMerge } from "tailwind-merge";
 import { InputType } from "../../enum/input-type";
 import InputMask from "react-input-mask";
-import { ChangeEvent, InputHTMLAttributes, useRef } from "react";
-import { UseFormRegisterReturn } from "react-hook-form";
+import { FieldErrors, FieldValues, Path, UseFormRegister } from "react-hook-form";
+interface InputProps<T extends FieldValues> {
+    type: InputType
+    placeholder?: string;
+    label: string;
+    name: Path<T>;
+    register: UseFormRegister<T>
+    error: FieldErrors<T>
+}
 
-type InputProps = {
-    type: InputType,
-    placeholder?: string
-    label: string,
-    error?: string,
-    register?: UseFormRegisterReturn,
-    onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
-} & InputHTMLAttributes<HTMLInputElement>;
-
-export const Input = ({ type, placeholder, label, error, register, onChange }: InputProps) => {
-    const inputRef = useRef(null);
+export const Input = <T extends FieldValues>({ type, placeholder, label, register, error, name }: InputProps<T>) => {
 
     const getMask = (type: string) => {
         switch (type) {
@@ -50,7 +47,7 @@ export const Input = ({ type, placeholder, label, error, register, onChange }: I
                         'border-2 border-colorMenuSecondary rounded-full px-4 py-2 w-full focus:outline-none focus:border-2 focus:border-colorMenuPrimary appearance-none relative',
                         'custom-select'
                     )}
-                    {...register}
+                    {...register(name)}
                 >
                     <option value="">Selecione o Estado</option>
                     {ufOptions.map(uf => (
@@ -61,30 +58,26 @@ export const Input = ({ type, placeholder, label, error, register, onChange }: I
                 </select>
             ) : mask ? (
                 <InputMask
-                    ref={inputRef}
                     mask={mask}
                     placeholder={placeholder}
-                    className={twMerge(
-                        'border-2 border-colorMenuSecondary rounded-full px-4 py-2 w-full focus:outline-none focus:border-2 focus:border-colorMenuPrimary',
-                    )}
-                    {...register}
-                    onChange={onChange}
-                />
-            ) : (
-                <input
                     type={type}
-                    ref={inputRef}
-                    placeholder={placeholder}
                     className={twMerge(
                         'border-2 border-colorMenuSecondary rounded-full px-4 py-2 w-full focus:outline-none focus:border-2 focus:border-colorMenuPrimary',
                     )}
-                    {...register}
-                    onChange={onChange}
+                    {...register(name)}
                 />
-            )}
-            {error && (
-                <p className="text-red-500 text-xs ml-4">{error}</p>
-            )}
+            ) :
+                (
+                    <input
+                        type={type}
+                        placeholder={placeholder}
+                        className={twMerge(
+                            'border-2 border-colorMenuSecondary rounded-full px-4 py-2 w-full focus:outline-none focus:border-2 focus:border-colorMenuPrimary',
+                        )}
+                        {...register(name)}
+                    />
+                )}
+            {error && <span className="text-xs text-red-500 ml-4">{(error[name]?.message as string) || ''}</span>}
         </div>
     );
 };

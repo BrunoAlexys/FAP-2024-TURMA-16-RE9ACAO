@@ -9,8 +9,8 @@ import { CadastroEmpresa } from "../pages/cadastro-empresa/CadastroEmpresa";
 import { CadastroInstituicao } from "../pages/cadastro-instituicao/CadastroInstituicao";
 import { Login } from "../pages/login/Login";
 import PrivateRoute from "./PrivateRoute";
-import { CadastroProfessor } from "../pages/cadastro-professor/CadastroProfessor";
 import { CadastrosAluno } from "../pages/cadastros-aluno/CadastrosAluno";
+import { CadastroProfessor } from "../pages/cadastro-professor/CadastroProfessor";
 
 
 export const MainRouter = () => {
