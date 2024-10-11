@@ -20,7 +20,19 @@ export default {
         colorCardTerciary: '#FF7200',
         colorSearch: '#D9D9D9',
         popup: '#D9D9D9',
-        delete: '#D30000'
+        delete: '#D30000',
+        colorAlertErrorBorder: '#EB5757',
+        colorAlertError: '#FDEEEE',
+        colorAlertInfoBorder: '#5458F7',
+        colorAlertInfo: '#EEEEFE',
+        colorAlertSucessBorder: '#00CC99',
+        colorAlertSucess: '#E6FAF5',
+        colorAlertWarningBorder: '#F2C94C',
+        colorAlertWarning: '#FDF8E8',
+        colorAlertMobileWarning: '#F6E2C2',
+        colorAlertMobileError: '#EEC2C2',
+        colorAlertMobileInfo: '#C2E7EA',
+        colorAlertMobileSucess: '#C2E2CD'
       }
     },
   },

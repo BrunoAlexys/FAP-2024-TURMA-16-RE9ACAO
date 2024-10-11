@@ -4,34 +4,40 @@ import { DiagonalSection } from "../../components/diagonal-section/DiagonalSecti
 import Logo from './assets/logo.png';
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthProvider";
+import { useForm } from "react-hook-form";
+import { FormLogin } from "../../types/FormLogin";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { LoginScheme } from "../../utils/LoginScheme";
 
 export const Login = () => {
 
     const [selectedOption, setSelectedOption] = useState('Aluno');
     const navigate = useNavigate();
     const options = ['Aluno', 'Professor', 'Empresa', 'Instituição'];
-    const [login, setLogin] = useState('');
-    const [password, setPassword] = useState('');
     const { login: authenticate } = useAuth();
 
-    const handleLogin = async () => {
+    const { register, handleSubmit, formState: { errors }, reset } = useForm<FormLogin>({
+        resolver: zodResolver(LoginScheme)
+    });
+
+    const handleLogin = async (data: FormLogin) => {
         try {
-            const isAuthenticated = await authenticate({ email: login, password, userType: selectedOption });
+            const isAuthenticated = await authenticate({
+                email: data.email,
+                password: data.password,
+                userType: selectedOption.toLowerCase()
+            });
 
             if (isAuthenticated) {
-                navigate('/dashbord'); // Navega apenas se autenticado com sucesso
+                navigate('/dashboard');
             } else {
-                setLogin('');
-                setPassword('');
+                reset();
             }
-
         } catch (error) {
             console.error('Erro durante a autenticação:', error);
             alert('Erro ao fazer login. Tente novamente mais tarde.');
         }
     };
-
-
 
 
     const handleRegisterRedirect = () => {
@@ -77,32 +83,32 @@ export const Login = () => {
 
                     </div>
 
-                    <div className="md:w-1/2 lg:w-[60%] flex flex-col gap-2">
+                    <form onSubmit={handleSubmit(handleLogin)} className="md:w-1/2 lg:w-[60%] flex flex-col gap-2">
                         <div className="flex flex-col gap-2">
                             <label className="text-xl font-bold ml-4">Login</label>
                             <input
                                 type="text"
-                                value={login}
-                                onChange={e => setLogin(e.target.value)}
-                                className="border-2 border-colorMenuSecondary rounded-full px-4 py-2 w-full focus:outline-none focus:border-2 focus:border-colorMenuPrimary"
+                                className={`border-2 border-colorMenuSecondary rounded-full px-4 py-2 w-full focus:outline-none ${errors.email ? 'border-red-500' : 'focus:border-colorMenuPrimary'}`}
+                                {...register('email')}
                             />
+                            {errors.email && <span className="text-red-500 ml-4 text-xs">{errors?.email?.message}</span>}
                         </div>
                         <div className="flex flex-col gap-2">
                             <label className="text-xl font-bold ml-4">Senha</label>
                             <input
                                 type="password"
-                                value={password}
-                                onChange={e => setPassword(e.target.value)}
-                                className="border-2 border-colorMenuSecondary rounded-full px-4 py-2 w-full focus:outline-none focus:border-2 focus:border-colorMenuPrimary"
+                                className={`border-2 border-colorMenuSecondary rounded-full px-4 py-2 w-full focus:outline-none ${errors.password ? 'border-red-500' : 'focus:border-colorMenuPrimary'}`}
+                                {...register('password')}
                             />
+                            {errors.password && <span className="text-red-500 ml-4 text-xs">{errors?.password?.message}</span>}
                             <a href="#" className="text-xs ml-4">Esqueceu sua senha?</a>
                         </div>
-                    </div>
 
-                    <div className="flex flex-col items-center gap-2">
-                        <Button type="button" variant="solid" children="Login" size="large" onClick={handleLogin} />
-                        <button className="text-[10px]" onClick={handleRegisterRedirect}>ou cadastre-se</button>
-                    </div>
+                        <div className="flex flex-col items-center gap-2">
+                            <Button type="submit" variant="solid" children="Login" size="large" />
+                            <button className="text-[10px]" onClick={handleRegisterRedirect}>ou cadastre-se</button>
+                        </div>
+                    </form>
                 </div>
 
                 <div className="hidden lg:flex flex-col gap-6 flex-1 text-center py-8">
