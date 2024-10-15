@@ -45,7 +45,7 @@ export const Input = <T extends FieldValues>({ type, placeholder, label, registe
                 <select
                     className={twMerge(
                         'border-2 border-colorMenuSecondary rounded-full px-4 py-2 w-full focus:outline-none focus:border-2 focus:border-colorMenuPrimary appearance-none relative',
-                        'custom-select'
+                        'custom-select', error[name] ? 'border-red-500' : ''
                     )}
                     {...register(name)}
                 >
@@ -62,7 +62,8 @@ export const Input = <T extends FieldValues>({ type, placeholder, label, registe
                     placeholder={placeholder}
                     type={type}
                     className={twMerge(
-                        'border-2 border-colorMenuSecondary rounded-full px-4 py-2 w-full focus:outline-none focus:border-2 focus:border-colorMenuPrimary',
+                        'border-2 border-colorMenuSecondary rounded-full px-4 py-2 w-full focus:outline-none focus:border-2',
+                        error[name] ? 'border-red-500' : 'focus:border-colorMenuPrimary'
                     )}
                     {...register(name)}
                 />
@@ -72,7 +73,8 @@ export const Input = <T extends FieldValues>({ type, placeholder, label, registe
                         type={type}
                         placeholder={placeholder}
                         className={twMerge(
-                            'border-2 border-colorMenuSecondary rounded-full px-4 py-2 w-full focus:outline-none focus:border-2 focus:border-colorMenuPrimary',
+                            'border-2 border-colorMenuSecondary rounded-full px-4 py-2 w-full focus:outline-none focus:border-2',
+                            error[name] ? 'border-red-500' : 'focus:border-colorMenuPrimary'
                         )}
                         {...register(name)}
                     />

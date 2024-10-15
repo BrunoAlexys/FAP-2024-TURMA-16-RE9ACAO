@@ -11,6 +11,7 @@ import { Login } from "../pages/login/Login";
 import PrivateRoute from "./PrivateRoute";
 import { CadastrosAluno } from "../pages/cadastros-aluno/CadastrosAluno";
 import { CadastroProfessor } from "../pages/cadastro-professor/CadastroProfessor";
+import { Editar } from "../pages/Editar/Editar";
 
 
 export const MainRouter = () => {
@@ -19,6 +20,7 @@ export const MainRouter = () => {
         { path: "/projetos", element: <PrivateRoute element={<Projeto />} /> },
         { path: "/parceiros", element: <PrivateRoute element={<ParceiroComponent />} /> },
         { path: "/configuracao", element: <PrivateRoute element={<Configuracao />} /> },
+        { path: "/editar", element: <PrivateRoute element={<Editar />} /> },
         { path: "/perfil", element: <PrivateRoute element={<Perfil />} /> },
         { path: "/notificacoes", element: <PrivateRoute element={<NotificacoesMobile />} /> },
         { path: "/cadastro-empresa", element: <CadastroEmpresa /> },  // Rota pública

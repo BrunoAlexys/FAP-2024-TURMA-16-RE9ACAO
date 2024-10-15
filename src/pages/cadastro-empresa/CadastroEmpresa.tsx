@@ -8,11 +8,24 @@ import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { FormCompany } from "../../types/FormCompany";
 import { CompanyScheme } from "../../utils/CompanyScheme";
+import { useState } from "react";
+import { AlertState } from "../../types/AlertState";
+import Alert from "../../components/alerts/alertDesktop";
 
 export const CadastroEmpresa = () => {
 
     const navigate = useNavigate();
     const API_URL = 'http://localhost:3001/empresa';
+
+    const [alert, setAlert] = useState<AlertState | null>(null);
+
+    const showAlert = (type: AlertState['type'], message: string) => {
+        setAlert({ type, message });
+    };
+
+    const closeAlert = () => {
+        setAlert(null);
+    }
 
     const { register, handleSubmit, formState: { errors }, reset } = useForm<FormCompany>({
         resolver: zodResolver(CompanyScheme)
@@ -22,8 +35,9 @@ export const CadastroEmpresa = () => {
         try {
             const response = await axios.post(API_URL, data);
             if (response.status === 201) {
-                console.log('Formulário enviado com sucesso:', data);
+                showAlert('sucesso', 'Empresa cadastrada com sucesso!');
             } else {
+                showAlert('error', 'Erro ao enviar o formulário');
                 throw new Error('Erro ao enviar o formulário');
             }
             reset();
@@ -43,6 +57,11 @@ export const CadastroEmpresa = () => {
 
     return (
         <div className="flex flex-col items-center ">
+            {alert && (
+                <>
+                    <Alert type={alert.type} text={alert.message} onClose={closeAlert} />
+                </>
+            )}
             <DiagonalSection text="Cadastro" subtext="Empresarial" />
             <div className="absolute w-[90%] mt-28 lg:ml-2 lg:mt-[245px] lg:mr-20 flex flex-col">
                 <form

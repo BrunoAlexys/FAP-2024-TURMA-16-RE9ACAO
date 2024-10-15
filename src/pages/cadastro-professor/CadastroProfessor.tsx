@@ -8,11 +8,24 @@ import { useForm } from "react-hook-form";
 import { FormTeacher } from "../../types/FormTeacher";
 import { TeacherScheme } from "../../utils/TeacherScheme";
 import axios, { AxiosError } from "axios";
+import { AlertState } from "../../types/AlertState";
+import { useState } from "react";
+import Alert from "../../components/alerts/alertDesktop";
 
 export const CadastroProfessor = () => {
 
     const navigate = useNavigate();
     const API_URL = 'http://localhost:3001/professor';
+
+    const [alert, setAlert] = useState<AlertState | null>(null);
+
+    const showAlert = (type: AlertState['type'], message: string) => {
+        setAlert({ type, message });
+    };
+
+    const closeAlert = () => {
+        setAlert(null);
+    }
 
     const { register, handleSubmit, formState: { errors }, reset } = useForm<FormTeacher>({
         resolver: zodResolver(TeacherScheme)
@@ -22,8 +35,9 @@ export const CadastroProfessor = () => {
         try {
             const response = await axios.post(API_URL, data);
             if (response.status === 201) {
-                console.log('Formulário enviado com sucesso:', data);
+                showAlert('sucesso', 'Cadastro realizado com sucesso');
             } else {
+                showAlert('error', 'Erro ao enviar o formulário');
                 throw new Error('Erro ao enviar o formulário');
             }
             reset();
@@ -42,6 +56,12 @@ export const CadastroProfessor = () => {
     };
     return (
         <div className="flex flex-col mb-6">
+            {alert && (
+                <>
+                    <Alert
+                        type={alert.type} text={alert.message} onClose={closeAlert} />
+                </>
+            )}
             <DiagonalSection text='Cadastro' subtext="Professor" />
             <div className="absolute w-[90%] mt-28 lg:ml-2 lg:mt-[245px] lg:mr-20 flex flex-col">
                 <form

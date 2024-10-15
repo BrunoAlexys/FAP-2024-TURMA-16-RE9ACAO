@@ -8,34 +8,42 @@ import { useForm } from "react-hook-form";
 import { FormLogin } from "../../types/FormLogin";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { LoginScheme } from "../../utils/LoginScheme";
+import { AlertState } from "../../types/AlertState";
+import Alert from "../../components/alerts/alertDesktop";
+import AlertMobile from "../../components/alerts/alertMobile";
 
 export const Login = () => {
 
-    const [selectedOption, setSelectedOption] = useState('Aluno');
-    const navigate = useNavigate();
     const options = ['Aluno', 'Professor', 'Empresa', 'Instituição'];
+    const [selectedOption, setSelectedOption] = useState(options[0]);
+    const navigate = useNavigate();
     const { login: authenticate } = useAuth();
 
     const { register, handleSubmit, formState: { errors }, reset } = useForm<FormLogin>({
         resolver: zodResolver(LoginScheme)
     });
 
-    const handleLogin = async (data: FormLogin) => {
-        try {
-            const isAuthenticated = await authenticate({
-                email: data.email,
-                password: data.password,
-                userType: selectedOption.toLowerCase()
-            });
+    const [alert, setAlert] = useState<AlertState | null>(null);
 
-            if (isAuthenticated) {
-                navigate('/dashboard');
-            } else {
-                reset();
-            }
-        } catch (error) {
-            console.error('Erro durante a autenticação:', error);
-            alert('Erro ao fazer login. Tente novamente mais tarde.');
+    const showAlert = (type: AlertState['type'], message: string) => {
+        setAlert({ type, message });
+    };
+
+    const closeAlert = () => {
+        setAlert(null);
+    }
+
+    const handleLogin = async (data: FormLogin) => {
+        const isAuthenticated = await authenticate({
+            email: data.email,
+            password: data.password,
+            userType: selectedOption.toLowerCase()
+        });
+
+        if (isAuthenticated) {
+            navigate('/dashboard');
+        } else {
+            reset();
         }
     };
 
@@ -51,13 +59,19 @@ export const Login = () => {
         } else if (option === 'instituição') {
             navigate('/cadastro-instituicao');
         } else {
-            alert('Selecione uma opção válida');
+            showAlert('error', 'Opção inválida');
         }
     };
 
 
     return (
         <div className="flex justify-center">
+            {alert && (
+                <>
+                    <Alert type={alert.type} text={alert.message} onClose={closeAlert} />
+                    <AlertMobile type={alert.type} message={alert.message} onClose={closeAlert} />
+                </>
+            )}
             <DiagonalSection text="Login" />
 
             <div className="absolute flex mt-[150px] md:mt-[200px] lg:mt-[245px] w-full">
