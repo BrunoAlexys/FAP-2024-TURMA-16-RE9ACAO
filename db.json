@@ -235,26 +235,7 @@
       "tipo": 0
     }
   ],
-  "aluno": [
-    {
-      "id": "dd36",
-      "name": "Bruno Álexys Souza Moura da Silva",
-      "cpf": "12722891417",
-      "email": "brunoalexysmoura@gmail.com",
-      "confirmEmail": "brunoalexysmoura@gmail.com",
-      "phone": "(81) 99401-2667",
-      "uf": "PE",
-      "cep": "55636000",
-      "city": "Chã Grande",
-      "neighborhood": "Dom helder camara",
-      "street": "Joaquim Francisco dos Santos",
-      "course": "Sistemas de informações",
-      "period": "6",
-      "registration": "1235468",
-      "password": "Bruno@124578",
-      "confirmPassword": "Bruno@124578"
-    }
-  ],
+  "aluno": [],
   "professor": [],
   "empresa": [],
   "instituicao": []
