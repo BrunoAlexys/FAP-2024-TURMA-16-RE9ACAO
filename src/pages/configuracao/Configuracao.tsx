@@ -33,7 +33,6 @@ export const Configuracao = () => {
             <div className="flex justify-end">
                 <Button children='Editar' variant="solid" type="button" onClick={() => navigate('/editar')} />
             </div>
-
         </section>
     );
 };
