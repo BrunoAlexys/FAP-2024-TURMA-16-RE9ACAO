@@ -1,6 +1,6 @@
 export type CardData = {
     id: number,
-    projectName: string,
-    tipo: number,
-    children?: React.ReactNode
+    name: string,
+    description: string,
+    tipo: number
 }

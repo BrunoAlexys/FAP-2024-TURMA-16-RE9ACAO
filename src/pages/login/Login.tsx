@@ -97,7 +97,7 @@ export const Login = () => {
 
                     </div>
 
-                    <form onSubmit={handleSubmit(handleLogin)} className="md:w-1/2 lg:w-[60%] flex flex-col gap-2">
+                    <form onSubmit={handleSubmit(handleLogin)} className="sm:w-[70%] md:w-1/2 lg:w-[60%] flex flex-col gap-2">
                         <div className="flex flex-col gap-2">
                             <label className="text-xl font-bold ml-4">Login</label>
                             <input

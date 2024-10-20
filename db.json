@@ -1,124 +1,136 @@
 {
   "projects": [
     {
-      "id": "1",
-      "tipo": 3,
-      "projectName": "Aplicativo de Gestão Financeira",
-      "children": "Desenvolvimento de um aplicativo para gerenciamento de finanças pessoais com gráficos interativos e integração bancária."
+      "id": 1,
+      "name": "Aplicativo de Comunicação Assistiva",
+      "description": "Um aplicativo baseado no método PECS para ajudar crianças autistas não verbais a se comunicarem.",
+      "tipo": 2
     },
     {
-      "id": "2",
-      "tipo": 1,
-      "projectName": "E-commerce de Moda",
-      "children": "Plataforma online de vendas de roupas e acessórios com sistema de recomendação baseado em inteligência artificial."
+      "id": 2,
+      "name": "Sistema de Agendamento de Barbearia",
+      "description": "Aplicação web para agendamento de horários em barbearias com uma interface amigável.",
+      "tipo": 1
     },
     {
-      "id": "3",
-      "tipo": 4,
-      "projectName": "Sistema de Automação Residencial",
-      "children": "Projeto de controle remoto de dispositivos eletrônicos da casa utilizando IoT, permitindo automação de luzes e temperatura."
+      "id": 3,
+      "name": "Calculadora Flutter",
+      "description": "Uma calculadora personalizável com temas claro e escuro, suportando expressões matemáticas.",
+      "tipo": 3
     },
     {
-      "id": "4",
-      "tipo": 2,
-      "projectName": "Portal de Notícias",
-      "children": "Desenvolvimento de um portal de notícias com suporte a múltiplas categorias e atualização em tempo real."
+      "id": 4,
+      "name": "Painel para Profissionais de Saúde",
+      "description": "Um painel desenvolvido em React para gerenciar atividades e comunicação de crianças autistas.",
+      "tipo": 2
     },
     {
-      "id": "5",
-      "tipo": 1,
-      "projectName": "Marketplace de Serviços Locais",
-      "children": "Plataforma que conecta profissionais locais, como encanadores e eletricistas, a clientes que necessitam de serviços específicos."
+      "id": 5,
+      "name": "Sistema de Gerenciamento de Tarefas",
+      "description": "Um sistema para gerenciar e acompanhar tarefas de forma eficiente, com funções de usuário.",
+      "tipo": 1
     },
     {
-      "id": "6",
-      "tipo": 4,
-      "projectName": "Jogo Mobile de Estratégia",
-      "children": "Criação de um jogo para smartphones com batalhas em tempo real e estratégia, onde os jogadores controlam exércitos em batalhas épicas."
+      "id": 6,
+      "name": "Loja Online",
+      "description": "Uma plataforma de e-commerce completa para venda de produtos físicos e digitais.",
+      "tipo": 0
     },
     {
-      "id": "7",
-      "tipo": 2,
-      "projectName": "Blog de Tecnologia",
-      "children": "Plataforma de blog voltada para notícias e tutoriais de tecnologia, com foco em desenvolvimento de software e inovações."
+      "id": 7,
+      "name": "Aplicativo de Monitoramento Fitness",
+      "description": "App mobile que permite aos usuários monitorar treinos, definir metas e acompanhar o progresso.",
+      "tipo": 2
     },
     {
-      "id": "8",
-      "tipo": 3,
-      "projectName": "Sistema de Gerenciamento de Estoque",
-      "children": "Desenvolvimento de um sistema para controlar o estoque de lojas de pequeno porte, com relatórios de vendas e alertas de reposição."
+      "id": 8,
+      "name": "Sistema de Reservas para Restaurantes",
+      "description": "Um sistema de reservas para restaurantes, permitindo que os usuários reservem mesas antecipadamente.",
+      "tipo": 1
     },
     {
-      "id": "9",
-      "tipo": 1,
-      "projectName": "Plataforma de Doações",
-      "children": "Criação de uma plataforma para conectar doadores com causas sociais, oferecendo transparência nas transações e metas atingidas."
+      "id": 9,
+      "name": "Gerenciador de Finanças Pessoais",
+      "description": "Aplicativo para controlar despesas, definir orçamentos e gerenciar finanças pessoais de forma eficiente.",
+      "tipo": 3
     },
     {
-      "id": "10",
-      "tipo": 4,
-      "projectName": "Aplicativo de Exercícios em Casa",
-      "children": "Desenvolvimento de um app de fitness que orienta usuários em exercícios que podem ser feitos em casa, com planos personalizados."
+      "id": 10,
+      "name": "Ferramenta de Gerenciamento de Projetos",
+      "description": "Um sistema de gerenciamento de projetos com atribuição de tarefas, prazos e acompanhamento de progresso.",
+      "tipo": 0
     },
     {
-      "id": "11",
-      "tipo": 2,
-      "projectName": "Portal Educacional",
-      "children": "Plataforma online para cursos de diversas áreas, com funcionalidades de fórum, quizzes e certificação para alunos."
+      "id": 11,
+      "name": "Jogo Educativo para Crianças",
+      "description": "Um jogo interativo desenvolvido para ensinar crianças pequenas habilidades básicas de matemática e leitura.",
+      "tipo": 2
     },
     {
-      "id": "12",
-      "tipo": 3,
-      "projectName": "Sistema de Gestão Escolar",
-      "children": "Aplicação para gerenciar informações acadêmicas, financeiras e administrativas de escolas, incluindo controle de alunos e professores."
+      "id": 12,
+      "name": "Plataforma de Ensino Online",
+      "description": "Plataforma para hospedar e gerenciar cursos online, com aulas interativas e quizzes.",
+      "tipo": 1
     },
     {
-      "id": "13",
-      "tipo": 1,
-      "projectName": "Aplicativo de Entregas",
-      "children": "Plataforma de entrega de alimentos, onde restaurantes locais podem se cadastrar e os usuários fazem pedidos com acompanhamento em tempo real."
+      "id": 13,
+      "name": "Aplicativo de Previsão do Tempo",
+      "description": "Aplicativo mobile que fornece atualizações em tempo real do clima e previsões semanais para várias localidades.",
+      "tipo": 0
     },
     {
-      "id": "14",
-      "tipo": 4,
-      "projectName": "Software de Design Gráfico Online",
-      "children": "Criação de um editor de design gráfico diretamente no navegador, permitindo criar banners, logos e posts para redes sociais."
+      "id": 14,
+      "name": "Serviço de Streaming de Música",
+      "description": "Uma plataforma de streaming de música com playlists, recomendações e escuta offline.",
+      "tipo": 3
     },
     {
-      "id": "15",
-      "tipo": 2,
-      "projectName": "Site de Consultoria Jurídica",
-      "children": "Plataforma que oferece serviços jurídicos online, conectando advogados a clientes para consultas e resolução de questões legais."
+      "id": 15,
+      "name": "Sistema de Recomendação de Filmes",
+      "description": "Um sistema que sugere filmes com base nas preferências e histórico de visualização do usuário.",
+      "tipo": 1
     },
     {
-      "id": "16",
-      "tipo": 3,
-      "projectName": "Aplicativo de Saúde Mental",
-      "children": "Desenvolvimento de um aplicativo focado em saúde mental, com acompanhamento de humor, meditação guiada e chat com psicólogos."
+      "id": 16,
+      "name": "Aplicativo de Mídia Social",
+      "description": "Aplicativo mobile para conectar pessoas, compartilhar atualizações, fotos e mensagens.",
+      "tipo": 0
     },
     {
-      "id": "17",
-      "tipo": 1,
-      "projectName": "Plataforma de Freelancer",
-      "children": "Marketplace para freelancers oferecerem seus serviços, permitindo que clientes publiquem trabalhos e selecionem profissionais."
+      "id": 17,
+      "name": "Ferramenta de Automação de Tarefas",
+      "description": "Ferramenta que automatiza tarefas repetitivas, permitindo que os usuários criem fluxos de trabalho personalizados.",
+      "tipo": 1
     },
     {
-      "id": "18",
-      "tipo": 4,
-      "projectName": "Aplicativo de Realidade Aumentada para Turismo",
-      "children": "Criação de um app que utiliza realidade aumentada para fornecer informações históricas e culturais sobre pontos turísticos."
+      "id": 18,
+      "name": "Aplicativo de Aprendizado de Línguas",
+      "description": "App que ajuda os usuários a aprender novas línguas com lições interativas e quizzes.",
+      "tipo": 2
     },
     {
-      "id": "19",
-      "tipo": 2,
-      "projectName": "Revista Online de Ciência",
-      "children": "Plataforma de artigos científicos e notícias sobre avanços em tecnologia e ciência, com suporte a autores e revisores."
+      "id": 19,
+      "name": "Aplicativo de Rastreamento de Hábitos",
+      "description": "Aplicativo mobile que ajuda os usuários a criar hábitos positivos e acompanhar o progresso ao longo do tempo.",
+      "tipo": 3
     },
     {
-      "id": "20",
-      "tipo": 3,
-      "projectName": "Sistema de Controle de Pacientes",
-      "children": "Desenvolvimento de um sistema para hospitais monitorarem o histórico médico de pacientes e organizarem consultas e exames."
+      "id": 20,
+      "name": "Plataforma de Eventos Virtuais",
+      "description": "Plataforma para hospedar e gerenciar conferências virtuais, webinars e eventos ao vivo.",
+      "tipo": 0
+    },
+    {
+      "id": "c879",
+      "name": "Teste 1",
+      "description": "Teste 1",
+      "tipo": 0
+    },
+    {
+      "id": "307d",
+      "name": "Teste",
+      "description": "Teste",
+      "tipo": 0
     }
   ],
   "notifications": [
@@ -175,67 +187,116 @@
   ],
   "parceiros": [
     {
-      "id": "1",
-      "name": "Parceiro 1",
-      "description": "Descrição do Parceiro 1",
+      "id": 1,
+      "name": "Tech Solutions",
+      "description": "Empresa especializada em desenvolvimento de software personalizado para negócios de todos os tamanhos.",
+      "tipo": 2
+    },
+    {
+      "id": 2,
+      "name": "InovaWeb",
+      "description": "Agência de marketing digital com foco em SEO, desenvolvimento de websites e e-commerce.",
+      "tipo": 1
+    },
+    {
+      "id": 3,
+      "name": "GreenTech",
+      "description": "Empresa de tecnologia que desenvolve soluções sustentáveis para o setor agrícola.",
+      "tipo": 3
+    },
+    {
+      "id": 4,
+      "name": "BlueOcean",
+      "description": "Consultoria especializada em inovação e transformação digital para empresas do setor marítimo.",
       "tipo": 0
     },
     {
-      "id": "2",
-      "name": "Parceiro 2",
-      "description": "Descrição do Parceiro 2",
+      "id": 5,
+      "name": "Smart Retail",
+      "description": "Líder em soluções de automação para o varejo, oferecendo ferramentas de gestão de inventário e análise de dados.",
+      "tipo": 1
+    },
+    {
+      "id": 6,
+      "name": "CloudSoft",
+      "description": "Empresa de tecnologia focada em serviços de computação em nuvem e soluções de infraestrutura.",
+      "tipo": 2
+    },
+    {
+      "id": 7,
+      "name": "NextGen Robotics",
+      "description": "Desenvolvedora de robôs autônomos para indústrias de manufatura e logística.",
+      "tipo": 3
+    },
+    {
+      "id": 8,
+      "name": "EcoEnergy",
+      "description": "Empresa focada em energias renováveis e soluções de eficiência energética.",
       "tipo": 0
     },
     {
-      "id": "3",
-      "name": "Parceiro 3",
-      "description": "Descrição do Parceiro 3",
-      "tipo": 0
+      "id": 9,
+      "name": "DataBridge",
+      "description": "Plataforma de análise de dados e big data para empresas que buscam insights estratégicos.",
+      "tipo": 1
     },
     {
-      "id": "4",
-      "name": "Parceiro 4",
-      "description": "Descrição do Parceiro 4",
-      "tipo": 0
+      "id": 10,
+      "name": "HealthConnect",
+      "description": "Provedora de sistemas de gestão hospitalar e prontuário eletrônico para o setor de saúde.",
+      "tipo": 2
     },
     {
-      "id": "5",
-      "name": "Parceiro 5",
-      "description": "Descrição do Parceiro 5",
-      "tipo": 0
+      "id": 11,
+      "name": "LogiTrack",
+      "description": "Empresa de logística especializada em soluções de rastreamento e otimização de rotas para transportadoras.",
+      "tipo": 1
     },
     {
-      "id": "6",
-      "name": "Parceiro 6",
-      "description": "Descrição do Parceiro 6",
-      "tipo": 0
-    },
-    {
-      "id": "7",
-      "name": "Parceiro 7",
-      "description": "Descrição do Parceiro 7",
-      "tipo": 0
-    },
-    {
-      "id": "8",
-      "name": "Parceiro 8",
-      "description": "Descrição do Parceiro 8",
-      "tipo": 0
-    },
-    {
-      "id": "9",
-      "name": "Parceiro 9",
-      "description": "Descrição do Parceiro 9",
-      "tipo": 0
-    },
-    {
-      "id": "10",
-      "name": "Parceiro 10",
-      "description": "Descrição do Parceiro 10",
-      "tipo": 0
+      "id": 12,
+      "name": "CyberShield",
+      "description": "Empresa de cibersegurança que oferece soluções avançadas de proteção de dados e redes corporativas.",
+      "tipo": 3
     }
   ],
-  "aluno": [],
+  "aluno": [
+    {
+      "id": "d72b",
+      "name": "Bruno Álexys Souza moura da Silva",
+      "cpf": "00000000000",
+      "email": "bruno@gmail.com",
+      "confirmEmail": "bruno@gmail.com",
+      "phone": "(81) 99401-2667",
+      "uf": "PE",
+      "cep": "55636000",
+      "city": "Chã Grande",
+      "neighborhood": "Dom helder camara",
+      "street": "Joaquim Francisco dos Santos",
+      "course": "Sistemas de informações",
+      "period": "6",
+      "registration": "1235468",
+      "password": "Bm@123456789",
+      "confirmPassword": "Bm@123456789"
+    },
+    {
+      "id": "d3d0",
+      "name": "Bruno",
+      "cpf": "00000000000",
+      "email": "brunoalexysmoura@gmail.com",
+      "confirmEmail": "brunoalexysmoura@gmail.com",
+      "phone": "(81) 99401-2667",
+      "uf": "PE",
+      "cep": "55636000",
+      "city": "Chã Grande",
+      "neighborhood": "Dom helder camara",
+      "street": "Joaquim Francisco dos Santos",
+      "course": "Sistemas de informações",
+      "period": "6",
+      "registration": "1235468",
+      "password": "Bm@123456789",
+      "confirmPassword": "Bm@123456789"
+    }
+  ],
   "professor": [],
   "empresa": [],
   "instituicao": []
