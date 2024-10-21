@@ -106,7 +106,7 @@ export const CadastroAluno = () => {
                     <div className="flex flex-col lg:flex-row gap-4">
                         <div className="lg:w-full lg:flex-1">
                             <Input
-                                type={InputType.Text}
+                                type={InputType.Email}
                                 label="Email"
                                 error={errors}
                                 register={register}
@@ -116,7 +116,7 @@ export const CadastroAluno = () => {
 
                         <div className="lg:w-full lg:flex-1">
                             <Input
-                                type={InputType.Text}
+                                type={InputType.Email}
                                 label="Confirmar Email"
                                 error={errors}
                                 register={register}
