@@ -1,4 +1,3 @@
-import { DiagonalSection } from "../../../components/diagonal-section/DiagonalSection";
 
 import { Etapa1 } from "./etapas/Etapa1";
 import { Etapa2 } from "./etapas/Etapa2";
@@ -21,16 +20,15 @@ export const CadastroAlunoMobile = () => {
         useForms(formComponents);
 
     return (
-        <div className="flex flex-col">
-            <DiagonalSection text="Cadastro" subtext="Aluno" />
+        <div className="flex flex-col px-4 h-full">
             <form
-                className="mt-28"
+                className="h-full flex flex-col"
                 onSubmit={(e) => changeStep(curStep + 1, e)}
             >
-                <div className="min-h-[400px]" id="inputsContainer">
+                <div className="h-full flex flex-col" id="inputsContainer">
                     {curComponent}
                 </div>
-                <div id="actions" className="flex justify-around items-center">
+                <div id="actions" className="flex justify-around items-center relative bottom-2">
                     {!isFirstStep && (
                         <button
                             className="text-colorMenuPrimary font-medium"
