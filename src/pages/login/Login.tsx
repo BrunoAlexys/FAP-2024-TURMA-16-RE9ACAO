@@ -1,18 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "../../components/button/button";
 import { DiagonalSection } from "../../components/diagonal-section/DiagonalSection";
 import Logo from './assets/logo.png';
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthProvider";
 import { useForm } from "react-hook-form";
 import { FormLogin } from "../../types/FormLogin";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { LoginScheme } from "../../utils/LoginScheme";
 import { AlertState } from "../../types/AlertState";
-import Alert from "../../components/alerts/alertDesktop";
 import AlertMobile from "../../components/alerts/alertMobile";
 
-export const Login = () => {
+export const Login: React.FC = () => {
+    const location = useLocation();
 
     const options = ['Aluno', 'Professor', 'Empresa', 'Instituição'];
     const [selectedOption, setSelectedOption] = useState(options[0]);
@@ -23,14 +23,14 @@ export const Login = () => {
         resolver: zodResolver(LoginScheme)
     });
 
-    const [alert, setAlert] = useState<AlertState | null>(null);
+    const [alertMobile, setAlertMobile] = useState<AlertState | null>(null);
 
     const showAlert = (type: AlertState['type'], message: string) => {
-        setAlert({ type, message });
+        setAlertMobile({ type, message });
     };
 
     const closeAlert = () => {
-        setAlert(null);
+        setAlertMobile(null);
     }
 
     const handleLogin = async (data: FormLogin) => {
@@ -63,15 +63,20 @@ export const Login = () => {
         }
     };
 
+    useEffect(() => {
+        if (location.state?.cadastroRealizado) {
+            showAlert("sucesso", "Cadastro realizado com sucesso!");
+        }
+    }, [location.state]);
 
     return (
         <div className="flex justify-center">
-            {alert && (
+            {alertMobile && (
                 <>
-                    <Alert type={alert.type} text={alert.message} onClose={closeAlert} />
-                    <AlertMobile type={alert.type} message={alert.message} onClose={closeAlert} />
+                    <AlertMobile type={alertMobile.type} message={alertMobile.message} onClose={closeAlert} />
                 </>
             )}
+            
             <DiagonalSection text="Login" />
 
             <div className="absolute flex mt-[150px] md:mt-[200px] lg:mt-[245px] w-full">

@@ -10,8 +10,6 @@ import { Step5 } from "./etapas/Step5";
 import axios, { AxiosError } from "axios";
 import { FormStudentMobile } from "../../../types/FormStudentMobile";
 import { useNavigate } from "react-router-dom";
-import { AlertState } from "../../../types/AlertState";
-import Alert from "../../../components/alerts/alertDesktop";
 
 export const CadastroAlunoMobile: React.FC = () => {
   const methods = useForm<FormStudentMobile>({
@@ -26,23 +24,16 @@ export const CadastroAlunoMobile: React.FC = () => {
 
   const API_URL = "http://localhost:3001/aluno";
 
-  const [alert, setAlert] = useState<AlertState | null>(null);
-
-  const showAlert = (type: AlertState["type"], message: string) => {
-    setAlert({ type, message });
-  };
-
   const onSubmit = async (data: FormStudentMobile) => {
     try {
       const response = await axios.post(API_URL, data);
       if (response.status === 201) {
-        showAlert("sucesso", "Cadastro realizado com sucesso");
+        navigate("/", { state: { cadastroRealizado: true } });
       } else {
-        showAlert("error", "Erro ao enviar o formulário");
+        console.log("error", "Erro ao enviar o formulário");
         throw new Error("Erro ao enviar o formulário");
       }
       methods.reset();
-      navigate("/");
     } catch (error) {
       const axiosError = error as AxiosError;
       if (axiosError.response) {
@@ -62,15 +53,8 @@ export const CadastroAlunoMobile: React.FC = () => {
 
   const CurComponent = steps[step];
 
-  const closeAlert = () => {setAlert(null);}
-
   return (
     <div className="flex flex-col px-4 h-full">
-        {alert && (
-            <>
-                <Alert type={alert.type} text={alert.message} onClose={closeAlert} />
-            </>
-        )}
       <FormProvider {...methods}>
         <form
           onSubmit={methods.handleSubmit(onSubmit)}
