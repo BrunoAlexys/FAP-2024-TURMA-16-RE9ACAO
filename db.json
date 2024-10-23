@@ -1,121 +1,121 @@
 {
   "projects": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Aplicativo de Comunicação Assistiva",
       "description": "Um aplicativo baseado no método PECS para ajudar crianças autistas não verbais a se comunicarem.",
       "tipo": 2
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Sistema de Agendamento de Barbearia",
       "description": "Aplicação web para agendamento de horários em barbearias com uma interface amigável.",
       "tipo": 1
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Calculadora Flutter",
       "description": "Uma calculadora personalizável com temas claro e escuro, suportando expressões matemáticas.",
       "tipo": 3
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Painel para Profissionais de Saúde",
       "description": "Um painel desenvolvido em React para gerenciar atividades e comunicação de crianças autistas.",
       "tipo": 2
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Sistema de Gerenciamento de Tarefas",
       "description": "Um sistema para gerenciar e acompanhar tarefas de forma eficiente, com funções de usuário.",
       "tipo": 1
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Loja Online",
       "description": "Uma plataforma de e-commerce completa para venda de produtos físicos e digitais.",
       "tipo": 0
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Aplicativo de Monitoramento Fitness",
       "description": "App mobile que permite aos usuários monitorar treinos, definir metas e acompanhar o progresso.",
       "tipo": 2
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Sistema de Reservas para Restaurantes",
       "description": "Um sistema de reservas para restaurantes, permitindo que os usuários reservem mesas antecipadamente.",
       "tipo": 1
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "Gerenciador de Finanças Pessoais",
       "description": "Aplicativo para controlar despesas, definir orçamentos e gerenciar finanças pessoais de forma eficiente.",
       "tipo": 3
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "Ferramenta de Gerenciamento de Projetos",
       "description": "Um sistema de gerenciamento de projetos com atribuição de tarefas, prazos e acompanhamento de progresso.",
       "tipo": 0
     },
     {
-      "id": 11,
+      "id": "11",
       "name": "Jogo Educativo para Crianças",
       "description": "Um jogo interativo desenvolvido para ensinar crianças pequenas habilidades básicas de matemática e leitura.",
       "tipo": 2
     },
     {
-      "id": 12,
+      "id": "12",
       "name": "Plataforma de Ensino Online",
       "description": "Plataforma para hospedar e gerenciar cursos online, com aulas interativas e quizzes.",
       "tipo": 1
     },
     {
-      "id": 13,
+      "id": "13",
       "name": "Aplicativo de Previsão do Tempo",
       "description": "Aplicativo mobile que fornece atualizações em tempo real do clima e previsões semanais para várias localidades.",
       "tipo": 0
     },
     {
-      "id": 14,
+      "id": "14",
       "name": "Serviço de Streaming de Música",
       "description": "Uma plataforma de streaming de música com playlists, recomendações e escuta offline.",
       "tipo": 3
     },
     {
-      "id": 15,
+      "id": "15",
       "name": "Sistema de Recomendação de Filmes",
       "description": "Um sistema que sugere filmes com base nas preferências e histórico de visualização do usuário.",
       "tipo": 1
     },
     {
-      "id": 16,
+      "id": "16",
       "name": "Aplicativo de Mídia Social",
       "description": "Aplicativo mobile para conectar pessoas, compartilhar atualizações, fotos e mensagens.",
       "tipo": 0
     },
     {
-      "id": 17,
+      "id": "17",
       "name": "Ferramenta de Automação de Tarefas",
       "description": "Ferramenta que automatiza tarefas repetitivas, permitindo que os usuários criem fluxos de trabalho personalizados.",
       "tipo": 1
     },
     {
-      "id": 18,
+      "id": "18",
       "name": "Aplicativo de Aprendizado de Línguas",
       "description": "App que ajuda os usuários a aprender novas línguas com lições interativas e quizzes.",
       "tipo": 2
     },
     {
-      "id": 19,
+      "id": "19",
       "name": "Aplicativo de Rastreamento de Hábitos",
       "description": "Aplicativo mobile que ajuda os usuários a criar hábitos positivos e acompanhar o progresso ao longo do tempo.",
       "tipo": 3
     },
     {
-      "id": 20,
+      "id": "20",
       "name": "Plataforma de Eventos Virtuais",
       "description": "Plataforma para hospedar e gerenciar conferências virtuais, webinars e eventos ao vivo.",
       "tipo": 0
@@ -187,73 +187,73 @@
   ],
   "parceiros": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Tech Solutions",
       "description": "Empresa especializada em desenvolvimento de software personalizado para negócios de todos os tamanhos.",
       "tipo": 2
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "InovaWeb",
       "description": "Agência de marketing digital com foco em SEO, desenvolvimento de websites e e-commerce.",
       "tipo": 1
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "GreenTech",
       "description": "Empresa de tecnologia que desenvolve soluções sustentáveis para o setor agrícola.",
       "tipo": 3
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "BlueOcean",
       "description": "Consultoria especializada em inovação e transformação digital para empresas do setor marítimo.",
       "tipo": 0
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Smart Retail",
       "description": "Líder em soluções de automação para o varejo, oferecendo ferramentas de gestão de inventário e análise de dados.",
       "tipo": 1
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "CloudSoft",
       "description": "Empresa de tecnologia focada em serviços de computação em nuvem e soluções de infraestrutura.",
       "tipo": 2
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "NextGen Robotics",
       "description": "Desenvolvedora de robôs autônomos para indústrias de manufatura e logística.",
       "tipo": 3
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "EcoEnergy",
       "description": "Empresa focada em energias renováveis e soluções de eficiência energética.",
       "tipo": 0
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "DataBridge",
       "description": "Plataforma de análise de dados e big data para empresas que buscam insights estratégicos.",
       "tipo": 1
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "HealthConnect",
       "description": "Provedora de sistemas de gestão hospitalar e prontuário eletrônico para o setor de saúde.",
       "tipo": 2
     },
     {
-      "id": 11,
+      "id": "11",
       "name": "LogiTrack",
       "description": "Empresa de logística especializada em soluções de rastreamento e otimização de rotas para transportadoras.",
       "tipo": 1
     },
     {
-      "id": 12,
+      "id": "12",
       "name": "CyberShield",
       "description": "Empresa de cibersegurança que oferece soluções avançadas de proteção de dados e redes corporativas.",
       "tipo": 3
