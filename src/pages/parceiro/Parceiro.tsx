@@ -34,7 +34,7 @@ export const ParceiroComponent = () => {
     }
 
     return (
-        <section id="parceiros" className="flex flex-col items-center gap-6">
+        <section id="parceiros" className="flex flex-col items-center gap-6 px-4 py-2 max-h-[calc(100vh-92px)] overflow-auto">
             <div className="w-full lg:w-[84%] flex justify-between items-center gap-2" id="filters">
                 <div className="flex justify-between items-center w-full lg:w-1/2 gap-2">
                     <Search onSearchChange={handleSearchChange} />

@@ -60,22 +60,24 @@ export const CadastroAlunoMobile: React.FC = () => {
           onSubmit={methods.handleSubmit(onSubmit)}
           className="h-full flex flex-col"
         >
-          <CurComponent
-            register={methods.register}
-            errors={methods.formState.errors}
-          />
-          <div>
+          <div className="h-full">
+            <CurComponent
+              register={methods.register}
+              errors={methods.formState.errors}
+            />
+          </div>
+          <div className="relative bottom-2 flex justify-around items-center">
             {step > 0 && (
-              <button type="button" onClick={() => setStep(step - 1)}>
+              <button className="font-medium text-colorMenuPrimary" type="button" onClick={() => setStep(step - 1)}>
                 Voltar
               </button>
             )}
             {step < steps.length - 1 ? (
-              <button type="button" onClick={() => setStep(step + 1)}>
+              <button className="text-white bg-colorMenuPrimary px-4 py-2 rounded-2xl font-medium" type="button" onClick={() => setStep(step + 1)}>
                 Avançar
               </button>
             ) : (
-              <button type="submit">Enviar</button>
+              <button className="text-white bg-colorMenuPrimary px-4 py-2 rounded-2xl font-medium" type="submit">Enviar</button>
             )}
           </div>
         </form>
