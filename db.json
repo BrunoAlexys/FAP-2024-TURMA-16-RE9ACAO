@@ -319,6 +319,24 @@
       "registration": "1111",
       "password": "1111@Mn11",
       "confirmPassword": "1111@Mn11"
+    },
+    {
+      "id": "4926",
+      "name": "Clerisson",
+      "cpf": "00000000000",
+      "email": "c@gmail.com",
+      "confirmEmail": "c@gmail.com",
+      "phone": "(00) 00000-0000",
+      "uf": "AP",
+      "cep": "00000000",
+      "city": "ccc",
+      "neighborhood": "ccc",
+      "street": "ccc",
+      "course": "si",
+      "period": "3",
+      "registration": "000",
+      "password": "111111@Mn",
+      "confirmPassword": "111111@Mn"
     }
   ],
   "professor": [],
