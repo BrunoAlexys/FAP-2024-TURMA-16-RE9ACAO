@@ -1,16 +1,16 @@
+import { zodResolver } from "@hookform/resolvers/zod";
+import axios, { AxiosError } from "axios";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import Alert from "../../components/alerts/alertDesktop";
 import { Button } from "../../components/button/button";
 import { DiagonalSection } from "../../components/diagonal-section/DiagonalSection";
 import { Input } from "../../components/input/input";
 import { InputType } from "../../enum/input-type";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
+import { AlertState } from "../../types/AlertState";
 import { FormTeacher } from "../../types/FormTeacher";
 import { TeacherScheme } from "../../utils/TeacherScheme";
-import axios, { AxiosError } from "axios";
-import { AlertState } from "../../types/AlertState";
-import { useState } from "react";
-import Alert from "../../components/alerts/alertDesktop";
 
 export const CadastroProfessor = () => {
 
@@ -58,8 +58,7 @@ export const CadastroProfessor = () => {
         <div className="flex flex-col mb-6">
             {alert && (
                 <>
-                    <Alert
-                        type={alert.type} text={alert.message} onClose={closeAlert} />
+                    <Alert type={alert.type} text={alert.message} onClose={closeAlert} />
                 </>
             )}
             <DiagonalSection text='Cadastro' subtext="Professor" />
