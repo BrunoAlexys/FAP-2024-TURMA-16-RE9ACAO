@@ -263,6 +263,12 @@
       "name": "CyberShield",
       "description": "Empresa de cibersegurança que oferece soluções avançadas de proteção de dados e redes corporativas.",
       "tipo": 3
+    },
+    {
+      "id": "f9c2",
+      "name": "Teste 2",
+      "description": "Teste 2",
+      "tipo": 0
     }
   ],
   "aluno": [

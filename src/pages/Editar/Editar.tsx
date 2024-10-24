@@ -26,7 +26,7 @@ export const Editar = () => {
     }, []);
 
     return (
-        <div className="flex flex-col gap-12">
+        <div className="flex flex-col gap-12 max-h-screen overflow-auto p-6">
             <div className="mt-24 flex flex-col gap-3">
                 <h1 className="text-3xl font-bold">Configurações de Perfil</h1>
                 <div className="border-2 border-b-black"></div>

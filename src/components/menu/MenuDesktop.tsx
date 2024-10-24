@@ -33,7 +33,11 @@ export const MenuDesktop = () => {
     const toggleMenu = () => setMenu(!menu);
 
     useEffect(() => {
-        setSelected(location.pathname);  // Atualiza o item selecionado de acordo com a rota atual
+        if (location.pathname === '/editar') {
+            setSelected('/configuracao');
+        } else {
+            setSelected(location.pathname);  // Atualiza o item selecionado de acordo com a rota atual
+        }
     }, [location.pathname]);
 
     return (

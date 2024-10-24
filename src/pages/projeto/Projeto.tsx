@@ -43,13 +43,15 @@ export const Projeto = () => {
     }
 
     return (
-        <section id="projetos" className="px-4 py-2 flex flex-col items-center gap-6 max-h-[calc(100vh-92px)] lg:max-h-screen overflow-auto">
+        <section id="projetos" className="px-4 py-2 mt-5 flex flex-col items-center gap-6 max-h-[calc(100vh-92px)] lg:max-h-screen lg:overflow-auto">
             <div className="w-full lg:w-[84%] flex justify-between items-center gap-2" id="filters">
                 <div className="flex justify-between items-center w-full lg:w-1/2 gap-2">
                     <Search onSearchChange={handleSearchChange} />
-                    <Filter onFilter={handleFilter} />
                 </div>
-                <BotaoPadrao nome="Criar" icone="add" onClick={handleCreate} />
+                <div className="flex gap-2">
+                    <Filter onFilter={handleFilter} />
+                    <BotaoPadrao nome="Criar" icone="add" onClick={handleCreate} />
+                </div>
             </div>
             <div id="projetosContainer" className="flex flex-col w-full gap-6 lg:flex-row lg:flex-wrap lg:justify-center">
                 {filteredCards.length > 0 ? (

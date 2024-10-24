@@ -5,7 +5,7 @@ export const Configuracao = () => {
     const navigate = useNavigate();
 
     return (
-        <section className="w-full h-full flex flex-col justify-between">
+        <section className="w-full h-full flex flex-col justify-between p-12">
             <div className="flex flex-col">
                 <div className="ml-4 flex flex-col gap-10 mt-4">
                     <div className="flex items-center gap-8">
