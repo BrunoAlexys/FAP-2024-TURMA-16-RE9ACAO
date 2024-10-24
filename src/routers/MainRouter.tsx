@@ -12,12 +12,14 @@ import PrivateRoute from "./PrivateRoute";
 import { CadastrosAluno } from "../pages/cadastros-aluno/CadastrosAluno";
 import { CadastroProfessor } from "../pages/cadastro-professor/CadastroProfessor";
 import { Editar } from "../pages/Editar/Editar";
+import { InfoProjeto } from "../pages/info-projeto/InfoProjeto";
 
 
 export const MainRouter = () => {
     const routes = useRoutes([
         { path: "/dashboard", element: <PrivateRoute element={<Dashboard />} /> },
         { path: "/projetos", element: <PrivateRoute element={<Projeto />} /> },
+        { path: "/projeto/:id", element: <PrivateRoute element={<InfoProjeto />} /> },
         { path: "/parceiros", element: <PrivateRoute element={<ParceiroComponent />} /> },
         { path: "/configuracao", element: <PrivateRoute element={<Configuracao />} /> },
         { path: "/editar", element: <PrivateRoute element={<Editar />} /> },

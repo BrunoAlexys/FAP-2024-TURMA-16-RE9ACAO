@@ -7,6 +7,7 @@ import imagem from './assets/perfil.png'
 import axios from "axios";
 import { CardData } from "../../types/CardData";
 import { CreateProjectPopUp } from "../../components/pop-create-project/PopUpCreateProject";
+import { useNavigate } from "react-router-dom";
 
 export const Projeto = () => {
 
@@ -14,6 +15,7 @@ export const Projeto = () => {
     const [search, setSearch] = useState("");
     const [filterTipo, setFilterTipo] = useState(0);
     const [create, setCreate] = useState(false);
+    const navigate = useNavigate();
 
     const handleSearchChange = (value: string) => {
         setSearch(value)
@@ -56,7 +58,7 @@ export const Projeto = () => {
             <div id="projetosContainer" className="flex flex-col w-full gap-6 lg:flex-row lg:flex-wrap lg:justify-center">
                 {filteredCards.length > 0 ? (
                     filteredCards.map((card) => (
-                        <Card key={card.id} img={imagem} projectName={card.name} tipo={card.tipo}>
+                        <Card key={card.id} img={imagem} projectName={card.name} tipo={card.tipo} onClick={() => navigate(`/projeto/${card.id}`)}>
                             {card.description}
                         </Card>
                     ))

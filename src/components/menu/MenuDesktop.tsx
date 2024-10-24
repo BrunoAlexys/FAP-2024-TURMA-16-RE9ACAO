@@ -35,6 +35,8 @@ export const MenuDesktop = () => {
     useEffect(() => {
         if (location.pathname === '/editar') {
             setSelected('/configuracao');
+        } else if (/^\/projeto\/\d+$/.test(location.pathname)) {
+            setSelected('/projetos');
         } else {
             setSelected(location.pathname);  // Atualiza o item selecionado de acordo com a rota atual
         }
@@ -129,4 +131,3 @@ export const MenuDesktop = () => {
         </div>
     );
 };
-
