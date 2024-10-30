@@ -3,19 +3,19 @@ import axios, { AxiosError } from "axios";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import Alert from "../../components/alerts/alertDesktop";
-import { Button } from "../../components/button/button";
-import { DiagonalSection } from "../../components/diagonal-section/DiagonalSection";
-import { Input } from "../../components/input/input";
-import { InputType } from "../../enum/input-type";
-import { AlertState } from "../../types/AlertState";
-import { FormTeacher } from "../../types/FormTeacher";
-import { TeacherScheme } from "../../utils/TeacherScheme";
+import Alert from "../../../components/alerts/alertDesktop";
+import { Button } from "../../../components/button/button";
+import { Input } from "../../../components/input/input";
+import { InputType } from "../../../enum/input-type";
+import { AlertState } from "../../../types/AlertState";
+import { FormCompany } from "../../../types/FormCompany";
+import { CompanyScheme } from "../../../utils/CompanyScheme";
 
-export const CadastroProfessor = () => {
+
+export const CadastroEmpresa = () => {
 
     const navigate = useNavigate();
-    const API_URL = 'http://localhost:3001/professor';
+    const API_URL = 'http://localhost:3001/empresa';
 
     const [alert, setAlert] = useState<AlertState | null>(null);
 
@@ -27,15 +27,15 @@ export const CadastroProfessor = () => {
         setAlert(null);
     }
 
-    const { register, handleSubmit, formState: { errors }, reset } = useForm<FormTeacher>({
-        resolver: zodResolver(TeacherScheme)
+    const { register, handleSubmit, formState: { errors }, reset } = useForm<FormCompany>({
+        resolver: zodResolver(CompanyScheme)
     });
 
-    const onSubmit = async (data: FormTeacher) => {
+    const onSubmit = async (data: FormCompany) => {
         try {
             const response = await axios.post(API_URL, data);
             if (response.status === 201) {
-                showAlert('sucesso', 'Cadastro realizado com sucesso');
+                showAlert('sucesso', 'Empresa cadastrada com sucesso!');
             } else {
                 showAlert('error', 'Erro ao enviar o formulário');
                 throw new Error('Erro ao enviar o formulário');
@@ -54,15 +54,15 @@ export const CadastroProfessor = () => {
             throw error;
         }
     };
+
     return (
-        <div className="flex flex-col mb-6">
+        <div className="flex flex-col items-center ">
             {alert && (
                 <>
                     <Alert type={alert.type} text={alert.message} onClose={closeAlert} />
                 </>
             )}
-            <DiagonalSection text='Cadastro' subtext="Professor" />
-            <div className="absolute w-[90%] mt-28 lg:ml-2 lg:mt-[245px] lg:mr-20 flex flex-col">
+            <div className="absolute w-[90%] lg:ml-2 lg:mr-20 flex flex-col">
                 <form
                     className="flex flex-col gap-6 mb-6"
                     onSubmit={handleSubmit(onSubmit)}
@@ -80,12 +80,12 @@ export const CadastroProfessor = () => {
 
                         <div className="lg:w-full">
                             <Input
-                                type={InputType.CPF}
-                                label="CPF"
+                                type={InputType.CNPJ}
+                                label="CNPJ"
                                 error={errors}
                                 register={register}
-                                name="cpf"
-                                placeholder="000.000.000-00"
+                                name="cnpj"
+                                placeholder="00.000.000/0000-00"
                             />
                         </div>
 
@@ -179,38 +179,6 @@ export const CadastroProfessor = () => {
                         </div>
 
                         <div className="lg:flex-1 lg:block hidden"></div>
-                    </div>
-
-                    <div className="flex flex-col lg:flex-row gap-4">
-                        <div className="lg:w-full lg:flex-1">
-                            <Input
-                                type={InputType.Text}
-                                label="Formação"
-                                error={errors}
-                                register={register}
-                                name="formation"
-                            />
-                        </div>
-
-                        <div className="lg:w-full lg:flex-1">
-                            <Input
-                                type={InputType.Text}
-                                label="Curso"
-                                error={errors}
-                                register={register}
-                                name="course"
-                            />
-                        </div>
-
-                        <div className="lg:w-full lg:flex-1">
-                            <Input
-                                type={InputType.Text}
-                                label="Matrícula"
-                                error={errors}
-                                register={register}
-                                name="registration"
-                            />
-                        </div>
                     </div>
 
                     <div className="flex flex-col lg:flex-row gap-4">

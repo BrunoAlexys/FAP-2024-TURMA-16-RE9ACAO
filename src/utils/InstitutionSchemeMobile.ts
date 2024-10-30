@@ -57,7 +57,7 @@ export const Step4Schema = z.object({
         .min(1, { message: "* Confirmação de senha é obrigatória." }),
 })
 
-export const InstutionSchemaMobile = Step1Schema.merge(Step2Schema)
+export const InstitutionSchemaMobile = Step1Schema.merge(Step2Schema)
   .merge(Step3Schema)
   .merge(Step4Schema)
   .superRefine((data, ctx) => {

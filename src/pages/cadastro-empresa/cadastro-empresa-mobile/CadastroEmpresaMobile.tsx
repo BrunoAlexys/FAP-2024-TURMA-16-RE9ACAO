@@ -7,14 +7,13 @@ import { Step3 } from "./etapas/Step3";
 
 import axios, { AxiosError } from "axios";
 import { useNavigate } from "react-router-dom";
+import { CompanySchemeMobile } from "../../../utils/CompanySchemeMobile";
 import { FormCompanyMobile } from "../../../types/FormCompanyMobile";
 import { Step4 } from "./etapas/Step4";
-import { FormInstitutionMobile } from "../../../types/FormInstituitionMobile";
-import { InstitutionSchemaMobile } from "../../../utils/InstitutionSchemeMobile";
 
-export const CadastroInstituicaoMobile: React.FC = () => {
-    const methods = useForm<FormInstitutionMobile>({
-        resolver: zodResolver(InstitutionSchemaMobile),
+export const CadastroEmpresaMobile: React.FC = () => {
+    const methods = useForm<FormCompanyMobile>({
+        resolver: zodResolver(CompanySchemeMobile),
         mode: "onChange",
     });
 

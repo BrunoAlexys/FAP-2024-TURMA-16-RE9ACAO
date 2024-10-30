@@ -90,7 +90,7 @@ export const CadastroAlunoMobile: React.FC = () => {
         event: React.KeyboardEvent<HTMLFormElement>
     ) => {
         if (event.key === "Enter") {
-            event.preventDefault(); // Prevent the default form submission
+            event.preventDefault();
             if (step < steps.length - 1) {
                 await handleNextStep();
             } else {

@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import { DiagonalSection } from "../../../components/diagonal-section/DiagonalSection";
 import { Input } from "../../../components/input/input";
 import { InputType } from "../../../enum/input-type";
 import { useForm } from "react-hook-form";
@@ -63,8 +62,7 @@ export const CadastroInstituicao = () => {
                     <Alert type={alert.type} text={alert.message} onClose={closeAlert} />
                 </>
             )}
-            <DiagonalSection text='Cadastro' subtext="Instituição de Ensino" />
-            <div className="absolute w-[90%] mt-28 lg:ml-2 lg:mt-[245px] lg:mr-20 flex flex-col">
+            <div className="absolute w-[90%] lg:mr-20 flex flex-col">
                 <form
                     className="flex flex-col gap-6 mb-6"
                     onSubmit={handleSubmit(onSubmit)}

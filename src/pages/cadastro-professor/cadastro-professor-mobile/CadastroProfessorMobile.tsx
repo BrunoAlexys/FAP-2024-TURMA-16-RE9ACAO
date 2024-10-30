@@ -4,33 +4,33 @@ import { useState } from "react";
 import { Step2 } from "./etapas/Step2";
 import { Step1 } from "./etapas/Step1";
 import { Step3 } from "./etapas/Step3";
-
+import { Step4 } from "./etapas/Step4";
+import { Step5 } from "./etapas/Step5";
 import axios, { AxiosError } from "axios";
 import { useNavigate } from "react-router-dom";
-import { FormCompanyMobile } from "../../../types/FormCompanyMobile";
-import { Step4 } from "./etapas/Step4";
-import { FormInstitutionMobile } from "../../../types/FormInstituitionMobile";
-import { InstitutionSchemaMobile } from "../../../utils/InstitutionSchemeMobile";
+import { FormTeacherMobile } from "../../../types/FormTeacherMobile";
+import { TeacherSchemeMobile } from "../../../utils/TeacherSchemeMobile";
 
-export const CadastroInstituicaoMobile: React.FC = () => {
-    const methods = useForm<FormInstitutionMobile>({
-        resolver: zodResolver(InstitutionSchemaMobile),
+export const CadastroProfessorMobile: React.FC = () => {
+    const methods = useForm<FormTeacherMobile>({
+        resolver: zodResolver(TeacherSchemeMobile),
         mode: "onChange",
     });
 
     const [step, setStep] = useState(0);
-    const steps = [Step1, Step2, Step3, Step4];
-    const fieldNames: { [key: number]: (keyof FormCompanyMobile)[] } = {
-        0: ["name", "cnpj"],
+    const steps = [Step1, Step2, Step3, Step4, Step5];
+    const fieldNames: { [key: number]: (keyof FormTeacherMobile)[] } = {
+        0: ["name", "cpf"],
         1: ["email", "confirmEmail", "phone"],
         2: ["uf", "cep", "city", "neighborhood", "street"],
-        3: ["password", "confirmPassword"],
+        3: ["formation", "course", "registration"],
+        4: ["password", "confirmPassword"],
     };
 
     const navigate = useNavigate();
     const API_URL = "http://localhost:3001/aluno";
 
-    const onSubmit = async (data: FormCompanyMobile) => {
+    const onSubmit = async (data: FormTeacherMobile) => {
         try {
             const response = await axios.post(API_URL, data);
             if (response.status === 201) {
