@@ -1,16 +1,16 @@
 import { useNavigate } from "react-router-dom";
-import { DiagonalSection } from "../../components/diagonal-section/DiagonalSection";
-import { Input } from "../../components/input/input";
-import { InputType } from "../../enum/input-type";
+import { DiagonalSection } from "../../../components/diagonal-section/DiagonalSection";
+import { Input } from "../../../components/input/input";
+import { InputType } from "../../../enum/input-type";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { InstituionScheme } from "../../utils/InstitutionScheme";
-import { FormInstituion } from "../../types/FormInstituion";
+import { InstituionScheme } from "../../../utils/InstitutionScheme";
+import { FormInstituion } from "../../../types/FormInstituion";
 import axios, { AxiosError } from "axios";
-import { Button } from "../../components/button/button";
+import { Button } from "../../../components/button/button";
 import { useState } from "react";
-import { AlertState } from "../../types/AlertState";
-import Alert from "../../components/alerts/alertDesktop";
+import { AlertState } from "../../../types/AlertState";
+import Alert from "../../../components/alerts/alertDesktop";
 
 
 export const CadastroInstituicao = () => {

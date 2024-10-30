@@ -6,7 +6,7 @@ import { Configuracao } from "../pages/configuracao/Configuracao";
 import { Perfil } from "../pages/perfil/Perfil";
 import { NotificacoesMobile } from "../pages/notificacoesMobile/NotificacoesMobile";
 import { CadastroEmpresa } from "../pages/cadastro-empresa/CadastroEmpresa";
-import { CadastroInstituicao } from "../pages/cadastro-instituicao/CadastroInstituicao";
+import { CadastroInstituicao } from "../pages/cadastro-instituicao/cadastro-instituicao-desktop/CadastroInstituicao";
 import { Login } from "../pages/login/Login";
 import PrivateRoute from "./PrivateRoute";
 import { CadastrosAluno } from "../pages/cadastros-aluno/CadastrosAluno";
