@@ -1,4 +1,4 @@
-import { useRoutes } from "react-router-dom"
+import { useRoutes } from "react-router-dom";
 import { Dashboard } from "../pages/dashbord/Dashbord";
 import { Projeto } from "../pages/projeto/Projeto";
 import { ParceiroComponent } from "../pages/parceiro/Parceiro";
@@ -10,8 +10,8 @@ import { CadastroInstituicao } from "../pages/cadastro-instituicao/cadastro-inst
 import { Login } from "../pages/login/Login";
 import PrivateRoute from "./PrivateRoute";
 import { CadastrosAluno } from "../pages/cadastros-aluno/CadastrosAluno";
-import { CadastroProfessor } from "../pages/cadastro-professor/CadastroProfessor";
 import { Editar } from "../pages/Editar/Editar";
+import { CadastroProfessor } from "../pages/cadastro-professor/CadastroProfessor";
 
 
 export const MainRouter = () => {
