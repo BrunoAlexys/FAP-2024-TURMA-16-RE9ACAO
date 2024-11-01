@@ -5,13 +5,13 @@ import { Filter } from "../../components/filter-component/Filter";
 import { Search } from "../../components/search-component/Search";
 import imagem from './assets/perfil.png'
 import axios from "axios";
-import { CardData } from "../../types/CardData";
-import { CreateProjectPopUp } from "../../components/pop-create-project/PopUpCreateProject";
+import { FormPopUp } from "../../components/form-pop-up/FormPopUp";
 import { useNavigate } from "react-router-dom";
+import { Project } from "../../types/Projects";
 
 export const Projeto = () => {
 
-    const [cards, setCards] = useState<CardData[]>([]);
+    const [project, setProject] = useState<Project[]>([]);
     const [search, setSearch] = useState("");
     const [filterTipo, setFilterTipo] = useState(0);
     const [create, setCreate] = useState(false);
@@ -28,16 +28,16 @@ export const Projeto = () => {
     useEffect(() => {
         axios.get("http://localhost:3001/projects")
             .then((response) => {
-                setCards(response.data)
+                setProject(response.data)
             })
             .catch((error) => {
                 throw new Error(error);
             })
     }, [])
 
-    let filteredCards = cards.filter(card => card.name.toLowerCase().includes(search.toLowerCase()))
+    let filteredproject = project.filter(card => card.name.toLowerCase().includes(search.toLowerCase()))
     if (filterTipo != 0) {
-        filteredCards = filteredCards.filter(card => card.tipo.toString().includes(filterTipo.toString()))
+        filteredproject = filteredproject.filter(card => card.tipo.toString().includes(filterTipo.toString()))
     }
 
     const handleCreate = () => {
@@ -56,17 +56,24 @@ export const Projeto = () => {
                 </div>
             </div>
             <div id="projetosContainer" className="flex flex-col w-full gap-6 lg:flex-row lg:flex-wrap lg:justify-center">
-                {filteredCards.length > 0 ? (
-                    filteredCards.map((card) => (
-                        <Card key={card.id} img={imagem} projectName={card.name} tipo={card.tipo} onClick={() => navigate(`/projeto/${card.id}`)}>
-                            {card.description}
+                {filteredproject.length > 0 ? (
+                    filteredproject.map((project) => (
+                        <Card key={project.id} img={imagem} projectName={project.name} tipo={project.tipo} onClick={() => navigate(`/projeto/${project.id}`)}>
+                            {project.description}
                         </Card>
                     ))
                 ) : (
                     <p className="text-center text-gray-500 mt-72">Nenhum projeto cadastrado</p>
                 )}
             </div>
-            {create && <CreateProjectPopUp onClose={() => setCreate(false)} type="projects" />}
+            {create && <FormPopUp
+                onClose={() => setCreate(false)}
+                type="projects"
+                title="Criar Projeto"
+                namePlaceholder="Nome do Projeto"
+                descriptionLabel="Descrição do Projeto"
+                descriptionPlaceholder="Descreva o projeto"
+            />}
         </section>
     );
 };

@@ -4,12 +4,23 @@ import { FormCreateProject } from '../../types/FormCreateProject';
 import { CreateProjectScheme } from '../../utils/CreateProjectScheme';
 import axios from 'axios';
 
-type CreateProjectPopupProps = {
+type FormPopUpProps = {
     onClose: () => void;
-    type: 'parceiros' | 'projects'
+    type: 'edit' | 'projects' | 'tasks'; // Novo: tipo de formulário
+    title: string; // Novo: título do formulário
+    descriptionLabel: string; // Novo: rótulo da descrição
+    namePlaceholder: string; // Novo: placeholder para o nome
+    descriptionPlaceholder: string; // Novo: placeholder para a descrição
 };
 
-export const CreateProjectPopUp = ({ onClose, type }: CreateProjectPopupProps) => {
+export const FormPopUp = ({
+    onClose,
+    type,
+    title,
+    descriptionLabel,
+    namePlaceholder,
+    descriptionPlaceholder,
+}: FormPopUpProps) => {
     const handleSave = async (data: FormCreateProject) => {
         try {
             await axios.post(`http://localhost:3001/${type}`, data);
@@ -36,24 +47,24 @@ export const CreateProjectPopUp = ({ onClose, type }: CreateProjectPopupProps) =
         <form onSubmit={handleSubmit(handleSave)} className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
             <div className="w-[600px] bg-popup rounded-lg shadow-lg p-6 flex flex-col">
                 <div>
-                    <h1 className="text-lg font-semibold mb-4">Título do Projeto</h1>
+                    <h1 className="text-lg font-semibold mb-4">{title}</h1>
                     <input
                         type="text"
                         className="w-full p-3 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        placeholder="Crie um título para o projeto"
+                        placeholder={namePlaceholder}
                         {...register('name')}
                     />
-                    {errors && <span className="text-xs text-red-500 ml-4">{(errors['name']?.message as string) || ''}</span>}
+                    {errors.name && <span className="text-xs text-red-500 ml-4">{errors.name.message as string}</span>}
                 </div>
 
                 <div>
-                    <h1 className="text-lg font-semibold mb-4">Descrição</h1>
+                    <h1 className="text-lg font-semibold mb-4">{descriptionLabel}</h1>
                     <textarea
                         className="w-full p-3 border border-gray-300 rounded-lg h-28 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        placeholder="Adicione uma descrição ao projeto"
+                        placeholder={descriptionPlaceholder}
                         {...register('description')}
                     ></textarea>
-                    {errors && <span className="text-xs text-red-500 ml-4">{(errors['description']?.message as string) || ''}</span>}
+                    {errors.description && <span className="text-xs text-red-500 ml-4">{errors.description.message as string}</span>}
                 </div>
 
                 {/* Campo 'tipo' oculto, com valor padrão */}

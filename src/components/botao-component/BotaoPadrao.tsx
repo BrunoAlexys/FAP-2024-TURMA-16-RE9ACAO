@@ -2,7 +2,7 @@ import clsx from "clsx";
 import AddIcon from "./assets/adicionar.png";
 
 interface BotaoPadraoProps {
-    icone: string,
+    icone: 'add',
     nome: string,
     onClick?: () => void;
 }
