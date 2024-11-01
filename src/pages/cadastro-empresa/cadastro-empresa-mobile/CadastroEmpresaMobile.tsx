@@ -1,36 +1,35 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FormProvider, useForm } from "react-hook-form";
-import { StudentSchemaMobile } from "../../../utils/StudentSchemeMobile";
 import { useState } from "react";
 import { Step2 } from "./etapas/Step2";
 import { Step1 } from "./etapas/Step1";
 import { Step3 } from "./etapas/Step3";
-import { Step4 } from "./etapas/Step4";
-import { Step5 } from "./etapas/Step5";
-import axios, { AxiosError } from "axios";
-import { FormStudentMobile } from "../../../types/FormStudentMobile";
-import { useNavigate } from "react-router-dom";
 
-export const CadastroAlunoMobile: React.FC = () => {
-    const methods = useForm<FormStudentMobile>({
-        resolver: zodResolver(StudentSchemaMobile),
+import axios, { AxiosError } from "axios";
+import { useNavigate } from "react-router-dom";
+import { CompanySchemeMobile } from "../../../utils/CompanySchemeMobile";
+import { FormCompanyMobile } from "../../../types/FormCompanyMobile";
+import { Step4 } from "./etapas/Step4";
+
+export const CadastroEmpresaMobile: React.FC = () => {
+    const methods = useForm<FormCompanyMobile>({
+        resolver: zodResolver(CompanySchemeMobile),
         mode: "onChange",
     });
 
     const [step, setStep] = useState(0);
-    const steps = [Step1, Step2, Step3, Step4, Step5];
-    const fieldNames: { [key: number]: (keyof FormStudentMobile)[] } = {
-        0: ["name", "cpf"],
+    const steps = [Step1, Step2, Step3, Step4];
+    const fieldNames: { [key: number]: (keyof FormCompanyMobile)[] } = {
+        0: ["name", "cnpj"],
         1: ["email", "confirmEmail", "phone"],
         2: ["uf", "cep", "city", "neighborhood", "street"],
-        3: ["course", "period", "registration"],
-        4: ["password", "confirmPassword"],
+        3: ["password", "confirmPassword"],
     };
 
     const navigate = useNavigate();
     const API_URL = "http://localhost:3001/aluno";
 
-    const onSubmit = async (data: FormStudentMobile) => {
+    const onSubmit = async (data: FormCompanyMobile) => {
         try {
             const response = await axios.post(API_URL, data);
             if (response.status === 201) {
