@@ -35,19 +35,19 @@ const AlertMobile = ({type, onClose} : AlertProps)=>{
             {
                 'translate-y-[-150%]': !isVisible, 
                 'translate-y-0': isVisible,
-                'bg-colorAlertMobileWarning': type === 'alerta',
-                'bg-colorAlertMobileError': type === 'error',
-                'bg-colorAlertMobileInfo': type === 'informação',
-                'bg-colorAlertMobileSucess': type === 'sucesso',
+                'bg-[#fae4c1]': type === 'alerta',
+                'bg-[#fabdc2]': type === 'error',
+                'bg-[#bcd6ea]': type === 'informação',
+                'bg-[#b4e7cd]': type === 'sucesso',
             }
             
         )}>
             <div className={clsx("rounded-full h-7 w-7 flex items-center justify-center overflow-hidden ",
                 {
-                    'bg-colorAlertWarningBorder': type === 'alerta',
-                    'bg-colorAlertErrorBorder': type === 'error',
-                    'bg-colorAlertInfoBorder': type === 'informação',
-                    'bg-colorAlertSucessBorder': type === 'sucesso',
+                    'bg-[#f9cf47]': type === 'alerta',
+                    'bg-[#ff2d56]': type === 'error',
+                    'bg-[#6c00f9]': type === 'informação',
+                    'bg-[#00d998]': type === 'sucesso',
                     
                 }
             )}>

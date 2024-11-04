@@ -35,19 +35,19 @@ const Alert = ({type, text, onClose} : AlertProps)=>{
                     {
                         'translate-y-[-150%]': !isVisible, 
                         'translate-y-0': isVisible,
-                        'bg-colorAlertWarning border-x-colorAlertWarningBorder': type === 'alerta',
-                        'bg-colorAlertError border-x-colorAlertErrorBorder': type === 'error',
-                        'bg-colorAlertInfo border-x-colorAlertInfoBorder': type === 'info',
-                        'bg-colorAlertSucess border-x-colorAlertSucessBorder': type === 'sucesso',
+                        'bg-[#fdf9e8] border-x-[#F2C94C]': type === 'alerta',
+                        'bg-[#ffeeef] border-x-[#EB5757]': type === 'error',
+                        'bg-[#efedff] border-x-[#5458F7]': type === 'info',
+                        'bg-[#dffcf5] border-x-[#00CC99]': type === 'sucesso',
                     }
                     
                 )}>
                     <div className={clsx("rounded-full h-24 w-24  flex items-center justify-center flex-col",
                         {
-                            'bg-colorAlertWarningBorder': type === 'alerta',
-                            'bg-colorAlertErrorBorder': type === 'error',
-                            'bg-colorAlertInfoBorder': type === 'info',
-                            'bg-colorAlertSucessBorder': type === 'sucesso',
+                            'bg-[#F2C94C]': type === 'alerta',
+                            'bg-[#EB5757]': type === 'error',
+                            'bg-[#5458F7]': type === 'info',
+                            'bg-[#00CC99]': type === 'sucesso',
                             
                         }
                     )}>
