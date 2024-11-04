@@ -1,33 +1,35 @@
-import React, { useEffect, useState } from 'react';
 import clsx from "clsx";
-import error from"./assets/error.png"
+import error from "./assets/error.png"
 import alerta from "./assets/warning.png"
 import info from "./assets/info.png"
 import sucesso from "./assets/sucess.png"
+import { useEffect, useState } from "react";
 
 
 type AlertProps = {
     type: "alerta" | "error" | "info" | "sucesso";
-    text: String;
-    onClose?: () => void;
+    text: string;
+    onClose: () => void;
 }
 
-const Alert = ({type, text, onClose} : AlertProps)=>{
-    const [isVisible, setIsVisible] = useState(false); 
+const Alert = ({ type, text, onClose }: AlertProps) => {
+
+    const [isVisible, setIsVisible] = useState(true);
+    const [isExiting, setIsExiting] = useState(false);
 
     useEffect(() => {
-        setIsVisible(true);
-
         const timer = setTimeout(() => {
-            setIsVisible(false);
-            if (onClose) {
-                setTimeout(onClose, 500); 
-            }
-        }, 5000);
+            setIsExiting(true);
+            setTimeout(() => {
+                setIsVisible(false);
+                onClose(); // Chama a função de callback para fechar o alerta
+            }, 300); // Tempo para coincidir com a animação
+        }, 3000); // Tempo total de exibição
 
-        return () => clearTimeout(timer); 
+        return () => clearTimeout(timer);
     }, [onClose]);
 
+    if (!isVisible) return null;
 
             return (
                 <div className={clsx(

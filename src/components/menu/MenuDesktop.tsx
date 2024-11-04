@@ -33,11 +33,8 @@ export const MenuDesktop = () => {
     const toggleMenu = () => setMenu(!menu);
 
     useEffect(() => {
-        if (location.pathname === '/') {
-            setSelected('/dashboard');
-            navigate('/dashboard');
-        }
-    }, [location.pathname, navigate]);
+        setSelected(location.pathname);  // Atualiza o item selecionado de acordo com a rota atual
+    }, [location.pathname]);
 
     return (
         <div className='hidden lg:block'>

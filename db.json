@@ -2,247 +2,453 @@
   "projects": [
     {
       "id": "1",
-      "tipo": 3,
-      "projectName": "Aplicativo de Gestão Financeira",
-      "children": "Desenvolvimento de um aplicativo para gerenciamento de finanças pessoais com gráficos interativos e integração bancária."
+      "name": "Aplicativo de Comunicação Assistiva",
+      "description": "Um aplicativo baseado no método PECS para ajudar crianças autistas não verbais a se comunicarem.",
+      "tipo": 2
     },
     {
       "id": "2",
-      "tipo": 1,
-      "projectName": "E-commerce de Moda",
-      "children": "Plataforma online de vendas de roupas e acessórios com sistema de recomendação baseado em inteligência artificial."
+      "name": "Sistema de Agendamento de Barbearia",
+      "description": "Aplicação web para agendamento de horários em barbearias com uma interface amigável.",
+      "tipo": 1
     },
     {
       "id": "3",
-      "tipo": 4,
-      "projectName": "Sistema de Automação Residencial",
-      "children": "Projeto de controle remoto de dispositivos eletrônicos da casa utilizando IoT, permitindo automação de luzes e temperatura."
+      "name": "Calculadora Flutter",
+      "description": "Uma calculadora personalizável com temas claro e escuro, suportando expressões matemáticas.",
+      "tipo": 3
     },
     {
       "id": "4",
-      "tipo": 2,
-      "projectName": "Portal de Notícias",
-      "children": "Desenvolvimento de um portal de notícias com suporte a múltiplas categorias e atualização em tempo real."
+      "name": "Painel para Profissionais de Saúde",
+      "description": "Um painel desenvolvido em React para gerenciar atividades e comunicação de crianças autistas.",
+      "tipo": 2
     },
     {
       "id": "5",
-      "tipo": 1,
-      "projectName": "Marketplace de Serviços Locais",
-      "children": "Plataforma que conecta profissionais locais, como encanadores e eletricistas, a clientes que necessitam de serviços específicos."
+      "name": "Sistema de Gerenciamento de Tarefas",
+      "description": "Um sistema para gerenciar e acompanhar tarefas de forma eficiente, com funções de usuário.",
+      "tipo": 1
     },
     {
       "id": "6",
-      "tipo": 4,
-      "projectName": "Jogo Mobile de Estratégia",
-      "children": "Criação de um jogo para smartphones com batalhas em tempo real e estratégia, onde os jogadores controlam exércitos em batalhas épicas."
+      "name": "Loja Online",
+      "description": "Uma plataforma de e-commerce completa para venda de produtos físicos e digitais.",
+      "tipo": 0
     },
     {
       "id": "7",
-      "tipo": 2,
-      "projectName": "Blog de Tecnologia",
-      "children": "Plataforma de blog voltada para notícias e tutoriais de tecnologia, com foco em desenvolvimento de software e inovações."
+      "name": "Aplicativo de Monitoramento Fitness",
+      "description": "App mobile que permite aos usuários monitorar treinos, definir metas e acompanhar o progresso.",
+      "tipo": 2
     },
     {
       "id": "8",
-      "tipo": 3,
-      "projectName": "Sistema de Gerenciamento de Estoque",
-      "children": "Desenvolvimento de um sistema para controlar o estoque de lojas de pequeno porte, com relatórios de vendas e alertas de reposição."
+      "name": "Sistema de Reservas para Restaurantes",
+      "description": "Um sistema de reservas para restaurantes, permitindo que os usuários reservem mesas antecipadamente.",
+      "tipo": 1
     },
     {
       "id": "9",
-      "tipo": 1,
-      "projectName": "Plataforma de Doações",
-      "children": "Criação de uma plataforma para conectar doadores com causas sociais, oferecendo transparência nas transações e metas atingidas."
+      "name": "Gerenciador de Finanças Pessoais",
+      "description": "Aplicativo para controlar despesas, definir orçamentos e gerenciar finanças pessoais de forma eficiente.",
+      "tipo": 3
     },
     {
       "id": "10",
-      "tipo": 4,
-      "projectName": "Aplicativo de Exercícios em Casa",
-      "children": "Desenvolvimento de um app de fitness que orienta usuários em exercícios que podem ser feitos em casa, com planos personalizados."
+      "name": "Ferramenta de Gerenciamento de Projetos",
+      "description": "Um sistema de gerenciamento de projetos com atribuição de tarefas, prazos e acompanhamento de progresso.",
+      "tipo": 0
     },
     {
       "id": "11",
-      "tipo": 2,
-      "projectName": "Portal Educacional",
-      "children": "Plataforma online para cursos de diversas áreas, com funcionalidades de fórum, quizzes e certificação para alunos."
+      "name": "Jogo Educativo para Crianças",
+      "description": "Um jogo interativo desenvolvido para ensinar crianças pequenas habilidades básicas de matemática e leitura.",
+      "tipo": 2
     },
     {
       "id": "12",
-      "tipo": 3,
-      "projectName": "Sistema de Gestão Escolar",
-      "children": "Aplicação para gerenciar informações acadêmicas, financeiras e administrativas de escolas, incluindo controle de alunos e professores."
+      "name": "Plataforma de Ensino Online",
+      "description": "Plataforma para hospedar e gerenciar cursos online, com aulas interativas e quizzes.",
+      "tipo": 1
     },
     {
       "id": "13",
-      "tipo": 1,
-      "projectName": "Aplicativo de Entregas",
-      "children": "Plataforma de entrega de alimentos, onde restaurantes locais podem se cadastrar e os usuários fazem pedidos com acompanhamento em tempo real."
+      "name": "Aplicativo de Previsão do Tempo",
+      "description": "Aplicativo mobile que fornece atualizações em tempo real do clima e previsões semanais para várias localidades.",
+      "tipo": 0
     },
     {
       "id": "14",
-      "tipo": 4,
-      "projectName": "Software de Design Gráfico Online",
-      "children": "Criação de um editor de design gráfico diretamente no navegador, permitindo criar banners, logos e posts para redes sociais."
+      "name": "Serviço de Streaming de Música",
+      "description": "Uma plataforma de streaming de música com playlists, recomendações e escuta offline.",
+      "tipo": 3
     },
     {
       "id": "15",
-      "tipo": 2,
-      "projectName": "Site de Consultoria Jurídica",
-      "children": "Plataforma que oferece serviços jurídicos online, conectando advogados a clientes para consultas e resolução de questões legais."
+      "name": "Sistema de Recomendação de Filmes",
+      "description": "Um sistema que sugere filmes com base nas preferências e histórico de visualização do usuário.",
+      "tipo": 1
     },
     {
       "id": "16",
-      "tipo": 3,
-      "projectName": "Aplicativo de Saúde Mental",
-      "children": "Desenvolvimento de um aplicativo focado em saúde mental, com acompanhamento de humor, meditação guiada e chat com psicólogos."
+      "name": "Aplicativo de Mídia Social",
+      "description": "Aplicativo mobile para conectar pessoas, compartilhar atualizações, fotos e mensagens.",
+      "tipo": 0
     },
     {
       "id": "17",
-      "tipo": 1,
-      "projectName": "Plataforma de Freelancer",
-      "children": "Marketplace para freelancers oferecerem seus serviços, permitindo que clientes publiquem trabalhos e selecionem profissionais."
+      "name": "Ferramenta de Automação de Tarefas",
+      "description": "Ferramenta que automatiza tarefas repetitivas, permitindo que os usuários criem fluxos de trabalho personalizados.",
+      "tipo": 1
     },
     {
       "id": "18",
-      "tipo": 4,
-      "projectName": "Aplicativo de Realidade Aumentada para Turismo",
-      "children": "Criação de um app que utiliza realidade aumentada para fornecer informações históricas e culturais sobre pontos turísticos."
+      "name": "Aplicativo de Aprendizado de Línguas",
+      "description": "App que ajuda os usuários a aprender novas línguas com lições interativas e quizzes.",
+      "tipo": 2
     },
     {
       "id": "19",
-      "tipo": 2,
-      "projectName": "Revista Online de Ciência",
-      "children": "Plataforma de artigos científicos e notícias sobre avanços em tecnologia e ciência, com suporte a autores e revisores."
+      "name": "Aplicativo de Rastreamento de Hábitos",
+      "description": "Aplicativo mobile que ajuda os usuários a criar hábitos positivos e acompanhar o progresso ao longo do tempo.",
+      "tipo": 3
     },
     {
       "id": "20",
-      "tipo": 3,
-      "projectName": "Sistema de Controle de Pacientes",
-      "children": "Desenvolvimento de um sistema para hospitais monitorarem o histórico médico de pacientes e organizarem consultas e exames."
+      "name": "Plataforma de Eventos Virtuais",
+      "description": "Plataforma para hospedar e gerenciar conferências virtuais, webinars e eventos ao vivo.",
+      "tipo": 0
+    },
+    {
+      "id": "c879",
+      "name": "Teste 1",
+      "description": "Teste 1",
+      "tipo": 0
+    },
+    {
+      "id": "307d",
+      "name": "Teste",
+      "description": "Teste",
+      "tipo": 0
+    },
+    {
+      "id": "d268",
+      "name": "Teste 3",
+      "description": "ksldaçjfldjslfk",
+      "tipo": 0
     }
   ],
   "notifications": [
     {
       "id": "1",
-      "name": "Autor",
-      "description": "Descrição da notificação 1"
+      "isRead": true,
+      "name": "Machado de Assis",
+      "time": "10h00",
+      "description": "Lançamento do livro 'Dom Casmurro'",
+      "img": "img001"
     },
     {
       "id": "2",
-      "name": "Item 2",
-      "description": "Alguma descrição interessante"
+      "isRead": true,
+      "name": "Clarice Lispector",
+      "time": "12h30",
+      "description": "Novo artigo publicado na revista literária",
+      "img": "img002"
     },
     {
       "id": "3",
-      "name": "Item 3",
-      "description": "Uma breve explicação aqui"
+      "isRead": true,
+      "name": "Paulo Coelho",
+      "time": "09h00",
+      "description": "Entrevista exclusiva sobre 'O Alquimista'",
+      "img": "img003"
     },
     {
       "id": "4",
-      "name": "Item 4",
-      "description": "Mais um objeto fictício"
+      "isRead": true,
+      "name": "José Saramago",
+      "time": "14h45",
+      "description": "Reflexões sobre 'Ensaio sobre a cegueira'",
+      "img": "img004"
     },
     {
       "id": "5",
-      "name": "Item 5",
-      "description": "Uma descrição criativa"
+      "isRead": true,
+      "name": "Jorge Amado",
+      "time": "11h15",
+      "description": "Aniversário de 100 anos do autor",
+      "img": "img005"
     },
     {
       "id": "6",
-      "name": "Item 6",
-      "description": "Algo misterioso talvez?"
+      "isRead": true,
+      "name": "Carlos Drummond de Andrade",
+      "time": "13h30",
+      "description": "Exposição de poesias no museu",
+      "img": "img006"
     },
     {
       "id": "7",
-      "name": "Item 7",
-      "description": "Uma nota sobre o sétimo objeto"
+      "isRead": true,
+      "name": "João Cabral de Melo Neto",
+      "time": "16h00",
+      "description": "Lançamento de nova coletânea de poemas",
+      "img": "img007"
     },
     {
       "id": "8",
-      "name": "Item 8",
-      "description": "Uma descrição curta e concisa"
+      "isRead": true,
+      "name": "Fernando Pessoa",
+      "time": "17h15",
+      "description": "Edição especial de 'Mensagem'",
+      "img": "img008"
     },
     {
       "id": "9",
-      "name": "Item 9",
-      "description": "Um objeto imaginário"
+      "isRead": true,
+      "name": "Cecília Meireles",
+      "time": "08h00",
+      "description": "Homenagem à autora no centenário de nascimento",
+      "img": "img009"
     },
     {
       "id": "10",
-      "name": "Item 10",
-      "description": "Último item, mas não menos importante!"
+      "isRead": true,
+      "name": "Graciliano Ramos",
+      "time": "18h45",
+      "description": "Sessão de autógrafos de 'Vidas Secas'",
+      "img": "img010"
+    },
+    {
+      "id": "11",
+      "isRead": true,
+      "name": "Manuel Bandeira",
+      "time": "09h30",
+      "description": "Encontro literário sobre 'Libertinagem'",
+      "img": "img011"
+    },
+    {
+      "id": "12",
+      "isRead": true,
+      "name": "Lygia Fagundes Telles",
+      "time": "12h00",
+      "description": "Discussão do conto 'Venha ver o pôr do sol'",
+      "img": "img012"
+    },
+    {
+      "id": "13",
+      "isRead": true,
+      "name": "Rubem Fonseca",
+      "time": "15h30",
+      "description": "Lançamento da nova edição de 'Agosto'",
+      "img": "img013"
+    },
+    {
+      "id": "14",
+      "isRead": true,
+      "name": "Nelson Rodrigues",
+      "time": "11h45",
+      "description": "Reedição de peças teatrais",
+      "img": "img014"
+    },
+    {
+      "id": "15",
+      "isRead": true,
+      "name": "Hilda Hilst",
+      "time": "10h30",
+      "description": "Lançamento póstumo de coletânea",
+      "img": "img015"
+    },
+    {
+      "id": "16",
+      "isRead": true,
+      "name": "Marcelino Freire",
+      "time": "14h00",
+      "description": "Palestra sobre literatura marginal",
+      "img": "img016"
+    },
+    {
+      "id": "17",
+      "isRead": true,
+      "name": "Ana Cristina Cesar",
+      "time": "16h30",
+      "description": "Relançamento de 'A teus pés'",
+      "img": "img017"
+    },
+    {
+      "id": "18",
+      "isRead": true,
+      "name": "Milton Hatoum",
+      "time": "18h00",
+      "description": "Bate-papo sobre 'Dois Irmãos'",
+      "img": "img018"
+    },
+    {
+      "id": "19",
+      "isRead": true,
+      "name": "Luiz Ruffato",
+      "time": "10h45",
+      "description": "Discussão sobre 'Eles eram muitos cavalos'",
+      "img": "img019"
+    },
+    {
+      "id": "20",
+      "isRead": true,
+      "name": "Raduan Nassar",
+      "time": "13h15",
+      "description": "Encontro sobre 'Lavoura arcaica'",
+      "img": "img020"
     }
   ],
   "parceiros": [
     {
       "id": "1",
-      "name": "Parceiro 1",
-      "description": "Descrição do Parceiro 1",
-      "tipo": 0
+      "name": "Tech Solutions",
+      "description": "Empresa especializada em desenvolvimento de software personalizado para negócios de todos os tamanhos.",
+      "tipo": 2
     },
     {
       "id": "2",
-      "name": "Parceiro 2",
-      "description": "Descrição do Parceiro 2",
-      "tipo": 0
+      "name": "InovaWeb",
+      "description": "Agência de marketing digital com foco em SEO, desenvolvimento de websites e e-commerce.",
+      "tipo": 1
     },
     {
       "id": "3",
-      "name": "Parceiro 3",
-      "description": "Descrição do Parceiro 3",
-      "tipo": 0
+      "name": "GreenTech",
+      "description": "Empresa de tecnologia que desenvolve soluções sustentáveis para o setor agrícola.",
+      "tipo": 3
     },
     {
       "id": "4",
-      "name": "Parceiro 4",
-      "description": "Descrição do Parceiro 4",
+      "name": "BlueOcean",
+      "description": "Consultoria especializada em inovação e transformação digital para empresas do setor marítimo.",
       "tipo": 0
     },
     {
       "id": "5",
-      "name": "Parceiro 5",
-      "description": "Descrição do Parceiro 5",
-      "tipo": 0
+      "name": "Smart Retail",
+      "description": "Líder em soluções de automação para o varejo, oferecendo ferramentas de gestão de inventário e análise de dados.",
+      "tipo": 1
     },
     {
       "id": "6",
-      "name": "Parceiro 6",
-      "description": "Descrição do Parceiro 6",
-      "tipo": 0
+      "name": "CloudSoft",
+      "description": "Empresa de tecnologia focada em serviços de computação em nuvem e soluções de infraestrutura.",
+      "tipo": 2
     },
     {
       "id": "7",
-      "name": "Parceiro 7",
-      "description": "Descrição do Parceiro 7",
-      "tipo": 0
+      "name": "NextGen Robotics",
+      "description": "Desenvolvedora de robôs autônomos para indústrias de manufatura e logística.",
+      "tipo": 3
     },
     {
       "id": "8",
-      "name": "Parceiro 8",
-      "description": "Descrição do Parceiro 8",
+      "name": "EcoEnergy",
+      "description": "Empresa focada em energias renováveis e soluções de eficiência energética.",
       "tipo": 0
     },
     {
       "id": "9",
-      "name": "Parceiro 9",
-      "description": "Descrição do Parceiro 9",
-      "tipo": 0
+      "name": "DataBridge",
+      "description": "Plataforma de análise de dados e big data para empresas que buscam insights estratégicos.",
+      "tipo": 1
     },
     {
       "id": "10",
-      "name": "Parceiro 10",
-      "description": "Descrição do Parceiro 10",
-      "tipo": 0
-    }
-  ],
-  "users": [
+      "name": "HealthConnect",
+      "description": "Provedora de sistemas de gestão hospitalar e prontuário eletrônico para o setor de saúde.",
+      "tipo": 2
+    },
     {
-      "id": "1",
-      "login": "123456789",
-      "senha": "123"
+      "id": "11",
+      "name": "LogiTrack",
+      "description": "Empresa de logística especializada em soluções de rastreamento e otimização de rotas para transportadoras.",
+      "tipo": 1
+    },
+    {
+      "id": "12",
+      "name": "CyberShield",
+      "description": "Empresa de cibersegurança que oferece soluções avançadas de proteção de dados e redes corporativas.",
+      "tipo": 3
     }
   ],
-  "aluno": [],
+  "aluno": [
+    {
+      "id": "d72b",
+      "name": "Bruno Álexys Souza moura da Silva",
+      "cpf": "00000000000",
+      "email": "bruno@gmail.com",
+      "confirmEmail": "bruno@gmail.com",
+      "phone": "(81) 99401-2667",
+      "uf": "PE",
+      "cep": "55636000",
+      "city": "Chã Grande",
+      "neighborhood": "Dom helder camara",
+      "street": "Joaquim Francisco dos Santos",
+      "course": "Sistemas de informações",
+      "period": "6",
+      "registration": "1235468",
+      "password": "Bm@123456789",
+      "confirmPassword": "Bm@123456789"
+    },
+    {
+      "id": "d3d0",
+      "name": "Bruno",
+      "cpf": "00000000000",
+      "email": "brunoalexysmoura@gmail.com",
+      "confirmEmail": "brunoalexysmoura@gmail.com",
+      "phone": "(81) 99401-2667",
+      "uf": "PE",
+      "cep": "55636000",
+      "city": "Chã Grande",
+      "neighborhood": "Dom helder camara",
+      "street": "Joaquim Francisco dos Santos",
+      "course": "Sistemas de informações",
+      "period": "6",
+      "registration": "1235468",
+      "password": "Bm@123456789",
+      "confirmPassword": "Bm@123456789"
+    },
+    {
+      "id": "0294",
+      "name": "Marcelo",
+      "cpf": "00000000000",
+      "email": "d@gmail.com",
+      "confirmEmail": "d@gmail.com",
+      "phone": "(00) 00000-0000",
+      "uf": "PR",
+      "cep": "00000000",
+      "city": "vsa",
+      "neighborhood": "kkkk",
+      "street": "kkkk",
+      "course": "si",
+      "period": "3",
+      "registration": "1111",
+      "password": "1111@Mn11",
+      "confirmPassword": "1111@Mn11"
+    },
+    {
+      "id": "4926",
+      "name": "Clerisson",
+      "cpf": "00000000000",
+      "email": "c@gmail.com",
+      "confirmEmail": "c@gmail.com",
+      "phone": "(00) 00000-0000",
+      "uf": "AP",
+      "cep": "00000000",
+      "city": "ccc",
+      "neighborhood": "ccc",
+      "street": "ccc",
+      "course": "si",
+      "period": "3",
+      "registration": "000",
+      "password": "111111@Mn",
+      "confirmPassword": "111111@Mn"
+    }
+  ],
   "professor": [],
   "empresa": [],
   "instituicao": []

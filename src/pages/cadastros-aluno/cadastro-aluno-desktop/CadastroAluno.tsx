@@ -1,5 +1,4 @@
 import { Button } from "../../../components/button/button";
-import { DiagonalSection } from "../../../components/diagonal-section/DiagonalSection";
 import { useNavigate } from "react-router-dom";
 import { Input } from "../../../components/input/input";
 import { InputType } from "../../../enum/input-type";
@@ -8,11 +7,24 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { StudentScheme } from "../../../utils/StudentScheme";
 import { FormStudent } from "../../../types/FormStudent";
 import axios, { AxiosError } from "axios";
+import { AlertState } from "../../../types/AlertState";
+import Alert from "../../../components/alerts/alertDesktop";
+import { useState } from "react";
 
 export const CadastroAluno = () => {
 
     const navigate = useNavigate();
     const API_URL = 'http://localhost:3001/aluno';
+
+    const [alert, setAlert] = useState<AlertState | null>(null);
+
+    const showAlert = (type: AlertState['type'], message: string) => {
+        setAlert({ type, message });
+    };
+
+    const closeAlert = () => {
+        setAlert(null);
+    }
 
     const { register, handleSubmit, formState: { errors }, reset } = useForm<FormStudent>({
         resolver: zodResolver(StudentScheme)
@@ -22,11 +34,13 @@ export const CadastroAluno = () => {
         try {
             const response = await axios.post(API_URL, data);
             if (response.status === 201) {
-                console.log('Formulário enviado com sucesso:', data);
+                showAlert('sucesso', 'Cadastro realizado com sucesso');
             } else {
+                showAlert('error', 'Erro ao enviar o formulário');
                 throw new Error('Erro ao enviar o formulário');
             }
             reset();
+            navigate('/');
         } catch (error) {
             const axiosError = error as AxiosError;
             if (axiosError.response) {
@@ -43,8 +57,12 @@ export const CadastroAluno = () => {
 
     return (
         <div className="flex flex-col items-center ">
-            <DiagonalSection text="Cadastro" subtext="Aluno" />
-            <div className="absolute w-[90%] mt-28 lg:ml-2 lg:mt-[245px] lg:mr-20 flex flex-col">
+            {alert && (
+                <>
+                    <Alert type={alert.type} text={alert.message} onClose={closeAlert} />
+                </>
+            )}
+            <div className="absolute w-[90%] lg:ml-2 lg:mr-20 flex flex-col">
                 <form
                     className="flex flex-col gap-6 mb-6"
                     onSubmit={handleSubmit(onSubmit)}
@@ -86,7 +104,7 @@ export const CadastroAluno = () => {
                     <div className="flex flex-col lg:flex-row gap-4">
                         <div className="lg:w-full lg:flex-1">
                             <Input
-                                type={InputType.Text}
+                                type={InputType.Email}
                                 label="Email"
                                 error={errors}
                                 register={register}
@@ -96,7 +114,7 @@ export const CadastroAluno = () => {
 
                         <div className="lg:w-full lg:flex-1">
                             <Input
-                                type={InputType.Text}
+                                type={InputType.Email}
                                 label="Confirmar Email"
                                 error={errors}
                                 register={register}

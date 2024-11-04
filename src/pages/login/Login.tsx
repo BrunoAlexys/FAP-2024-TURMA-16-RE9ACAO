@@ -1,23 +1,52 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "../../components/button/button";
 import { DiagonalSection } from "../../components/diagonal-section/DiagonalSection";
 import Logo from './assets/logo.png';
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthProvider";
+import { useForm } from "react-hook-form";
+import { FormLogin } from "../../types/FormLogin";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { LoginScheme } from "../../utils/LoginScheme";
+import { AlertState } from "../../types/AlertState";
+import AlertMobile from "../../components/alerts/alertMobile";
 
-export const Login = () => {
+export const Login: React.FC = () => {
+    const location = useLocation();
 
-    const [selectedOption, setSelectedOption] = useState('Aluno');
-    const navigate = useNavigate();
     const options = ['Aluno', 'Professor', 'Empresa', 'Instituição'];
-    const [login, setLogin] = useState('');
-    const [password, setPassword] = useState('');
+    const [selectedOption, setSelectedOption] = useState(options[0]);
+    const navigate = useNavigate();
     const { login: authenticate } = useAuth();
 
-    const handleLogin = async () => {
-        await authenticate({ login, password });
-        navigate('/dashbord');
+    const { register, handleSubmit, formState: { errors }, reset } = useForm<FormLogin>({
+        resolver: zodResolver(LoginScheme)
+    });
+
+    const [alertMobile, setAlertMobile] = useState<AlertState | null>(null);
+
+    const showAlert = (type: AlertState['type'], message: string) => {
+        setAlertMobile({ type, message });
+    };
+
+    const closeAlert = () => {
+        setAlertMobile(null);
     }
+
+    const handleLogin = async (data: FormLogin) => {
+        const isAuthenticated = await authenticate({
+            email: data.email,
+            password: data.password,
+            userType: selectedOption.toLowerCase()
+        });
+
+        if (isAuthenticated) {
+            navigate('/dashboard');
+        } else {
+            reset();
+        }
+    };
+
 
     const handleRegisterRedirect = () => {
         const option = selectedOption.toLowerCase();
@@ -30,13 +59,24 @@ export const Login = () => {
         } else if (option === 'instituição') {
             navigate('/cadastro-instituicao');
         } else {
-            alert('Selecione uma opção válida');
+            showAlert('error', 'Opção inválida');
         }
     };
 
+    useEffect(() => {
+        if (location.state?.cadastroRealizado) {
+            showAlert("sucesso", "Cadastro realizado com sucesso!");
+        }
+    }, [location.state]);
 
     return (
         <div className="flex justify-center">
+            {alertMobile && (
+                <>
+                    <AlertMobile type={alertMobile.type} message={alertMobile.message} onClose={closeAlert} />
+                </>
+            )}
+            
             <DiagonalSection text="Login" />
 
             <div className="absolute flex mt-[150px] md:mt-[200px] lg:mt-[245px] w-full">
@@ -62,32 +102,32 @@ export const Login = () => {
 
                     </div>
 
-                    <div className="md:w-1/2 lg:w-[60%] flex flex-col gap-2">
+                    <form onSubmit={handleSubmit(handleLogin)} className="sm:w-[70%] md:w-1/2 lg:w-[60%] flex flex-col gap-2">
                         <div className="flex flex-col gap-2">
                             <label className="text-xl font-bold ml-4">Login</label>
                             <input
                                 type="text"
-                                value={login}
-                                onChange={e => setLogin(e.target.value)}
-                                className="border-2 border-colorMenuSecondary rounded-full px-4 py-2 w-full focus:outline-none focus:border-2 focus:border-colorMenuPrimary"
+                                className={`border-2 border-colorMenuSecondary rounded-full px-4 py-2 w-full focus:outline-none ${errors.email ? 'border-red-500' : 'focus:border-colorMenuPrimary'}`}
+                                {...register('email')}
                             />
+                            {errors.email && <span className="text-red-500 ml-4 text-xs">{errors?.email?.message}</span>}
                         </div>
                         <div className="flex flex-col gap-2">
                             <label className="text-xl font-bold ml-4">Senha</label>
                             <input
-                                type="text"
-                                value={password}
-                                onChange={e => setPassword(e.target.value)}
-                                className="border-2 border-colorMenuSecondary rounded-full px-4 py-2 w-full focus:outline-none focus:border-2 focus:border-colorMenuPrimary"
+                                type="password"
+                                className={`border-2 border-colorMenuSecondary rounded-full px-4 py-2 w-full focus:outline-none ${errors.password ? 'border-red-500' : 'focus:border-colorMenuPrimary'}`}
+                                {...register('password')}
                             />
+                            {errors.password && <span className="text-red-500 ml-4 text-xs">{errors?.password?.message}</span>}
                             <a href="#" className="text-xs ml-4">Esqueceu sua senha?</a>
                         </div>
-                    </div>
 
-                    <div className="flex flex-col items-center gap-2">
-                        <Button type="button" variant="solid" children="Login" size="large" onClick={handleLogin} />
-                        <button className="text-[10px]" onClick={handleRegisterRedirect}>ou cadastre-se</button>
-                    </div>
+                        <div className="flex flex-col items-center gap-2">
+                            <Button type="submit" variant="solid" children="Login" size="large" />
+                            <button className="text-[10px]" onClick={handleRegisterRedirect}>ou cadastre-se</button>
+                        </div>
+                    </form>
                 </div>
 
                 <div className="hidden lg:flex flex-col gap-6 flex-1 text-center py-8">

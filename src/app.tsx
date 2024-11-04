@@ -14,7 +14,7 @@ export const App = () => {
             {isAuthenticated && <MenuDesktop />} {/* Renderiza MenuDesktop apenas se autenticado */}
             <section
                 id="mainContent"
-                className="w-full h-[calc(100vh-72px)] overflow-auto px-4 py-4 lg:px-16 lg:h-screen"
+                className="w-full h-screen"
             >
                 <MainRouter />
             </section>

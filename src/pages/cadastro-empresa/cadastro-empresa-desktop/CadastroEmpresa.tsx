@@ -1,18 +1,31 @@
-import axios, { AxiosError } from "axios";
-import { Button } from "../../components/button/button";
-import { DiagonalSection } from "../../components/diagonal-section/DiagonalSection";
-import { Input } from "../../components/input/input";
-import { InputType } from "../../enum/input-type";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useNavigate } from "react-router-dom";
+import axios, { AxiosError } from "axios";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { FormCompany } from "../../types/FormCompany";
-import { CompanyScheme } from "../../utils/CompanyScheme";
+import { useNavigate } from "react-router-dom";
+import Alert from "../../../components/alerts/alertDesktop";
+import { Button } from "../../../components/button/button";
+import { Input } from "../../../components/input/input";
+import { InputType } from "../../../enum/input-type";
+import { AlertState } from "../../../types/AlertState";
+import { FormCompany } from "../../../types/FormCompany";
+import { CompanyScheme } from "../../../utils/CompanyScheme";
+
 
 export const CadastroEmpresa = () => {
 
     const navigate = useNavigate();
     const API_URL = 'http://localhost:3001/empresa';
+
+    const [alert, setAlert] = useState<AlertState | null>(null);
+
+    const showAlert = (type: AlertState['type'], message: string) => {
+        setAlert({ type, message });
+    };
+
+    const closeAlert = () => {
+        setAlert(null);
+    }
 
     const { register, handleSubmit, formState: { errors }, reset } = useForm<FormCompany>({
         resolver: zodResolver(CompanyScheme)
@@ -22,8 +35,9 @@ export const CadastroEmpresa = () => {
         try {
             const response = await axios.post(API_URL, data);
             if (response.status === 201) {
-                console.log('Formulário enviado com sucesso:', data);
+                showAlert('sucesso', 'Empresa cadastrada com sucesso!');
             } else {
+                showAlert('error', 'Erro ao enviar o formulário');
                 throw new Error('Erro ao enviar o formulário');
             }
             reset();
@@ -43,8 +57,12 @@ export const CadastroEmpresa = () => {
 
     return (
         <div className="flex flex-col items-center ">
-            <DiagonalSection text="Cadastro" subtext="Empresarial" />
-            <div className="absolute w-[90%] mt-28 lg:ml-2 lg:mt-[245px] lg:mr-20 flex flex-col">
+            {alert && (
+                <>
+                    <Alert type={alert.type} text={alert.message} onClose={closeAlert} />
+                </>
+            )}
+            <div className="absolute w-[90%] lg:ml-2 lg:mr-20 flex flex-col">
                 <form
                     className="flex flex-col gap-6 mb-6"
                     onSubmit={handleSubmit(onSubmit)}

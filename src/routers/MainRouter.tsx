@@ -1,16 +1,17 @@
-import { useRoutes } from "react-router-dom"
+import { useRoutes } from "react-router-dom";
 import { Dashboard } from "../pages/dashbord/Dashbord";
 import { Projeto } from "../pages/projeto/Projeto";
 import { ParceiroComponent } from "../pages/parceiro/Parceiro";
 import { Configuracao } from "../pages/configuracao/Configuracao";
 import { Perfil } from "../pages/perfil/Perfil";
 import { NotificacoesMobile } from "../pages/notificacoesMobile/NotificacoesMobile";
-import { CadastroEmpresa } from "../pages/cadastro-empresa/CadastroEmpresa";
-import { CadastroInstituicao } from "../pages/cadastro-instituicao/CadastroInstituicao";
 import { Login } from "../pages/login/Login";
 import PrivateRoute from "./PrivateRoute";
 import { CadastrosAluno } from "../pages/cadastros-aluno/CadastrosAluno";
-import { CadastroProfessor } from "../pages/cadastro-professor/CadastroProfessor";
+import { Editar } from "../pages/Editar/Editar";
+import { CadastrosEmpresa } from "../pages/cadastro-empresa/CadastrosEmpresa";
+import { CadastrosInstituicao } from "../pages/cadastro-instituicao/CadastrosInstituicao";
+import { CadastrosProfessor } from "../pages/cadastro-professor/CadastrosProfessor";
 
 
 export const MainRouter = () => {
@@ -19,12 +20,13 @@ export const MainRouter = () => {
         { path: "/projetos", element: <PrivateRoute element={<Projeto />} /> },
         { path: "/parceiros", element: <PrivateRoute element={<ParceiroComponent />} /> },
         { path: "/configuracao", element: <PrivateRoute element={<Configuracao />} /> },
+        { path: "/editar", element: <PrivateRoute element={<Editar />} /> },
         { path: "/perfil", element: <PrivateRoute element={<Perfil />} /> },
         { path: "/notificacoes", element: <PrivateRoute element={<NotificacoesMobile />} /> },
-        { path: "/cadastro-empresa", element: <CadastroEmpresa /> },  // Rota pública
-        { path: "/cadastro-instituicao", element: <CadastroInstituicao /> }, // Rota pública
+        { path: "/cadastro-empresa", element: <CadastrosEmpresa /> },  // Rota pública
+        { path: "/cadastro-instituicao", element: <CadastrosInstituicao /> }, // Rota pública
         { path: "/cadastro-aluno", element: <CadastrosAluno /> }, // Rota pública
-        { path: "/cadastro-professor", element: <CadastroProfessor /> }, //Rota pública
+        { path: "/cadastro-professor", element: <CadastrosProfessor /> }, //Rota pública
         { path: "/", element: <Login /> }, // Rota pública
     ]);
 
