@@ -690,53 +690,163 @@
   "notifications": [
     {
       "id": "1",
-      "name": "Autor",
-      "description": "Descrição da notificação 1"
+      "isRead": true,
+      "name": "Machado de Assis",
+      "time": "10h00",
+      "description": "Lançamento do livro 'Dom Casmurro'",
+      "img": "img001"
     },
     {
       "id": "2",
-      "name": "Item 2",
-      "description": "Alguma descrição interessante"
+      "isRead": true,
+      "name": "Clarice Lispector",
+      "time": "12h30",
+      "description": "Novo artigo publicado na revista literária",
+      "img": "img002"
     },
     {
       "id": "3",
-      "name": "Item 3",
-      "description": "Uma breve explicação aqui"
+      "isRead": true,
+      "name": "Paulo Coelho",
+      "time": "09h00",
+      "description": "Entrevista exclusiva sobre 'O Alquimista'",
+      "img": "img003"
     },
     {
       "id": "4",
-      "name": "Item 4",
-      "description": "Mais um objeto fictício"
+      "isRead": true,
+      "name": "José Saramago",
+      "time": "14h45",
+      "description": "Reflexões sobre 'Ensaio sobre a cegueira'",
+      "img": "img004"
     },
     {
       "id": "5",
-      "name": "Item 5",
-      "description": "Uma descrição criativa"
+      "isRead": true,
+      "name": "Jorge Amado",
+      "time": "11h15",
+      "description": "Aniversário de 100 anos do autor",
+      "img": "img005"
     },
     {
       "id": "6",
-      "name": "Item 6",
-      "description": "Algo misterioso talvez?"
+      "isRead": true,
+      "name": "Carlos Drummond de Andrade",
+      "time": "13h30",
+      "description": "Exposição de poesias no museu",
+      "img": "img006"
     },
     {
       "id": "7",
-      "name": "Item 7",
-      "description": "Uma nota sobre o sétimo objeto"
+      "isRead": true,
+      "name": "João Cabral de Melo Neto",
+      "time": "16h00",
+      "description": "Lançamento de nova coletânea de poemas",
+      "img": "img007"
     },
     {
       "id": "8",
-      "name": "Item 8",
-      "description": "Uma descrição curta e concisa"
+      "isRead": true,
+      "name": "Fernando Pessoa",
+      "time": "17h15",
+      "description": "Edição especial de 'Mensagem'",
+      "img": "img008"
     },
     {
       "id": "9",
-      "name": "Item 9",
-      "description": "Um objeto imaginário"
+      "isRead": true,
+      "name": "Cecília Meireles",
+      "time": "08h00",
+      "description": "Homenagem à autora no centenário de nascimento",
+      "img": "img009"
     },
     {
       "id": "10",
-      "name": "Item 10",
-      "description": "Último item, mas não menos importante!"
+      "isRead": true,
+      "name": "Graciliano Ramos",
+      "time": "18h45",
+      "description": "Sessão de autógrafos de 'Vidas Secas'",
+      "img": "img010"
+    },
+    {
+      "id": "11",
+      "isRead": true,
+      "name": "Manuel Bandeira",
+      "time": "09h30",
+      "description": "Encontro literário sobre 'Libertinagem'",
+      "img": "img011"
+    },
+    {
+      "id": "12",
+      "isRead": true,
+      "name": "Lygia Fagundes Telles",
+      "time": "12h00",
+      "description": "Discussão do conto 'Venha ver o pôr do sol'",
+      "img": "img012"
+    },
+    {
+      "id": "13",
+      "isRead": true,
+      "name": "Rubem Fonseca",
+      "time": "15h30",
+      "description": "Lançamento da nova edição de 'Agosto'",
+      "img": "img013"
+    },
+    {
+      "id": "14",
+      "isRead": true,
+      "name": "Nelson Rodrigues",
+      "time": "11h45",
+      "description": "Reedição de peças teatrais",
+      "img": "img014"
+    },
+    {
+      "id": "15",
+      "isRead": true,
+      "name": "Hilda Hilst",
+      "time": "10h30",
+      "description": "Lançamento póstumo de coletânea",
+      "img": "img015"
+    },
+    {
+      "id": "16",
+      "isRead": true,
+      "name": "Marcelino Freire",
+      "time": "14h00",
+      "description": "Palestra sobre literatura marginal",
+      "img": "img016"
+    },
+    {
+      "id": "17",
+      "isRead": true,
+      "name": "Ana Cristina Cesar",
+      "time": "16h30",
+      "description": "Relançamento de 'A teus pés'",
+      "img": "img017"
+    },
+    {
+      "id": "18",
+      "isRead": true,
+      "name": "Milton Hatoum",
+      "time": "18h00",
+      "description": "Bate-papo sobre 'Dois Irmãos'",
+      "img": "img018"
+    },
+    {
+      "id": "19",
+      "isRead": true,
+      "name": "Luiz Ruffato",
+      "time": "10h45",
+      "description": "Discussão sobre 'Eles eram muitos cavalos'",
+      "img": "img019"
+    },
+    {
+      "id": "20",
+      "isRead": true,
+      "name": "Raduan Nassar",
+      "time": "13h15",
+      "description": "Encontro sobre 'Lavoura arcaica'",
+      "img": "img020"
     }
   ],
   "parceiros": [
