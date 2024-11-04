@@ -1,12 +1,16 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ButtonMenu } from "../button-menu/ButtonMenu";
 import clsx from "clsx";
 import axios from "axios";
+import { NotificacaoItem } from "../notificacao-itens/NotificacaoItens";
 
 interface NotificationsProps {
     id: number;
     name: string;
     description: string;
+    time: string;
+    img: string;
+    isRead: boolean;
 }
 
 export const Notification = () => {
@@ -18,14 +22,45 @@ export const Notification = () => {
         axios.get("http://localhost:3001/notifications")
             .then((response) => {
                 setNotifications(response.data);
-                if (response.data.length > 0) {
-                    setTemNotificacao(true);
-                }
             })
             .catch((error) => {
                 console.error(error);
             });
     }, []);
+
+    const handleMarkAsRead = async (notificationId: number) => {
+        try {
+            const updatedNotifications = notifications.map(notification => {
+                if (notification.id === notificationId) {
+                    return { ...notification, isRead: true };
+                }
+                return notification;
+            });
+    
+            const updatedNotification = updatedNotifications.find(notification => notification.id === notificationId);
+    
+            if (updatedNotification) {
+                await axios.put(`http://localhost:3001/notifications/${notificationId}`, updatedNotification);
+            }
+    
+            setNotifications(updatedNotifications);
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    const prevNotifications = useRef<NotificationsProps[]>([]);
+
+    const hasUnreadNotifications = (notifications: NotificationsProps[]) => {
+        return notifications.some((notification)=> !notification.isRead)
+    }
+
+    useEffect(()=>{
+        if(notifications !== prevNotifications.current){
+            setTemNotificacao(hasUnreadNotifications(notifications))
+            prevNotifications.current = notifications
+        }
+    }, [notifications])
 
     return (
         <div className="hidden lg:block">
@@ -36,18 +71,17 @@ export const Notification = () => {
                 <div className="flex items-center justify-center w-full h-[80px] rounded-tl-2xl bg-gradient-to-r from-colorMenuPrimary to-colorMenuSecondary">
                     <h2 className="text-xl font-bold text-white">Notificações</h2>
                 </div>
-                <div className="h-[calc(70vh-80px)] overflow-y-auto">
+                <div className="h-[calc(70vh-10px)] overflow-y-auto flex flex-col gap-2 p-2">
                     {notifications.map((notification) => (
-                        <div
+                        <NotificacaoItem 
                             key={notification.id}
-                            className="flex items-start gap-3 p-2 border-b-2 border-gray-500/15"
-                        >
-                            <div className="w-12 h-12 rounded-full bg-white"></div>
-                            <div>
-                                <h3 className="text-lg font-bold">{notification.name}</h3>
-                                <p className="text-base font-medium">{notification.description}</p>
-                            </div>
-                        </div>
+                            titulo={notification.name}
+                            time={notification.time}
+                            descricao={notification.description}
+                            imagem={notification.img}
+                            isRead={notification.isRead}
+                            onClick={()=>handleMarkAsRead(notification.id)}
+                        />
                     ))}
                 </div>
                 <ButtonMenu
