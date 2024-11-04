@@ -744,79 +744,149 @@
       "id": "1",
       "name": "Tech Solutions",
       "description": "Empresa especializada em desenvolvimento de software personalizado para negócios de todos os tamanhos.",
-      "tipo": 2
+      "tipo": 2,
+      "cursos": [
+        {
+          "id": "1.1",
+          "titulo": "Introdução ao Desenvolvimento de Software",
+          "comentario": "Curso básico para iniciantes em programação."
+        },
+        {
+          "id": "1.2",
+          "titulo": "Desenvolvimento de Aplicações Web",
+          "comentario": "Curso avançado em desenvolvimento de aplicações web com foco em backend."
+        }
+      ],
+      "professor": [
+        {
+          "id": "1",
+          "name": "Prof. Pedro Silva",
+          "img": "https://randomuser.me/api/portraits/men/1.jpg"
+        },
+        {
+          "id": "2",
+          "name": "Prof. Júlia Costa",
+          "img": "https://randomuser.me/api/portraits/women/2.jpg"
+        }
+      ],
+      "alunos": [
+        {
+          "id": "1",
+          "name": "Aluno 1",
+          "img": "https://randomuser.me/api/portraits/men/3.jpg"
+        },
+        {
+          "id": "2",
+          "name": "Aluno 2",
+          "img": "https://randomuser.me/api/portraits/women/4.jpg"
+        }
+      ]
     },
     {
       "id": "2",
       "name": "InovaWeb",
       "description": "Agência de marketing digital com foco em SEO, desenvolvimento de websites e e-commerce.",
-      "tipo": 1
+      "tipo": 1,
+      "cursos": [
+        {
+          "id": "2.1",
+          "titulo": "SEO para Iniciantes",
+          "comentario": "Curso sobre as principais técnicas de SEO para iniciantes."
+        },
+        {
+          "id": "2.2",
+          "titulo": "Desenvolvimento de E-commerce",
+          "comentario": "Curso sobre desenvolvimento e otimização de plataformas de e-commerce."
+        }
+      ],
+      "professor": [
+        {
+          "id": "1",
+          "name": "Prof. Lucas Mendes",
+          "img": "https://randomuser.me/api/portraits/men/5.jpg"
+        },
+        {
+          "id": "2",
+          "name": "Prof. Mariana Duarte",
+          "img": "https://randomuser.me/api/portraits/women/6.jpg"
+        }
+      ],
+      "alunos": [
+        {
+          "id": "1",
+          "name": "Aluno 3",
+          "img": "https://randomuser.me/api/portraits/men/7.jpg"
+        },
+        {
+          "id": "2",
+          "name": "Aluno 4",
+          "img": "https://randomuser.me/api/portraits/women/8.jpg"
+        }
+      ]
     },
     {
       "id": "3",
       "name": "GreenTech",
       "description": "Empresa de tecnologia que desenvolve soluções sustentáveis para o setor agrícola.",
-      "tipo": 3
+      "tipo": 3,
+      "cursos": [
+        {
+          "id": "3.1",
+          "titulo": "Tecnologias Sustentáveis para Agricultura",
+          "comentario": "Curso sobre inovações e tecnologias sustentáveis aplicadas ao setor agrícola."
+        }
+      ],
+      "professor": [
+        {
+          "id": "1",
+          "name": "Prof. Carlos Silva",
+          "img": "https://randomuser.me/api/portraits/men/9.jpg"
+        }
+      ],
+      "alunos": [
+        {
+          "id": "1",
+          "name": "Aluno 5",
+          "img": "https://randomuser.me/api/portraits/men/10.jpg"
+        },
+        {
+          "id": "2",
+          "name": "Aluno 6",
+          "img": "https://randomuser.me/api/portraits/women/11.jpg"
+        }
+      ]
     },
     {
       "id": "4",
       "name": "BlueOcean",
       "description": "Consultoria especializada em inovação e transformação digital para empresas do setor marítimo.",
-      "tipo": 0
-    },
-    {
-      "id": "5",
-      "name": "Smart Retail",
-      "description": "Líder em soluções de automação para o varejo, oferecendo ferramentas de gestão de inventário e análise de dados.",
-      "tipo": 1
-    },
-    {
-      "id": "6",
-      "name": "CloudSoft",
-      "description": "Empresa de tecnologia focada em serviços de computação em nuvem e soluções de infraestrutura.",
-      "tipo": 2
-    },
-    {
-      "id": "7",
-      "name": "NextGen Robotics",
-      "description": "Desenvolvedora de robôs autônomos para indústrias de manufatura e logística.",
-      "tipo": 3
-    },
-    {
-      "id": "8",
-      "name": "EcoEnergy",
-      "description": "Empresa focada em energias renováveis e soluções de eficiência energética.",
-      "tipo": 0
-    },
-    {
-      "id": "9",
-      "name": "DataBridge",
-      "description": "Plataforma de análise de dados e big data para empresas que buscam insights estratégicos.",
-      "tipo": 1
-    },
-    {
-      "id": "10",
-      "name": "HealthConnect",
-      "description": "Provedora de sistemas de gestão hospitalar e prontuário eletrônico para o setor de saúde.",
-      "tipo": 2
-    },
-    {
-      "id": "11",
-      "name": "LogiTrack",
-      "description": "Empresa de logística especializada em soluções de rastreamento e otimização de rotas para transportadoras.",
-      "tipo": 1
-    },
-    {
-      "id": "12",
-      "name": "CyberShield",
-      "description": "Empresa de cibersegurança que oferece soluções avançadas de proteção de dados e redes corporativas.",
-      "tipo": 3
-    },
-    {
-      "id": "f9c2",
-      "name": "Teste 2",
-      "description": "Teste 2",
-      "tipo": 0
+      "tipo": 0,
+      "cursos": [
+        {
+          "id": "4.1",
+          "titulo": "Inovação no Setor Marítimo",
+          "comentario": "Curso sobre inovação e transformação digital aplicada ao setor marítimo."
+        }
+      ],
+      "professor": [
+        {
+          "id": "1",
+          "name": "Prof. Ana Souza",
+          "img": "https://randomuser.me/api/portraits/women/12.jpg"
+        }
+      ],
+      "alunos": [
+        {
+          "id": "1",
+          "name": "Aluno 7",
+          "img": "https://randomuser.me/api/portraits/men/13.jpg"
+        },
+        {
+          "id": "2",
+          "name": "Aluno 8",
+          "img": "https://randomuser.me/api/portraits/women/14.jpg"
+        }
+      ]
     }
   ],
   "aluno": [

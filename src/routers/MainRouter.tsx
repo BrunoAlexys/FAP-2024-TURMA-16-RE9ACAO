@@ -13,6 +13,7 @@ import { InfoProjeto } from "../pages/info-projeto/InfoProjeto";
 import { CadastrosEmpresa } from "../pages/cadastro-empresa/CadastrosEmpresa";
 import { CadastrosInstituicao } from "../pages/cadastro-instituicao/CadastrosInstituicao";
 import { CadastrosProfessor } from "../pages/cadastro-professor/CadastrosProfessor";
+import { InfoParceiro } from "../pages/info-parceiro";
 
 export const MainRouter = () => {
     const routes = useRoutes([
@@ -20,6 +21,7 @@ export const MainRouter = () => {
         { path: "/projetos", element: <PrivateRoute element={<Projeto />} /> },
         { path: "/projeto/:id", element: <PrivateRoute element={<InfoProjeto />} /> },
         { path: "/parceiros", element: <PrivateRoute element={<ParceiroComponent />} /> },
+        { path: "/parceiro/:id", element: <PrivateRoute element={<InfoParceiro />} /> },
         { path: "/configuracao", element: <PrivateRoute element={<Configuracao />} /> },
         { path: "/editar", element: <PrivateRoute element={<Editar />} /> },
         { path: "/perfil", element: <PrivateRoute element={<Perfil />} /> },

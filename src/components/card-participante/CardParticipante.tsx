@@ -21,7 +21,7 @@ export const CardParticipante = ({ item, title }: CardParticipanteProps) => {
                 {item.map((item) => (
                     <div key={item.id} className="flex items-center gap-2 w-full p-1 bg-[#D9D9D9] border-b-[1px] border-[#B1AFAF]">
                         <div className="w-12 h-12 ml-1 rounded-full bg-white">
-                            <img src={item.img} />
+                            <img src={item.img} className='rounded-full' />
                         </div>
                         <h5>{item.name}</h5>
                     </div>

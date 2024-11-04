@@ -6,7 +6,7 @@ import axios from 'axios';
 
 type FormPopUpProps = {
     onClose: () => void;
-    type: 'edit' | 'projects' | 'tasks'; // Novo: tipo de formulário
+    type: 'edit' | 'projects' | 'tasks' | 'curso'; // Novo: tipo de formulário
     title: string; // Novo: título do formulário
     descriptionLabel: string; // Novo: rótulo da descrição
     namePlaceholder: string; // Novo: placeholder para o nome

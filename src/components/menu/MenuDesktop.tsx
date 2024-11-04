@@ -37,6 +37,8 @@ export const MenuDesktop = () => {
             setSelected('/configuracao');
         } else if (/^\/projeto\/\d+$/.test(location.pathname)) {
             setSelected('/projetos');
+        } else if (/^\/parceiro\/\d+$/.test(location.pathname)) {
+            setSelected('/parceiros');
         } else {
             setSelected(location.pathname);  // Atualiza o item selecionado de acordo com a rota atual
         }
