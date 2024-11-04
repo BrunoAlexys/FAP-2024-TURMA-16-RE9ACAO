@@ -1,16 +1,39 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Project } from "../../types/Projects";
 
 export const Dashboard = () => {
 
     const [projetos, setProjetos] = useState([]);
+    const [concluidos, setConcluidos] = useState([]);
+    const [andamento, setAndamento] = useState([]);
+    const [inicio, setInicio] = useState([])
 
     useEffect(()=>{
         axios.get("http://localhost:3001/projects")
         .then((response)=>{
             setProjetos(response.data)
+            const concluidos = response.data.filter((projetos: Project)=> projetos.tipo === 2)
+            setConcluidos(concluidos)
+            const andamento = response.data.filter((projetos: Project)=> projetos.tipo === 1)
+            setAndamento(andamento)
+            const inicio = response.data.filter((projetos: Project)=> projetos.tipo === 3)
+            setInicio(inicio)
         })
         .catch(error=>console.error(error))
+    })
+
+    const [professores, setProfessores] = useState([])
+    const [universidades, setUniversidades] = useState([])
+    const [alunos, setAlunos] = useState([])
+
+    useEffect(()=>{
+        const professor = axios.get("http://localhost:3001/professor")
+        const universidades = axios.get("http://localhost:3001/instituicao")
+        const alunos = axios.get("http://localhost:3001/aluno")
+        professor.then((response)=>{setProfessores(response.data)}).catch(error=>console.error(error))
+        universidades.then((response)=>{setUniversidades(response.data)}).catch(error=>console.error(error))
+        alunos.then((response)=>{setAlunos(response.data)}).catch(error=>console.error(error))
     })
 
     return (
@@ -37,7 +60,7 @@ export const Dashboard = () => {
                             </p>
                         </div>
                         <p className="w-full text-center p-4 text-xl font-medium">
-                            60
+                            {concluidos.length}
                         </p>
                     </div>
                     <div className="flex flex-col w-[48.8%] lg:w-1/5 rounded-xl overflow-hidden justify-center shadow-cardShadow">
@@ -47,7 +70,7 @@ export const Dashboard = () => {
                             </p>
                         </div>
                         <p className="w-full text-center p-4 text-xl font-medium">
-                            60
+                            {andamento.length}
                         </p>
                     </div>
                     <div className="flex flex-col w-[48.8%] lg:w-1/5 rounded-xl overflow-hidden justify-center shadow-cardShadow">
@@ -57,12 +80,12 @@ export const Dashboard = () => {
                             </p>
                         </div>
                         <p className="w-full text-center p-4 text-xl font-medium">
-                            60
+                            {inicio.length}
                         </p>
                     </div>
                 </div>
             </div>
-            <div id="projetos">
+            <div id="parceiros">
                 <h2 className="font-medium py-2 lg:text-3xl">
                     Parceiros
                 </h2>
@@ -74,7 +97,7 @@ export const Dashboard = () => {
                             </p>
                         </div>
                         <p className="w-full text-center p-4 text-xl font-medium">
-                            60
+                            {universidades.length}
                         </p>
                     </div>
                     <div className="flex flex-col w-[48.8%] lg:w-1/5 rounded-xl overflow-hidden justify-center shadow-cardShadow">
@@ -84,7 +107,7 @@ export const Dashboard = () => {
                             </p>
                         </div>
                         <p className="w-full text-center p-4 text-xl font-medium">
-                            60
+                            {professores.length}
                         </p>
                     </div>
                     <div className="flex flex-col w-[48.8%] lg:w-1/5 rounded-xl overflow-hidden justify-center shadow-cardShadow">
@@ -94,7 +117,7 @@ export const Dashboard = () => {
                             </p>
                         </div>
                         <p className="w-full text-center p-4 text-xl font-medium">
-                            60
+                            {alunos.length}
                         </p>
                     </div>
                 </div>
