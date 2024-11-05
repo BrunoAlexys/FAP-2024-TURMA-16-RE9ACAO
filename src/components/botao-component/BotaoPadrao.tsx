@@ -1,8 +1,8 @@
 import clsx from "clsx";
-import addIcon from "./assets/add.svg"
+import AddIcon from "./assets/adicionar.png";
 
 interface BotaoPadraoProps {
-    icone: string,
+    icone: 'add',
     nome: string,
     onClick?: () => void;
 }
@@ -10,7 +10,7 @@ interface BotaoPadraoProps {
 function checarIcon(icone: string) {
     switch (icone) {
         case "add":
-            return addIcon
+            return AddIcon;
     }
 }
 
@@ -21,7 +21,7 @@ export const BotaoPadrao = (props: BotaoPadraoProps) => {
             onClick={props.onClick}
         >
             <p className="hidden lg:block">{props.nome}</p>
-            <img className="w-8 lg:w-7" src={checarIcon(props.icone)} alt="+" />
+            <img className="w-8 lg:w-4" src={checarIcon(props.icone)} alt="+" />
         </button>
     )
 };

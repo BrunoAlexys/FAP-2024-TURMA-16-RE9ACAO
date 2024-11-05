@@ -2,7 +2,7 @@
 type InputEditProps = {
     label: string;
     type: string;
-    value: string;
+    value?: string;
 }
 
 export const InputEdit = ({ label, type, value }: InputEditProps) => {

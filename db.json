@@ -4,191 +4,849 @@
       "id": "1",
       "name": "Aplicativo de Comunicação Assistiva",
       "description": "Um aplicativo baseado no método PECS para ajudar crianças autistas não verbais a se comunicarem.",
-      "tipo": 2
+      "tipo": 2,
+      "tasks": [
+        {
+          "id": "1.1",
+          "titulo": "Configurar interface PECS",
+          "comentario": "Definir layout das imagens para comunicação."
+        },
+        {
+          "id": "1.2",
+          "titulo": "Implementar chat com profissionais",
+          "comentario": "Permitir comunicação entre crianças e profissionais de saúde."
+        },
+        {
+          "id": "1.3",
+          "titulo": "Integração com painel dos pais",
+          "comentario": "Sincronizar atividades entre o aplicativo e o painel dos pais."
+        }
+      ],
+      "professor": [
+        {
+          "id": "1",
+          "name": "Prof. João da Silva",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "2",
+          "name": "Prof. Maria Oliveira",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "3",
+          "name": "Prof. Carlos Santos",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "4",
+          "name": "Prof. Ana Souza",
+          "img": "https://randomuser.me/api/portraits"
+        }
+      ],
+      "alunos": [
+        {
+          "id": "1",
+          "name": "Aluno 1",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "2",
+          "name": "Aluno 2",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "3",
+          "name": "Aluno 3",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "4",
+          "name": "Aluno 4",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "5",
+          "name": "Aluno 5",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "6",
+          "name": "Aluno 6",
+          "img": "https://randomuser.me/api/portraits"
+        }
+      ]
     },
     {
       "id": "2",
       "name": "Sistema de Agendamento de Barbearia",
       "description": "Aplicação web para agendamento de horários em barbearias com uma interface amigável.",
-      "tipo": 1
+      "tipo": 1,
+      "tasks": [
+        {
+          "id": "2.1",
+          "titulo": "Criar sistema de login",
+          "comentario": "Desenvolver autenticação para usuários e administradores."
+        },
+        {
+          "id": "2.2",
+          "titulo": "Implementar calendário de agendamentos",
+          "comentario": "Exibir horários disponíveis para agendamento."
+        },
+        {
+          "id": "2.3",
+          "titulo": "Adicionar notificações de confirmação",
+          "comentario": "Enviar confirmação de agendamento por e-mail ou SMS."
+        }
+      ],
+      "professor": [
+        {
+          "id": "5",
+          "name": "Prof. José Silva",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "6",
+          "name": "Prof. Ana Oliveira",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "7",
+          "name": "Prof. Carlos Souza",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "8",
+          "name": "Prof. Maria Santos",
+          "img": "https://randomuser.me/api/portraits"
+        }
+      ],
+      "alunos": [
+        {
+          "id": "7",
+          "name": "Aluno 7",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "8",
+          "name": "Aluno 8",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "9",
+          "name": "Aluno 9",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "10",
+          "name": "Aluno 10",
+          "img": "https://randomuser.me/api/portraits"
+        }
+      ]
     },
     {
       "id": "3",
       "name": "Calculadora Flutter",
       "description": "Uma calculadora personalizável com temas claro e escuro, suportando expressões matemáticas.",
-      "tipo": 3
+      "tipo": 3,
+      "tasks": [
+        {
+          "id": "3.1",
+          "titulo": "Desenvolver interface de temas",
+          "comentario": "Implementar troca entre tema claro e escuro."
+        },
+        {
+          "id": "3.2",
+          "titulo": "Adicionar suporte para expressões",
+          "comentario": "Permitir cálculos complexos com múltiplas operações."
+        },
+        {
+          "id": "3.3",
+          "titulo": "Tratar erros de cálculo",
+          "comentario": "Exibir mensagem de erro ao dividir por zero ou operações inválidas."
+        }
+      ],
+      "professor": [
+        {
+          "id": "9",
+          "name": "Prof. Maria Oliveira",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "10",
+          "name": "Prof. Carlos Santos",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "11",
+          "name": "Prof. Ana Souza",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "12",
+          "name": "Prof. José Silva",
+          "img": "https://randomuser.me/api/portraits"
+        }
+      ],
+      "alunos": [
+        {
+          "id": "11",
+          "name": "Aluno 11",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "12",
+          "name": "Aluno 12",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "13",
+          "name": "Aluno 13",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "14",
+          "name": "Aluno 14",
+          "img": "https://randomuser.me/api/portraits"
+        }
+      ]
     },
     {
       "id": "4",
       "name": "Painel para Profissionais de Saúde",
       "description": "Um painel desenvolvido em React para gerenciar atividades e comunicação de crianças autistas.",
-      "tipo": 2
+      "tipo": 2,
+      "tasks": [
+        {
+          "id": "4.1",
+          "titulo": "Configurar painel de atividades",
+          "comentario": "Criar interface para gerenciar atividades e progresso."
+        },
+        {
+          "id": "4.2",
+          "titulo": "Implementar relatórios de progresso",
+          "comentario": "Gerar relatórios sobre o desenvolvimento da criança."
+        },
+        {
+          "id": "4.3",
+          "titulo": "Adicionar funcionalidade de chat",
+          "comentario": "Permitir comunicação entre pais e profissionais pelo painel."
+        }
+      ],
+      "professor": [
+        {
+          "id": "13",
+          "name": "Prof. Carlos Souza",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "14",
+          "name": "Prof. Maria Santos",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "15",
+          "name": "Prof. José Silva",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "16",
+          "name": "Prof. Ana Oliveira",
+          "img": "https://randomuser.me/api/portraits"
+        }
+      ],
+      "alunos": [
+        {
+          "id": "15",
+          "name": "Aluno 15",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "16",
+          "name": "Aluno 16",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "17",
+          "name": "Aluno 17",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "18",
+          "name": "Aluno 18",
+          "img": "https://randomuser.me/api/portraits"
+        }
+      ]
     },
     {
       "id": "5",
       "name": "Sistema de Gerenciamento de Tarefas",
       "description": "Um sistema para gerenciar e acompanhar tarefas de forma eficiente, com funções de usuário.",
-      "tipo": 1
+      "tipo": 1,
+      "tasks": [
+        {
+          "id": "5.1",
+          "titulo": "Configurar cadastro de usuários",
+          "comentario": "Permitir que usuários criem contas e façam login."
+        },
+        {
+          "id": "5.2",
+          "titulo": "Criar interface de tarefas",
+          "comentario": "Desenvolver visualização de tarefas pendentes e concluídas."
+        },
+        {
+          "id": "5.3",
+          "titulo": "Adicionar notificações de lembrete",
+          "comentario": "Enviar lembretes para tarefas próximas do prazo."
+        }
+      ],
+      "professor": [
+        {
+          "id": "17",
+          "name": "Prof. Ana Souza",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "18",
+          "name": "Prof. José Silva",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "19",
+          "name": "Prof. Maria Oliveira",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "20",
+          "name": "Prof. Carlos Santos",
+          "img": "https://randomuser.me/api/portraits"
+        }
+      ],
+      "alunos": [
+        {
+          "id": "19",
+          "name": "Aluno 19",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "20",
+          "name": "Aluno 20",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "21",
+          "name": "Aluno 21",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "22",
+          "name": "Aluno 22",
+          "img": "https://randomuser.me/api/portraits"
+        }
+      ]
     },
     {
       "id": "6",
       "name": "Loja Online",
       "description": "Uma plataforma de e-commerce completa para venda de produtos físicos e digitais.",
-      "tipo": 0
+      "tipo": 0,
+      "tasks": [
+        {
+          "id": "6.1",
+          "titulo": "Configurar catálogo de produtos",
+          "comentario": "Listar produtos com opções de filtros e categorias."
+        },
+        {
+          "id": "6.2",
+          "titulo": "Implementar carrinho de compras",
+          "comentario": "Adicionar ao carrinho e calcular valor total da compra."
+        },
+        {
+          "id": "6.3",
+          "titulo": "Configurar pagamentos online",
+          "comentario": "Integrar sistema de pagamento seguro para finalizar compras."
+        }
+      ],
+      "professor": [
+        {
+          "id": "21",
+          "name": "Prof. Maria Santos",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "22",
+          "name": "Prof. José Silva",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "23",
+          "name": "Prof. Ana Oliveira",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "24",
+          "name": "Prof. Carlos Souza",
+          "img": "https://randomuser.me/api/portraits"
+        }
+      ],
+      "alunos": [
+        {
+          "id": "23",
+          "name": "Aluno 23",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "24",
+          "name": "Aluno 24",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "25",
+          "name": "Aluno 25",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "26",
+          "name": "Aluno 26",
+          "img": "https://randomuser.me/api/portraits"
+        }
+      ]
     },
     {
       "id": "7",
       "name": "Aplicativo de Monitoramento Fitness",
       "description": "App mobile que permite aos usuários monitorar treinos, definir metas e acompanhar o progresso.",
-      "tipo": 2
+      "tipo": 2,
+      "tasks": [
+        {
+          "id": "7.1",
+          "titulo": "Configurar rastreamento de treinos",
+          "comentario": "Permitir registro de tipos de treinos e progresso diário."
+        },
+        {
+          "id": "7.2",
+          "titulo": "Adicionar meta de saúde e notificações",
+          "comentario": "Permitir que usuários definam metas e recebam lembretes."
+        },
+        {
+          "id": "7.3",
+          "titulo": "Implementar gráficos de progresso",
+          "comentario": "Exibir progresso de treinos ao longo do tempo."
+        }
+      ],
+      "professor": [
+        {
+          "id": "25",
+          "name": "Prof. Carlos Santos",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "26",
+          "name": "Prof. Maria Oliveira",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "27",
+          "name": "Prof. José Silva",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "28",
+          "name": "Prof. Ana Oliveira",
+          "img": "https://randomuser.me/api/portraits"
+        }
+      ],
+      "alunos": [
+        {
+          "id": "27",
+          "name": "Aluno 27",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "28",
+          "name": "Aluno 28",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "29",
+          "name": "Aluno 29",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "30",
+          "name": "Aluno 30",
+          "img": "https://randomuser.me/api/portraits"
+        }
+      ]
     },
     {
       "id": "8",
       "name": "Sistema de Reservas para Restaurantes",
       "description": "Um sistema de reservas para restaurantes, permitindo que os usuários reservem mesas antecipadamente.",
-      "tipo": 1
+      "tipo": 1,
+      "tasks": [
+        {
+          "id": "8.1",
+          "titulo": "Configurar visualização de mesas",
+          "comentario": "Exibir mapa interativo para escolha de mesas."
+        },
+        {
+          "id": "8.2",
+          "titulo": "Adicionar calendário de reservas",
+          "comentario": "Permitir que usuários escolham a data e horário."
+        },
+        {
+          "id": "8.3",
+          "titulo": "Implementar sistema de notificações",
+          "comentario": "Enviar notificações de confirmação e lembretes."
+        }
+      ],
+      "professor": [
+        {
+          "id": "29",
+          "name": "Prof. José Silva",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "30",
+          "name": "Prof. Ana Oliveira",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "31",
+          "name": "Prof. Carlos Souza",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "32",
+          "name": "Prof. Maria Santos",
+          "img": "https://randomuser.me/api/portraits"
+        }
+      ],
+      "alunos": [
+        {
+          "id": "31",
+          "name": "Aluno 31",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "32",
+          "name": "Aluno 32",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "33",
+          "name": "Aluno 33",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "34",
+          "name": "Aluno 34",
+          "img": "https://randomuser.me/api/portraits"
+        }
+      ]
     },
     {
       "id": "9",
       "name": "Gerenciador de Finanças Pessoais",
       "description": "Aplicativo para controlar despesas, definir orçamentos e gerenciar finanças pessoais de forma eficiente.",
-      "tipo": 3
+      "tipo": 3,
+      "tasks": [
+        {
+          "id": "9.1",
+          "titulo": "Configurar categorias de despesas",
+          "comentario": "Permitir que usuários categorizem suas despesas."
+        },
+        {
+          "id": "9.2",
+          "titulo": "Adicionar funcionalidade de orçamento",
+          "comentario": "Permitir que usuários definam limites de gasto por categoria."
+        },
+        {
+          "id": "9.3",
+          "titulo": "Implementar relatórios financeiros",
+          "comentario": "Gerar gráficos e relatórios mensais."
+        }
+      ],
+      "professor": [
+        {
+          "id": "33",
+          "name": "Prof. Maria Oliveira",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "34",
+          "name": "Prof. Carlos Santos",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "35",
+          "name": "Prof. Ana Souza",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "36",
+          "name": "Prof. José Silva",
+          "img": "https://randomuser.me/api/portraits"
+        }
+      ],
+      "alunos": [
+        {
+          "id": "35",
+          "name": "Aluno 35",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "36",
+          "name": "Aluno 36",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "37",
+          "name": "Aluno 37",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "38",
+          "name": "Aluno 38",
+          "img": "https://randomuser.me/api/portraits"
+        }
+      ]
     },
     {
       "id": "10",
       "name": "Ferramenta de Gerenciamento de Projetos",
       "description": "Um sistema de gerenciamento de projetos com atribuição de tarefas, prazos e acompanhamento de progresso.",
-      "tipo": 0
+      "tipo": 0,
+      "tasks": [
+        {
+          "id": "10.1",
+          "titulo": "Configurar quadro de tarefas",
+          "comentario": "Permitir visualização de tarefas em formato kanban."
+        },
+        {
+          "id": "10.2",
+          "titulo": "Adicionar prazos e notificações",
+          "comentario": "Notificar quando uma tarefa estiver perto do prazo."
+        },
+        {
+          "id": "10.3",
+          "titulo": "Implementar gráfico de progresso",
+          "comentario": "Exibir progresso geral dos projetos."
+        }
+      ],
+      "professor": [
+        {
+          "id": "37",
+          "name": "Prof. Ana Oliveira",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "38",
+          "name": "Prof. José Silva",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "39",
+          "name": "Prof. Maria Oliveira",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "40",
+          "name": "Prof. Carlos Santos",
+          "img": "https://randomuser.me/api/portraits"
+        }
+      ],
+      "alunos": [
+        {
+          "id": "39",
+          "name": "Aluno 39",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "40",
+          "name": "Aluno 40",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "41",
+          "name": "Aluno 41",
+          "img": "https://randomuser.me/api/portraits"
+        },
+        {
+          "id": "42",
+          "name": "Aluno 42",
+          "img": "https://randomuser.me/api/portraits"
+        }
+      ]
     },
     {
-      "id": "11",
-      "name": "Jogo Educativo para Crianças",
-      "description": "Um jogo interativo desenvolvido para ensinar crianças pequenas habilidades básicas de matemática e leitura.",
-      "tipo": 2
-    },
-    {
-      "id": "12",
-      "name": "Plataforma de Ensino Online",
-      "description": "Plataforma para hospedar e gerenciar cursos online, com aulas interativas e quizzes.",
-      "tipo": 1
-    },
-    {
-      "id": "13",
-      "name": "Aplicativo de Previsão do Tempo",
-      "description": "Aplicativo mobile que fornece atualizações em tempo real do clima e previsões semanais para várias localidades.",
-      "tipo": 0
-    },
-    {
-      "id": "14",
-      "name": "Serviço de Streaming de Música",
-      "description": "Uma plataforma de streaming de música com playlists, recomendações e escuta offline.",
-      "tipo": 3
-    },
-    {
-      "id": "15",
-      "name": "Sistema de Recomendação de Filmes",
-      "description": "Um sistema que sugere filmes com base nas preferências e histórico de visualização do usuário.",
-      "tipo": 1
-    },
-    {
-      "id": "16",
-      "name": "Aplicativo de Mídia Social",
-      "description": "Aplicativo mobile para conectar pessoas, compartilhar atualizações, fotos e mensagens.",
-      "tipo": 0
-    },
-    {
-      "id": "17",
-      "name": "Ferramenta de Automação de Tarefas",
-      "description": "Ferramenta que automatiza tarefas repetitivas, permitindo que os usuários criem fluxos de trabalho personalizados.",
-      "tipo": 1
-    },
-    {
-      "id": "18",
-      "name": "Aplicativo de Aprendizado de Línguas",
-      "description": "App que ajuda os usuários a aprender novas línguas com lições interativas e quizzes.",
-      "tipo": 2
-    },
-    {
-      "id": "19",
-      "name": "Aplicativo de Rastreamento de Hábitos",
-      "description": "Aplicativo mobile que ajuda os usuários a criar hábitos positivos e acompanhar o progresso ao longo do tempo.",
-      "tipo": 3
-    },
-    {
-      "id": "20",
-      "name": "Plataforma de Eventos Virtuais",
-      "description": "Plataforma para hospedar e gerenciar conferências virtuais, webinars e eventos ao vivo.",
-      "tipo": 0
-    },
-    {
-      "id": "c879",
-      "name": "Teste 1",
-      "description": "Teste 1",
-      "tipo": 0
-    },
-    {
-      "id": "307d",
+      "id": "ca78",
       "name": "Teste",
-      "description": "Teste",
-      "tipo": 0
-    },
-    {
-      "id": "d268",
-      "name": "Teste 3",
-      "description": "ksldaçjfldjslfk",
+      "description": "Teste\n",
       "tipo": 0
     }
   ],
   "notifications": [
     {
       "id": "1",
-      "name": "Autor",
-      "description": "Descrição da notificação 1"
+      "isRead": true,
+      "name": "Machado de Assis",
+      "time": "10h00",
+      "description": "Lançamento do livro 'Dom Casmurro'",
+      "img": "img001"
     },
     {
       "id": "2",
-      "name": "Item 2",
-      "description": "Alguma descrição interessante"
+      "isRead": true,
+      "name": "Clarice Lispector",
+      "time": "12h30",
+      "description": "Novo artigo publicado na revista literária",
+      "img": "img002"
     },
     {
       "id": "3",
-      "name": "Item 3",
-      "description": "Uma breve explicação aqui"
+      "isRead": true,
+      "name": "Paulo Coelho",
+      "time": "09h00",
+      "description": "Entrevista exclusiva sobre 'O Alquimista'",
+      "img": "img003"
     },
     {
       "id": "4",
-      "name": "Item 4",
-      "description": "Mais um objeto fictício"
+      "isRead": true,
+      "name": "José Saramago",
+      "time": "14h45",
+      "description": "Reflexões sobre 'Ensaio sobre a cegueira'",
+      "img": "img004"
     },
     {
       "id": "5",
-      "name": "Item 5",
-      "description": "Uma descrição criativa"
+      "isRead": true,
+      "name": "Jorge Amado",
+      "time": "11h15",
+      "description": "Aniversário de 100 anos do autor",
+      "img": "img005"
     },
     {
       "id": "6",
-      "name": "Item 6",
-      "description": "Algo misterioso talvez?"
+      "isRead": true,
+      "name": "Carlos Drummond de Andrade",
+      "time": "13h30",
+      "description": "Exposição de poesias no museu",
+      "img": "img006"
     },
     {
       "id": "7",
-      "name": "Item 7",
-      "description": "Uma nota sobre o sétimo objeto"
+      "isRead": true,
+      "name": "João Cabral de Melo Neto",
+      "time": "16h00",
+      "description": "Lançamento de nova coletânea de poemas",
+      "img": "img007"
     },
     {
       "id": "8",
-      "name": "Item 8",
-      "description": "Uma descrição curta e concisa"
+      "isRead": true,
+      "name": "Fernando Pessoa",
+      "time": "17h15",
+      "description": "Edição especial de 'Mensagem'",
+      "img": "img008"
     },
     {
       "id": "9",
-      "name": "Item 9",
-      "description": "Um objeto imaginário"
+      "isRead": true,
+      "name": "Cecília Meireles",
+      "time": "08h00",
+      "description": "Homenagem à autora no centenário de nascimento",
+      "img": "img009"
     },
     {
       "id": "10",
-      "name": "Item 10",
-      "description": "Último item, mas não menos importante!"
+      "isRead": true,
+      "name": "Graciliano Ramos",
+      "time": "18h45",
+      "description": "Sessão de autógrafos de 'Vidas Secas'",
+      "img": "img010"
+    },
+    {
+      "id": "11",
+      "isRead": true,
+      "name": "Manuel Bandeira",
+      "time": "09h30",
+      "description": "Encontro literário sobre 'Libertinagem'",
+      "img": "img011"
+    },
+    {
+      "id": "12",
+      "isRead": true,
+      "name": "Lygia Fagundes Telles",
+      "time": "12h00",
+      "description": "Discussão do conto 'Venha ver o pôr do sol'",
+      "img": "img012"
+    },
+    {
+      "id": "13",
+      "isRead": true,
+      "name": "Rubem Fonseca",
+      "time": "15h30",
+      "description": "Lançamento da nova edição de 'Agosto'",
+      "img": "img013"
+    },
+    {
+      "id": "14",
+      "isRead": true,
+      "name": "Nelson Rodrigues",
+      "time": "11h45",
+      "description": "Reedição de peças teatrais",
+      "img": "img014"
+    },
+    {
+      "id": "15",
+      "isRead": true,
+      "name": "Hilda Hilst",
+      "time": "10h30",
+      "description": "Lançamento póstumo de coletânea",
+      "img": "img015"
+    },
+    {
+      "id": "16",
+      "isRead": true,
+      "name": "Marcelino Freire",
+      "time": "14h00",
+      "description": "Palestra sobre literatura marginal",
+      "img": "img016"
+    },
+    {
+      "id": "17",
+      "isRead": true,
+      "name": "Ana Cristina Cesar",
+      "time": "16h30",
+      "description": "Relançamento de 'A teus pés'",
+      "img": "img017"
+    },
+    {
+      "id": "18",
+      "isRead": true,
+      "name": "Milton Hatoum",
+      "time": "18h00",
+      "description": "Bate-papo sobre 'Dois Irmãos'",
+      "img": "img018"
+    },
+    {
+      "id": "19",
+      "isRead": true,
+      "name": "Luiz Ruffato",
+      "time": "10h45",
+      "description": "Discussão sobre 'Eles eram muitos cavalos'",
+      "img": "img019"
+    },
+    {
+      "id": "20",
+      "isRead": true,
+      "name": "Raduan Nassar",
+      "time": "13h15",
+      "description": "Encontro sobre 'Lavoura arcaica'",
+      "img": "img020"
     }
   ],
   "parceiros": [
@@ -196,73 +854,149 @@
       "id": "1",
       "name": "Tech Solutions",
       "description": "Empresa especializada em desenvolvimento de software personalizado para negócios de todos os tamanhos.",
-      "tipo": 2
+      "tipo": 2,
+      "cursos": [
+        {
+          "id": "1.1",
+          "titulo": "Introdução ao Desenvolvimento de Software",
+          "comentario": "Curso básico para iniciantes em programação."
+        },
+        {
+          "id": "1.2",
+          "titulo": "Desenvolvimento de Aplicações Web",
+          "comentario": "Curso avançado em desenvolvimento de aplicações web com foco em backend."
+        }
+      ],
+      "professor": [
+        {
+          "id": "1",
+          "name": "Prof. Pedro Silva",
+          "img": "https://randomuser.me/api/portraits/men/1.jpg"
+        },
+        {
+          "id": "2",
+          "name": "Prof. Júlia Costa",
+          "img": "https://randomuser.me/api/portraits/women/2.jpg"
+        }
+      ],
+      "alunos": [
+        {
+          "id": "1",
+          "name": "Aluno 1",
+          "img": "https://randomuser.me/api/portraits/men/3.jpg"
+        },
+        {
+          "id": "2",
+          "name": "Aluno 2",
+          "img": "https://randomuser.me/api/portraits/women/4.jpg"
+        }
+      ]
     },
     {
       "id": "2",
       "name": "InovaWeb",
       "description": "Agência de marketing digital com foco em SEO, desenvolvimento de websites e e-commerce.",
-      "tipo": 1
+      "tipo": 1,
+      "cursos": [
+        {
+          "id": "2.1",
+          "titulo": "SEO para Iniciantes",
+          "comentario": "Curso sobre as principais técnicas de SEO para iniciantes."
+        },
+        {
+          "id": "2.2",
+          "titulo": "Desenvolvimento de E-commerce",
+          "comentario": "Curso sobre desenvolvimento e otimização de plataformas de e-commerce."
+        }
+      ],
+      "professor": [
+        {
+          "id": "1",
+          "name": "Prof. Lucas Mendes",
+          "img": "https://randomuser.me/api/portraits/men/5.jpg"
+        },
+        {
+          "id": "2",
+          "name": "Prof. Mariana Duarte",
+          "img": "https://randomuser.me/api/portraits/women/6.jpg"
+        }
+      ],
+      "alunos": [
+        {
+          "id": "1",
+          "name": "Aluno 3",
+          "img": "https://randomuser.me/api/portraits/men/7.jpg"
+        },
+        {
+          "id": "2",
+          "name": "Aluno 4",
+          "img": "https://randomuser.me/api/portraits/women/8.jpg"
+        }
+      ]
     },
     {
       "id": "3",
       "name": "GreenTech",
       "description": "Empresa de tecnologia que desenvolve soluções sustentáveis para o setor agrícola.",
-      "tipo": 3
+      "tipo": 3,
+      "cursos": [
+        {
+          "id": "3.1",
+          "titulo": "Tecnologias Sustentáveis para Agricultura",
+          "comentario": "Curso sobre inovações e tecnologias sustentáveis aplicadas ao setor agrícola."
+        }
+      ],
+      "professor": [
+        {
+          "id": "1",
+          "name": "Prof. Carlos Silva",
+          "img": "https://randomuser.me/api/portraits/men/9.jpg"
+        }
+      ],
+      "alunos": [
+        {
+          "id": "1",
+          "name": "Aluno 5",
+          "img": "https://randomuser.me/api/portraits/men/10.jpg"
+        },
+        {
+          "id": "2",
+          "name": "Aluno 6",
+          "img": "https://randomuser.me/api/portraits/women/11.jpg"
+        }
+      ]
     },
     {
       "id": "4",
       "name": "BlueOcean",
       "description": "Consultoria especializada em inovação e transformação digital para empresas do setor marítimo.",
-      "tipo": 0
-    },
-    {
-      "id": "5",
-      "name": "Smart Retail",
-      "description": "Líder em soluções de automação para o varejo, oferecendo ferramentas de gestão de inventário e análise de dados.",
-      "tipo": 1
-    },
-    {
-      "id": "6",
-      "name": "CloudSoft",
-      "description": "Empresa de tecnologia focada em serviços de computação em nuvem e soluções de infraestrutura.",
-      "tipo": 2
-    },
-    {
-      "id": "7",
-      "name": "NextGen Robotics",
-      "description": "Desenvolvedora de robôs autônomos para indústrias de manufatura e logística.",
-      "tipo": 3
-    },
-    {
-      "id": "8",
-      "name": "EcoEnergy",
-      "description": "Empresa focada em energias renováveis e soluções de eficiência energética.",
-      "tipo": 0
-    },
-    {
-      "id": "9",
-      "name": "DataBridge",
-      "description": "Plataforma de análise de dados e big data para empresas que buscam insights estratégicos.",
-      "tipo": 1
-    },
-    {
-      "id": "10",
-      "name": "HealthConnect",
-      "description": "Provedora de sistemas de gestão hospitalar e prontuário eletrônico para o setor de saúde.",
-      "tipo": 2
-    },
-    {
-      "id": "11",
-      "name": "LogiTrack",
-      "description": "Empresa de logística especializada em soluções de rastreamento e otimização de rotas para transportadoras.",
-      "tipo": 1
-    },
-    {
-      "id": "12",
-      "name": "CyberShield",
-      "description": "Empresa de cibersegurança que oferece soluções avançadas de proteção de dados e redes corporativas.",
-      "tipo": 3
+      "tipo": 0,
+      "cursos": [
+        {
+          "id": "4.1",
+          "titulo": "Inovação no Setor Marítimo",
+          "comentario": "Curso sobre inovação e transformação digital aplicada ao setor marítimo."
+        }
+      ],
+      "professor": [
+        {
+          "id": "1",
+          "name": "Prof. Ana Souza",
+          "img": "https://randomuser.me/api/portraits/women/12.jpg"
+        }
+      ],
+      "alunos": [
+        {
+          "id": "1",
+          "name": "Aluno 7",
+          "img": "https://randomuser.me/api/portraits/men/13.jpg"
+        },
+        {
+          "id": "2",
+          "name": "Aluno 8",
+          "img": "https://randomuser.me/api/portraits/women/14.jpg"
+        }
+      ]
     }
   ],
   "aluno": [
@@ -319,6 +1053,42 @@
       "registration": "1111",
       "password": "1111@Mn11",
       "confirmPassword": "1111@Mn11"
+    },
+    {
+      "id": "4926",
+      "name": "Clerisson",
+      "cpf": "00000000000",
+      "email": "c@gmail.com",
+      "confirmEmail": "c@gmail.com",
+      "phone": "(00) 00000-0000",
+      "uf": "AP",
+      "cep": "00000000",
+      "city": "ccc",
+      "neighborhood": "ccc",
+      "street": "ccc",
+      "course": "si",
+      "period": "3",
+      "registration": "000",
+      "password": "111111@Mn",
+      "confirmPassword": "111111@Mn"
+    },
+    {
+      "id": "ec9d",
+      "name": "teste",
+      "cpf": "00000000000",
+      "email": "teste@gmail.com",
+      "confirmEmail": "teste@gmail.com",
+      "phone": "(00) 00000-0000",
+      "uf": "MG",
+      "cep": "00000000",
+      "city": "hvhbkjnl",
+      "neighborhood": "bjnlkmçl",
+      "street": "jlnkçm",
+      "course": "hbkjnlkmç",
+      "period": "5",
+      "registration": "64546845",
+      "password": "As@123456789",
+      "confirmPassword": "As@123456789"
     }
   ],
   "professor": [],

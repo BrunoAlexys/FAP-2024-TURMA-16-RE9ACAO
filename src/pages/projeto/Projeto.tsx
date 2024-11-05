@@ -5,15 +5,17 @@ import { Filter } from "../../components/filter-component/Filter";
 import { Search } from "../../components/search-component/Search";
 import imagem from './assets/perfil.png'
 import axios from "axios";
-import { CardData } from "../../types/CardData";
-import { CreateProjectPopUp } from "../../components/pop-create-project/PopUpCreateProject";
+import { FormPopUp } from "../../components/form-pop-up/FormPopUp";
+import { useNavigate } from "react-router-dom";
+import { Project } from "../../types/Projects";
 
 export const Projeto = () => {
 
-    const [cards, setCards] = useState<CardData[]>([]);
+    const [project, setProject] = useState<Project[]>([]);
     const [search, setSearch] = useState("");
     const [filterTipo, setFilterTipo] = useState(0);
     const [create, setCreate] = useState(false);
+    const navigate = useNavigate();
 
     const handleSearchChange = (value: string) => {
         setSearch(value)
@@ -26,16 +28,16 @@ export const Projeto = () => {
     useEffect(() => {
         axios.get("http://localhost:3001/projects")
             .then((response) => {
-                setCards(response.data)
+                setProject(response.data)
             })
             .catch((error) => {
                 throw new Error(error);
             })
     }, [])
 
-    let filteredCards = cards.filter(card => card.name.toLowerCase().includes(search.toLowerCase()))
+    let filteredproject = project.filter(card => card.name.toLowerCase().includes(search.toLowerCase()))
     if (filterTipo != 0) {
-        filteredCards = filteredCards.filter(card => card.tipo.toString().includes(filterTipo.toString()))
+        filteredproject = filteredproject.filter(card => card.tipo.toString().includes(filterTipo.toString()))
     }
 
     const handleCreate = () => {
@@ -43,26 +45,35 @@ export const Projeto = () => {
     }
 
     return (
-        <section id="projetos" className="px-4 py-2 flex flex-col items-center gap-6 max-h-[calc(100vh-92px)] lg:max-h-screen overflow-auto">
-            <div className="w-full lg:w-[84%] flex justify-between items-center gap-2" id="filters">
+        <section id="projetos" className="px-4 py-4 flex flex-col items-center gap-6 max-h-[calc(100vh-92px)] overflow-auto lg:max-h-screen">
+            <div className="w-full lg:w-[84%] flex justify-between lg:mt-5 items-center gap-2" id="filters">
                 <div className="flex justify-between items-center w-full lg:w-1/2 gap-2">
                     <Search onSearchChange={handleSearchChange} />
-                    <Filter onFilter={handleFilter} />
                 </div>
-                <BotaoPadrao nome="Criar" icone="add" onClick={handleCreate} />
+                <div className="flex gap-2">
+                    <Filter onFilter={handleFilter} />
+                    <BotaoPadrao nome="Criar" icone="add" onClick={handleCreate} />
+                </div>
             </div>
             <div id="projetosContainer" className="flex flex-col w-full gap-6 lg:flex-row lg:flex-wrap lg:justify-center">
-                {filteredCards.length > 0 ? (
-                    filteredCards.map((card) => (
-                        <Card key={card.id} img={imagem} projectName={card.name} tipo={card.tipo}>
-                            {card.description}
+                {filteredproject.length > 0 ? (
+                    filteredproject.map((project) => (
+                        <Card key={project.id} img={imagem} projectName={project.name} tipo={project.tipo} onClick={() => navigate(`/projeto/${project.id}`)}>
+                            {project.description}
                         </Card>
                     ))
                 ) : (
                     <p className="text-center text-gray-500 mt-72">Nenhum projeto cadastrado</p>
                 )}
             </div>
-            {create && <CreateProjectPopUp onClose={() => setCreate(false)} type="projects" />}
+            {create && <FormPopUp
+                onClose={() => setCreate(false)}
+                type="projects"
+                title="Criar Projeto"
+                namePlaceholder="Nome do Projeto"
+                descriptionLabel="Descrição do Projeto"
+                descriptionPlaceholder="Descreva o projeto"
+            />}
         </section>
     );
 };

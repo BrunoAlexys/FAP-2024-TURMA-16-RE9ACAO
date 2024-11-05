@@ -35,22 +35,22 @@ const AlertMobile = ({ type, message, onClose }: AlertProps) => {
         <div className={clsx(
             "h-14 w-11/12 flex items-center p-4 rounded-lg fixed top-2 right-2 transition-all duration-500 ease-in-out z-20",
             {
-                'opacity-0 translate-y-[-20px]': isExiting,
-                'opacity-100 translate-y-0': !isExiting,
-                'bg-colorAlertMobileWarning': type === 'alerta',
-                'bg-colorAlertMobileError': type === 'error',
-                'bg-colorAlertMobileInfo': type === 'info',
-                'bg-colorAlertMobileSucess': type === 'sucesso',
+                'translate-y-[-150%]': !isVisible, 
+                'translate-y-0': isVisible,
+                'bg-[#fae4c1]': type === 'alerta',
+                'bg-[#fabdc2]': type === 'error',
+                'bg-[#bcd6ea]': type === 'info',
+                'bg-[#b4e7cd]': type === 'sucesso',
             }
 
         )}>
             <div className={clsx("rounded-full h-7 w-7 flex items-center justify-center overflow-hidden ",
                 {
-                    'bg-colorAlertWarningBorder': type === 'alerta',
-                    'bg-colorAlertErrorBorder': type === 'error',
-                    'bg-colorAlertInfoBorder': type === 'info',
-                    'bg-colorAlertSucessBorder': type === 'sucesso',
-
+                    'bg-[#f9cf47]': type === 'alerta',
+                    'bg-[#ff2d56]': type === 'error',
+                    'bg-[#6c00f9]': type === 'info',
+                    'bg-[#00d998]': type === 'sucesso',
+                    
                 }
             )}>
                 <img className={clsx(
