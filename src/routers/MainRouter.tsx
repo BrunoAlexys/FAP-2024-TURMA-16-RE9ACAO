@@ -12,6 +12,7 @@ import PrivateRoute from "./PrivateRoute";
 import { CadastrosAluno } from "../pages/cadastros-aluno/CadastrosAluno";
 import { CadastroProfessor } from "../pages/cadastro-professor/CadastroProfessor";
 import { Editar } from "../pages/Editar/Editar";
+import { NotFound } from "../pages/404notfound/NotFound";
 
 
 export const MainRouter = () => {
@@ -28,6 +29,7 @@ export const MainRouter = () => {
         { path: "/cadastro-aluno", element: <CadastrosAluno /> }, // Rota pública
         { path: "/cadastro-professor", element: <CadastroProfessor /> }, //Rota pública
         { path: "/", element: <Login /> }, // Rota pública
+        { path: "*", element: <NotFound /> },// Rota para o erro
     ]);
 
     return routes;

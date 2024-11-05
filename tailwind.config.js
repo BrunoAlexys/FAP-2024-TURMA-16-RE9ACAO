@@ -32,7 +32,11 @@ export default {
         colorAlertMobileWarning: '#F6E2C2',
         colorAlertMobileError: '#EEC2C2',
         colorAlertMobileInfo: '#C2E7EA',
-        colorAlertMobileSucess: '#C2E2CD'
+        colorAlertMobileSucess: '#C2E2CD',
+        colorAlertImg: '#88B0DA',
+        color404: '#8581FF',
+        corDeFundo:'#F9FAFB',
+        
       }
     },
   },
