@@ -12,9 +12,7 @@ export const NotificacoesMobile = () => {
         isRead: boolean;
     }
 
-    const [notifications, setNotifications] = useState<NotificationsProps[]>(
-        []
-    );
+    const [notifications, setNotifications] = useState<NotificationsProps[]>([]);
 
     useEffect(() => {
         axios
