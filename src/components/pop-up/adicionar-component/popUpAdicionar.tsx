@@ -3,10 +3,10 @@ import { UserItem } from "./select/userItem";
 
 type AdicionarPopupProps = {
   onClose: () => void;
-  nome: String;
+  nome: string;
 };
 
-export const AdicionarPopup = ({nome, onClose }: AdicionarPopupProps) => {
+export const AdicionarPopup = ({ nome, onClose }: AdicionarPopupProps) => {
   const [selectedUsers, setSelectedUsers] = useState<string[]>([]); // Estado dos usuários selecionados
 
   const handleUserSelect = (name: string, selected: boolean) => {
@@ -17,7 +17,7 @@ export const AdicionarPopup = ({nome, onClose }: AdicionarPopupProps) => {
     );
   };
 
-  const users = ["João", "Maria", "Pedro", "Ana", "Carlos", "Beatriz"]; // Lista de nomes
+  const users = ["João", "Maria", "Pedro", "Ana", "Carlos", "Beatriz", "João", "Maria", "Pedro", "Ana", "Carlos", "Beatriz"]; // Lista de nomes
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-85 flex items-center justify-center z-50">
@@ -26,7 +26,7 @@ export const AdicionarPopup = ({nome, onClose }: AdicionarPopupProps) => {
           <h1 className="text-white font-bold">Adicionar {nome}</h1>
         </div>
 
-        <div>
+        <div className="max-h-96 overflow-y-auto">
           {users.map((user) => (
             <UserItem
               key={user}

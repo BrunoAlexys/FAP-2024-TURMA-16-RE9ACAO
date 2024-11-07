@@ -1089,6 +1089,24 @@
       "registration": "64546845",
       "password": "As@123456789",
       "confirmPassword": "As@123456789"
+    },
+    {
+      "id": "6fdb",
+      "name": "João da Silva",
+      "cpf": "23457587086",
+      "email": "joao@gmail.com",
+      "confirmEmail": "joao@gmail.com",
+      "phone": "(00) 00000-0000",
+      "uf": "PE",
+      "cep": "00000000",
+      "city": "Recife",
+      "neighborhood": "Boa Viagem",
+      "street": "Rua 1",
+      "course": "Enfermagem",
+      "period": "8",
+      "registration": "64546845",
+      "password": "Joao@123",
+      "confirmPassword": "Joao@123"
     }
   ],
   "professor": [],
