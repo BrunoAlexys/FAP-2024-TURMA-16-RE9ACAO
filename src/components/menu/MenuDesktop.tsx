@@ -52,7 +52,7 @@ export const MenuDesktop = () => {
                     menu ? 'w-72' : 'w-28'
                 )}
             >
-                <div className="flex flex-col items-center gap-16 flex-1 mt-10">
+                <div className="flex flex-col items-center gap-10 flex-1 mt-10">
                     <div
                         className={clsx(
                             'bg-white rounded-full transition-all duration-500',
@@ -61,6 +61,10 @@ export const MenuDesktop = () => {
                     >
                         <img src={''} alt="" />
                     </div>
+                    <h2 className={clsx(
+                        'text-white text-xl font-bold transition-all duration-500',
+                        menu ? 'opacity-100' : 'opacity-0'
+                    )}>R9AÇÃO</h2>
                     <div
                         className={clsx(
                             'border-b-2 border-white transition-all duration-500',

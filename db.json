@@ -847,6 +847,14 @@
       "time": "13h15",
       "description": "Encontro sobre 'Lavoura arcaica'",
       "img": "img020"
+    },
+    {
+      "id": "21",
+      "isRead": true,
+      "name": "Machado de Assis",
+      "time": "13h45",
+      "description": "Lançamento do livro 'Dom Casmurro'",
+      "img": "img021"
     }
   ],
   "parceiros": [
