@@ -14,6 +14,7 @@ import { CadastrosEmpresa } from "../pages/cadastro-empresa/CadastrosEmpresa";
 import { CadastrosInstituicao } from "../pages/cadastro-instituicao/CadastrosInstituicao";
 import { CadastrosProfessor } from "../pages/cadastro-professor/CadastrosProfessor";
 import { InfoParceiro } from "../pages/info-parceiro";
+import { RecuperacaoDeSenha } from "../pages/recuperacao-senha/informe-email/Email";
 
 export const MainRouter = () => {
     const routes = useRoutes([
@@ -31,6 +32,7 @@ export const MainRouter = () => {
         { path: "/cadastro-aluno", element: <CadastrosAluno /> }, // Rota pública
         { path: "/cadastro-professor", element: <CadastrosProfessor /> }, //Rota pública
         { path: "/", element: <Login /> }, // Rota pública
+        { path: "/recuperacao", element: <RecuperacaoDeSenha /> }, //Rota pública
     ]);
 
     return routes;
