@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import Add from './assets/mais.png';
+import { AdicionarPopup } from '../pop-up/adicionar-component/popUpAdicionar';
 
 type Participante = {
     id: string;
@@ -12,6 +14,12 @@ type CardParticipanteProps = {
 }
 
 export const CardParticipante = ({ item, title }: CardParticipanteProps) => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const onClose = () => {
+        setIsOpen(false)
+    }
+
     return (
         <div className="w-[240px]">
             <div className="w-full h-16 rounded-t-2xl flex items-center justify-center text-white font-semibold bg-gradient-to-r from-colorMenuPrimary to-colorMenuSecondary">
@@ -29,9 +37,10 @@ export const CardParticipante = ({ item, title }: CardParticipanteProps) => {
             </div>
             <div className='flex items-center justify-center w-full h-16 rounded-b-2xl bg-[#ECE9E9]'>
                 <button className="flex items-center justify-center w-10 h-10 rounded-full bg-colorMenuPrimary">
-                    <img className='w-5 h-5' src={Add} alt="Icone de adicionar" />
+                    <img className='w-5 h-5' src={Add} alt="Icone de adicionar" onClick={() => setIsOpen(true)} />
                 </button>
             </div>
+            {isOpen && <AdicionarPopup onClose={onClose} nome={title} />}
         </div>
     );
 }

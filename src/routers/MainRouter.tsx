@@ -9,12 +9,14 @@ import { Login } from "../pages/login/Login";
 import PrivateRoute from "./PrivateRoute";
 import { CadastrosAluno } from "../pages/cadastros-aluno/CadastrosAluno";
 import { Editar } from "../pages/Editar/Editar";
+import { NotFound } from "../pages/404notfound/NotFound";
 import { InfoProjeto } from "../pages/info-projeto/InfoProjeto";
 import { CadastrosEmpresa } from "../pages/cadastro-empresa/CadastrosEmpresa";
 import { CadastrosInstituicao } from "../pages/cadastro-instituicao/CadastrosInstituicao";
 import { CadastrosProfessor } from "../pages/cadastro-professor/CadastrosProfessor";
 import { InfoParceiro } from "../pages/info-parceiro";
 import { RecuperacaoDeSenha } from "../pages/recuperacao-senha/informe-email/Email";
+
 
 export const MainRouter = () => {
     const routes = useRoutes([
@@ -33,6 +35,7 @@ export const MainRouter = () => {
         { path: "/cadastro-professor", element: <CadastrosProfessor /> }, //Rota pública
         { path: "/", element: <Login /> }, // Rota pública
         { path: "/recuperacao", element: <RecuperacaoDeSenha /> }, //Rota pública
+        { path: "*", element: <NotFound /> },// Rota para o erro
     ]);
 
     return routes;
