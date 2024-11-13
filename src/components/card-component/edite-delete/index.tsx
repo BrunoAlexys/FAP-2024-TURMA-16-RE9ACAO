@@ -22,14 +22,14 @@ export const EditeDelete = ({ type }: AddOrEdit) => {
     };
 
     return (
-        <>
-            <div className="flex flex-col gap-2 w-32 rounded-md items-center justify-start p-2 absolute right-2 top-14 bg-white shadow-lg border border-gray-300">
+        <div id="btnEditCancel">
+            <div className="flex flex-col gap-2  lg:w-32 rounded-md items-center justify-start p-2 absolute right-2 top-14 bg-white shadow-lg border border-gray-300">
                 <button
                     className="flex items-center gap-2 p-1 w-full"
                     onClick={() => openPopup(type === "Adicionar" ? "add" : "edit")}
                 >
                     <img src={Editar} alt="Icone de editar" className="w-5 h-5" />
-                    <p className="text-black">{type}</p>
+                    <p className="text-black hidden lg:block">{type}</p>
                 </button>
                 <div className="border-t border-gray-300 w-full"></div>
                 <button
@@ -37,7 +37,7 @@ export const EditeDelete = ({ type }: AddOrEdit) => {
                     onClick={() => openPopup("delete")}
                 >
                     <img src={Excluir} alt="Icone de excluir" className="w-5 h-5" />
-                    <p className="text-black">Excluir</p>
+                    <p className="hidden lg:block lg:text-black">Excluir</p>
                 </button>
             </div>
 
@@ -53,6 +53,6 @@ export const EditeDelete = ({ type }: AddOrEdit) => {
                     descriptionPlaceholder="Descrição"
                 />
             )}
-        </>
+        </div>
     );
 };

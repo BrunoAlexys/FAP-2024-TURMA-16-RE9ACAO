@@ -26,7 +26,7 @@ export const CardComentario = ({ titulo, comentario }: CardComentarioProps) => {
     }
 
     return (
-        <div className="flex flex-col justify-between bg-[#D9D9D9] w-[640px] h-[250px] p-2 rounded-2xl shadow-md relative">
+        <div className="flex flex-col justify-between bg-[#D9D9D9] relative w-full h-[250px] p-2 rounded-2xl shadow-md">
             <div className='p-3 flex flex-col justify-between mx-2'>
                 <div className='flex justify-between mx-2'>
                     <h3 className='font-bold text-xl'>{titulo}</h3>

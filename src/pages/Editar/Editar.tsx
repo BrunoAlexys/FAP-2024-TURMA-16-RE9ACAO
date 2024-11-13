@@ -22,13 +22,13 @@ export const Editar = () => {
     };
 
     return (
-        <div className="bg-corDeFundo flex flex-col gap-12 max-h-screen overflow-auto p-6">
-            <div className="mt-24 flex flex-col gap-3">
-                <h1 className="text-3xl font-bold">Configurações de Perfil</h1>
-                <div className="border-2 border-b-black"></div>
+        <section id="editarPerfil" className="bg-corDeFundo flex flex-col gap-12 h-full max-h-calc[100vh-92px] lg:max-h-screen overflow-auto p-6">
+            <div className="lg:mt-24 flex flex-col gap-3">
+                <h1 className="text-xl lg:text-3xl font-medium">Configurações de Perfil</h1>
+                <div className="border border-black"></div>
             </div>
-            <div className="flex gap-40">
-                <div className="w-[60%]">
+            <div className="flex flex-col-reverse items-center xl:items-start lg:items-start lg:flex-row gap-4 lg:gap-40">
+                <div className="w-full lg:w-[60%]">
                     <form className="flex flex-col gap-3">
                         <div>
                             <InputEdit type="text" label="Nome" />
@@ -68,7 +68,7 @@ export const Editar = () => {
                 <div className="w-[40%] flex flex-col gap-2 items-center">
                     <h3 className="font-semibold">Alterar foto de perfil</h3>
                     <div className="w-52 h-52 rounded-full bg-gray-300 relative flex items-center justify-center shadow-lg shadow-black-500/50">
-                        <img 
+                        <img
                             src={profileImage || imageDefault}
                             alt="Imagem de perfil"
                             className="w-full h-full rounded-full object-cover"
@@ -87,6 +87,6 @@ export const Editar = () => {
                 <Button children="Cancelar" variant="transparent" type="button" onClick={() => navigate('/configuracao')} />
                 <Button children="Salvar" variant="solid" type="submit" />
             </div>
-        </div>
+        </section>
     );
 };

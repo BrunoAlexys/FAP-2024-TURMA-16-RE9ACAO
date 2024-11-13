@@ -37,36 +37,17 @@ export const InfoParceiro = () => {
     }, [])
 
     return (
-        <div className="w-full lg:max-h-screen lg:overflow-y-auto">
+        <div className="w-full h-full max-h-[calc(100vh-92px)] overflow-auto lg:max-h-screen">
             <div className="flex flex-col">
-            <div className="relative w-full h-48">
-                    <img
-                        src={bannerImage}
-                        alt="Banner do Projeto"
-                        className="w-full h-full object-cover"
-                    />
-                    <div className="w-full h-full flex justify-end items-start absolute top-0 right-0">
-                        <div className="mx-6 my-5">
-                            <button className="cursor-pointer text-xl bg-white p-3 shadow-lg shadow-black-500/50  rounded-full" onClick={() => setIsOpenImagePopup(true)}>
-                                <img src={editaIcon} alt="" />
-                            </button>
-                            {isOpenImagePopup && (
-                                <PopUpImage
-                                    closePopup={() => setIsOpenImagePopup(false)}
-                                    handleImageUpload={handleImageUpload}
-                                />
-                            )}
-                        </div>
-                    </div>
-                </div>
-                <div className="lg:p-6">
-                    <h1 className="text-3xl font-bold">{parceiro?.name}</h1>
-                    <p className="text-lg font-medium mt-2">{parceiro?.description}</p>
+                <div className="w-full h-48 bg-gray-400"></div>
+                <div className="lg:p-6 px-4">
+                    <h1 className="text-xl lg:text-3xl font-medium">{parceiro?.name}</h1>
+                    <p className="text-md lg:text-lg font-normal mt-2">{parceiro?.description}</p>
                     <div className="border-2 border-b-gray-200 mt-4"></div>
                 </div>
             </div>
-            <div className="flex flex-col gap-6">
-                <div className="flex justify-between mx-16 gap-4 mb-4">
+            <div className="flex flex-col gap-6 px-4">
+                <div className="flex justify-between flex-col lg:flex-row lg:mx-16 gap-4 mb-4">
                     <div className="flex flex-col gap-4">
                         <div className="flex justify-between">
                             <h3 className="text-xl font-bold">Cursos cadastrados</h3>
@@ -92,7 +73,7 @@ export const InfoParceiro = () => {
                         </div>
 
                     </div>
-                    <div className="flex flex-col gap-4 mb-10">
+                    <div className="flex flex-col gap-4 mb-10 items-center justify-center">
                         <div>
                             <CardParticipante
                                 item={parceiro?.professor || []}

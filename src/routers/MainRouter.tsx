@@ -3,7 +3,6 @@ import { Dashboard } from "../pages/dashbord/Dashbord";
 import { Projeto } from "../pages/projeto/Projeto";
 import { ParceiroComponent } from "../pages/parceiro/Parceiro";
 import { Configuracao } from "../pages/configuracao/Configuracao";
-import { Perfil } from "../pages/perfil/Perfil";
 import { NotificacoesMobile } from "../pages/notificacoesMobile/NotificacoesMobile";
 import { Login } from "../pages/login/Login";
 import PrivateRoute from "./PrivateRoute";
@@ -27,7 +26,7 @@ export const MainRouter = () => {
         { path: "/parceiro/:id", element: <PrivateRoute element={<InfoParceiro />} /> },
         { path: "/configuracao", element: <PrivateRoute element={<Configuracao />} /> },
         { path: "/editar", element: <PrivateRoute element={<Editar />} /> },
-        { path: "/perfil", element: <PrivateRoute element={<Perfil />} /> },
+        { path: "/perfil", element: <PrivateRoute element={<Configuracao />} /> },
         { path: "/notificacoes", element: <PrivateRoute element={<NotificacoesMobile />} /> },
         { path: "/cadastro-empresa", element: <CadastrosEmpresa /> },  // Rota pública
         { path: "/cadastro-instituicao", element: <CadastrosInstituicao /> }, // Rota pública
