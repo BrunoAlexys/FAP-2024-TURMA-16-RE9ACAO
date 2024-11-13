@@ -36,8 +36,8 @@ export const CardParticipante = ({ item, title }: CardParticipanteProps) => {
                 ))}
             </div>
             <div className='flex items-center justify-center w-full h-16 rounded-b-2xl bg-[#ECE9E9]'>
-                <button className="flex items-center justify-center w-10 h-10 rounded-full bg-colorMenuPrimary">
-                    <img className='w-5 h-5' src={Add} alt="Icone de adicionar" onClick={() => setIsOpen(true)} />
+                <button className="flex items-center justify-center w-10 h-10 rounded-full bg-colorMenuPrimary" onClick={() => setIsOpen(true)}>
+                    <img className='w-5 h-5' src={Add} alt="Icone de adicionar" />
                 </button>
             </div>
             {isOpen && <AdicionarPopup onClose={onClose} nome={title} />}
