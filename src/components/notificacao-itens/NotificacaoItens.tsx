@@ -1,3 +1,4 @@
+import PersonDefault from "./assets/Default-Profile.png"
 interface NotificacaoProps {
     titulo: string;
     time: string;
@@ -19,7 +20,7 @@ export const NotificacaoItem: React.FC<NotificacaoProps> = ({
     return (
         <button onClick={onClick} className="flex justify-between p-4 gap-2 bg-blue-100 rounded-lg w-full max-w-1g text-black font-bold shadow-cardShadow">
             <img
-                src={imagem}
+                src={!imagem ? imagem: PersonDefault}
                 alt={imagem}
                 className="w-10 h-10 rounded-full bg-white"
             />
