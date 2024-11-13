@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import { ButtonMenu } from '../button-menu/ButtonMenu';
 import { useAuth } from '../../contexts/AuthProvider';
+import PerfilDefault from "./assets/Default-Profile.png";
 
 type MenuItems = {
     name?: string,
@@ -59,7 +60,7 @@ export const MenuDesktop = () => {
                             menu ? 'w-[100px] h-[100px] opacity-100' : 'w-[50px] h-[50px] opacity-0'
                         )}
                     >
-                        <img src={''} alt="" />
+                        <img src={PerfilDefault} alt="Foto de perfil" />
                     </div>
                     <h2 className={clsx(
                         'text-white text-xl font-bold transition-all duration-500',

@@ -4,7 +4,6 @@ import "./index.css";
 import { App } from "./app";
 import { BrowserRouter } from "react-router-dom";
 import { AuthProvider } from "./contexts/AuthProvider";
-import { AdicionarPopup } from "./components/pop-up/adicionar-component/popUpAdicionar";
 
 createRoot(document.getElementById("root")!).render(
     <StrictMode>
