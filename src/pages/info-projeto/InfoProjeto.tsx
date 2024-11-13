@@ -13,7 +13,7 @@ import editaIcon from "./Assets/editar.png";
 
 export const InfoProjeto = () => {
     const [isOpenImagePopup, setIsOpenImagePopup] = useState(false);
-    const [bannerImage, setBannerImage] = useState<string>(bannerDefault); 
+    const [bannerImage, setBannerImage] = useState<string>(bannerDefault);
     const { id } = useParams<{ id: string }>();
     const [project, setProject] = useState<Project | null>(null);
     const [isOpenNewTask, setIsOpenNewTask] = useState(false);

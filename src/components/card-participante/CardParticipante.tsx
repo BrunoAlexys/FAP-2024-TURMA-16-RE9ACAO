@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Add from './assets/mais.png';
 import { AdicionarPopup } from '../pop-up/adicionar-component/popUpAdicionar';
+import PerfilDefault from "./assets/Default-Profile.png";
 
 type Participante = {
     id: string;
@@ -29,7 +30,7 @@ export const CardParticipante = ({ item, title }: CardParticipanteProps) => {
                 {item.map((item) => (
                     <div key={item.id} className="flex items-center gap-2 w-full p-1 bg-[#D9D9D9] border-b-[1px] border-[#B1AFAF]">
                         <div className="w-12 h-12 ml-1 rounded-full bg-white">
-                            <img src={item.img} className='rounded-full' />
+                            <img src={!item.img ? item.img : PerfilDefault} className='rounded-full' />
                         </div>
                         <h5>{item.name}</h5>
                     </div>

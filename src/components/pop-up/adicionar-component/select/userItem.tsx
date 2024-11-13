@@ -1,18 +1,18 @@
 import { useState } from "react";
-import imageUser from "./assets/user.png";
+import imageUser from "./assets/Default-Profile.png";
 
 type UserItemProps = {
   name: string;
-  onSelect: (selected: boolean) => void; // Função de callback ao marcar/desmarcar
+  onSelect: (selected: boolean) => void; 
 };
 
 export const UserItem = ({ name, onSelect }: UserItemProps) => {
-  const [isChecked, setIsChecked] = useState(false); // Estado do checkbox
+  const [isChecked, setIsChecked] = useState(false); 
 
   const handleCheckboxChange = () => {
     const newCheckedState = !isChecked;
     setIsChecked(newCheckedState); 
-    onSelect(newCheckedState); // Chama a função callback com o novo estado
+    onSelect(newCheckedState); 
   };
 
   return (

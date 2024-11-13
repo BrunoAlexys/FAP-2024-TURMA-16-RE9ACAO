@@ -1205,9 +1205,46 @@
       "registration": "78465132",
       "password": "Tt@123456789",
       "confirmPassword": "Tt@123456789"
+    },
+    {
+      "id": "9a20",
+      "name": "tesste",
+      "cpf": "00000000000",
+      "email": "teste@gmail.com",
+      "confirmEmail": "teste@gmail.com",
+      "phone": "(00) 00000-0001",
+      "uf": "PE",
+      "cep": "00000000",
+      "city": "teste",
+      "neighborhood": "teste",
+      "street": "teste",
+      "course": "teste",
+      "period": "1",
+      "registration": "123123",
+      "password": "Teste123!",
+      "confirmPassword": "Teste123!"
     }
   ],
-  "professor": [],
+  "professor": [
+    {
+      "id": "b7c8",
+      "name": "teste",
+      "cpf": "00000000000",
+      "email": "teste@gmail.com",
+      "confirmEmail": "teste@gmail.com",
+      "phone": "(00) 00000-1000",
+      "uf": "PE",
+      "cep": "00001000",
+      "city": "teste",
+      "neighborhood": "teste",
+      "street": "teste",
+      "course": "teste",
+      "formation": "teste",
+      "registration": "123456",
+      "password": "Teste123!",
+      "confirmPassword": "Teste123!"
+    }
+  ],
   "empresa": [
     {
       "id": "bfe0",
@@ -1221,6 +1258,21 @@
       "city": "Teste",
       "neighborhood": "Testando",
       "street": "testando",
+      "password": "Teste123!",
+      "confirmPassword": "Teste123!"
+    },
+    {
+      "id": "e845",
+      "name": "teste",
+      "cnpj": "00000000000000",
+      "email": "teste@gmail.com",
+      "confirmEmail": "teste@gmail.com",
+      "phone": "(00) 00000-0200",
+      "uf": "PA",
+      "cep": "00001000",
+      "city": "teste",
+      "neighborhood": "teste",
+      "street": "teste",
       "password": "Teste123!",
       "confirmPassword": "Teste123!"
     }
@@ -1240,6 +1292,21 @@
       "street": "teste",
       "password": "Tt@123456789",
       "confirmPassword": "Tt@123456789"
+    },
+    {
+      "id": "5d66",
+      "name": "teste",
+      "cnpj": "00000000000000",
+      "email": "teste@gmail.com",
+      "confirmEmail": "teste@gmail.com",
+      "phone": "(00) 10000-0000",
+      "uf": "TO",
+      "cep": "00100100",
+      "city": "teste",
+      "neighborhood": "teste",
+      "street": "teste",
+      "password": "Teste123!",
+      "confirmPassword": "Teste123!"
     }
   ]
 }
