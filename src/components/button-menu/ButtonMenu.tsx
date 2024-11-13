@@ -30,7 +30,7 @@ export const ButtonMenu = ({ menu, toggleMenu, target = 'both', buttonStyle, ima
             <button
                 id="menuBtn"
                 className={twMerge(
-                    'w-14 h-14 rounded-tr-xl rounded-br-xl bg-gradient-to-l from-colorMenuPrimary to-colorMenuSecondary flex items-center justify-center absolute top-10 transition-all duration-500',
+                    'w-14 h-14 rounded-tr-xl rounded-br-xl bg-gradient-to-l z-30 from-colorMenuPrimary to-colorMenuSecondary flex items-center justify-center absolute top-10 transition-all duration-500',
                     menu ? 'left-72' : 'left-28',
                     target === 'button' || target === 'both' ? buttonStyle : ''
                 )}

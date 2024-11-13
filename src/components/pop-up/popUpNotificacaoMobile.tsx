@@ -1,3 +1,4 @@
+import PersonDefault from "./adicionar-component/select/assets/Default-Profile.png"
 type NotificationPopupProps = {
     onClose: () => void;
     titulo: string;
@@ -17,7 +18,7 @@ export const NotificationPopupMobile: React.FC<NotificationPopupProps> = ({
         <div className="fixed inset-0 bg-black bg-opacity-85 flex items-center justify-center z-50">
             <div className="w-80 h-fit rounded-lg bg-[#D9D9D9]">
                 <div className="flex p-4 bg-gradient-to-b from-colorMenuPrimary to-colorMenuSecondary rounded-t-lg">
-                    <img src={imagem} alt="" className="rounded-full bg-white w-14 h-14"/>
+                    <img src={!imagem ? imagem: PersonDefault} alt="" className="rounded-full bg-white w-14 h-14"/>
                     <p className="font-bold text-xl text-white p-4">{titulo}</p>
                 </div>
                 <div className="w-full flex flex-col ">

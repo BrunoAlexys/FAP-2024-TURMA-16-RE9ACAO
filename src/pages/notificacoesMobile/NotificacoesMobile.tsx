@@ -5,6 +5,7 @@ import clsx from "clsx";
 import { NotificationPopupMobile } from "../../components/pop-up/popUpNotificacaoMobile";
 import { ButtonMenu } from "../../components/button-menu/ButtonMenu";
 
+
 export const NotificacoesMobile = () => {
     interface NotificationsProps {
         id: number;

@@ -4,6 +4,7 @@ import clsx from "clsx";
 import axios from "axios";
 import { NotificacaoItem } from "../notificacao-itens/NotificacaoItens";
 import { NotificationPopup } from "../pop-up/popUpNotificacao";
+import PersonDefault from "./assets/Default-Profile.png";
 
 interface NotificationsProps {
     id: number;
@@ -92,7 +93,7 @@ export const Notification = () => {
                             titulo={notification.name}
                             time={notification.time}
                             descricao={notification.description}
-                            imagem={notification.img}
+                            imagem={!notification.img ? notification.img: PersonDefault}
                             isRead={notification.isRead}
                             onClick={() => {
                                 handleNotificationClick(notification)
