@@ -7,32 +7,58 @@ import { Project } from "../../types/Projects";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { FormPopUp } from "../../components/form-pop-up/FormPopUp";
+import { PopUpImage } from "../../components/popup-image/PopUpImage";
+import bannerDefault from "./Assets/Banner.png";
+import editaIcon from "./Assets/editar.png";
 
 export const InfoProjeto = () => {
-
+    const [isOpenImagePopup, setIsOpenImagePopup] = useState(false);
+    const [bannerImage, setBannerImage] = useState<string>(bannerDefault); 
     const { id } = useParams<{ id: string }>();
-
     const [project, setProject] = useState<Project | null>(null);
     const [isOpenNewTask, setIsOpenNewTask] = useState(false);
 
-    const onCloseNewTask = () => {
-        setIsOpenNewTask(false);
-    }
+    const onCloseNewTask = () => setIsOpenNewTask(false);
+
+    const handleImageUpload = (file: File) => {
+        const imageUrl = URL.createObjectURL(file);
+        setBannerImage(imageUrl);
+    };
 
     useEffect(() => {
         axios.get(`http://localhost:3001/projects/${id}`)
             .then((response) => {
-                setProject(response.data)
+                setProject(response.data);
+                setBannerImage(response.data.bannerImage || bannerDefault);
             })
             .catch((error) => {
-                throw new Error(error);
-            })
-    }, [])
+                console.error(error);
+            });
+    }, [id]);
 
     return (
         <div className="w-full lg:max-h-screen lg:overflow-y-auto">
             <div className="flex flex-col">
-                <div className="w-full h-48 bg-gray-400"></div>
+                <div className="relative w-full h-48">
+                    <img
+                        src={bannerImage}
+                        alt="Banner do Projeto"
+                        className="w-full h-full object-cover"
+                    />
+                    <div className="w-full h-full flex justify-end items-start absolute top-0 right-0">
+                        <div className="mx-6 my-5">
+                            <button className="cursor-pointer text-xl bg-white p-3 shadow-lg shadow-black-500/50  rounded-full" onClick={() => setIsOpenImagePopup(true)}>
+                                <img src={editaIcon} alt="" />
+                            </button>
+                            {isOpenImagePopup && (
+                                <PopUpImage
+                                    closePopup={() => setIsOpenImagePopup(false)}
+                                    handleImageUpload={handleImageUpload}
+                                />
+                            )}
+                        </div>
+                    </div>
+                </div>
                 <div className="lg:p-6">
                     <h1 className="text-3xl font-bold">{project?.name}</h1>
                     <p className="text-lg font-medium mt-2">{project?.description}</p>
@@ -45,7 +71,16 @@ export const InfoProjeto = () => {
                         <div className="flex justify-between">
                             <Filter />
                             <BotaoPadrao nome="Nova Tarefa" icone="add" onClick={() => setIsOpenNewTask(true)} />
-                            {isOpenNewTask && <FormPopUp onClose={onCloseNewTask} type="tasks" title="Nova Tarefa" descriptionLabel="Descrição" namePlaceholder="Título" descriptionPlaceholder="Descrição" />}
+                            {isOpenNewTask && (
+                                <FormPopUp
+                                    onClose={onCloseNewTask}
+                                    type="tasks"
+                                    title="Nova Tarefa"
+                                    descriptionLabel="Descrição"
+                                    namePlaceholder="Título"
+                                    descriptionPlaceholder="Descrição"
+                                />
+                            )}
                         </div>
                         <div className="flex flex-col gap-4">
                             {project?.tasks && project.tasks.length > 0 ? (
@@ -62,7 +97,6 @@ export const InfoProjeto = () => {
                                 </div>
                             )}
                         </div>
-
                     </div>
                     <div className="flex flex-col gap-4 mb-10">
                         <div>

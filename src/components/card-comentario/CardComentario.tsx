@@ -31,7 +31,7 @@ export const CardComentario = ({ titulo, comentario }: CardComentarioProps) => {
                 <div className='flex justify-between mx-2'>
                     <h3 className='font-bold text-xl'>{titulo}</h3>
                     <button className='cursor-pointer text-xl' onClick={openEdit}>...</button>
-                    {isOpenEdit && <EditeDelete />}
+                    {isOpenEdit && <EditeDelete type='Editar'/>}
                 </div>
                 <div className='mx-2 mt-3'>
                     <p className='font-medium'>{comentario}</p>

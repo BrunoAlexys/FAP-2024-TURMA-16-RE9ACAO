@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { Button } from "../../components/button/button";
+import PerfilDefault from "./Assets/Default-Profile.png";
 
 export const Configuracao = () => {
     const navigate = useNavigate();
@@ -9,7 +10,9 @@ export const Configuracao = () => {
             <div className="flex flex-col">
                 <div className="ml-4 flex flex-col gap-10 mt-4">
                     <div className="flex items-center gap-8">
-                        <div className="w-[150px] h-[150px] bg-slate-200 rounded-full"></div>
+                        <div className="w-[150px] h-[150px] bg-slate-200 rounded-full">
+                            <img src={PerfilDefault} alt="Foto de perfil" />
+                        </div>
                         <div>
                             <h1 className="text-3xl font-semibold">R9ação - Soluções Integradas</h1>
                         </div>
