@@ -6,9 +6,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Parceiro } from "../../types/parceiro";
 import { Curso } from "./curso";
-import bannerDefault from "./curso/assets/Banner.png"
-import editaIcon from "./curso/Assets/editar.png";
-import { PopUpImage } from "../../components/popup-image/PopUpImage";
+import bannerDefault from "./curso/assets/Banner.png";
 
 export const InfoParceiro = () => {
     const [isOpenImagePopup, setIsOpenImagePopup] = useState(false);

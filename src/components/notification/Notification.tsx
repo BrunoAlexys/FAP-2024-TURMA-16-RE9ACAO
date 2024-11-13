@@ -94,7 +94,10 @@ export const Notification = () => {
                             descricao={notification.description}
                             imagem={notification.img}
                             isRead={notification.isRead}
-                            onClick={() => handleNotificationClick(notification)} // Atualizado para abrir o popup
+                            onClick={() => {
+                                handleNotificationClick(notification)
+                                handleMarkAsRead(notification.id)
+                            }} // Atualizado para abrir o popup
                         />
                     ))}
                 </div>

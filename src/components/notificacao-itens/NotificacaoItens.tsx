@@ -28,7 +28,7 @@ export const NotificacaoItem: React.FC<NotificacaoProps> = ({
                     <h4 className="font-medium truncate">{titulo}</h4>
                     <span className="text-sm">{time}</span>
                     {!isRead && (
-                        <span className="block p-1 bg-red-500 rounded-full absolute -right-3 -top-2" />
+                        <span className="block p-2 bg-colorCardSecondary absolute rounded-full right-3 top-6 lg:top-1 lg:right-12" />
                     )}
                 </div>
                 <p className="text-sm font-normal text-justify truncate">{descricao}</p>
