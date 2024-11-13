@@ -41,6 +41,9 @@ export const CadastroInstituicao = () => {
                 throw new Error('Erro ao enviar o formulário');
             }
             reset();
+            setTimeout(() => {
+                navigate('/');
+            }, 2000);
         } catch (error) {
             const axiosError = error as AxiosError;
             if (axiosError.response) {
@@ -56,7 +59,7 @@ export const CadastroInstituicao = () => {
     };
 
     return (
-        <div className="flex flex-col mb-6">
+        <div className="flex flex-col items-center">
             {alert && (
                 <>
                     <Alert type={alert.type} text={alert.message} onClose={closeAlert} />

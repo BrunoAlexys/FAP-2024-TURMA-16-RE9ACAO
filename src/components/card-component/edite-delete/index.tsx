@@ -1,37 +1,58 @@
 import { useState } from 'react';
-import Editar from './assets/editar.png'
-import Excluir from './assets/lixo.png'
+import Editar from './assets/editar.png';
+import Excluir from './assets/lixo.png';
 import { PopDel } from '../../pop-del/PopDel';
 import { FormPopUp } from '../../form-pop-up/FormPopUp';
+import { PopUpImage } from '../../popup-image/PopUpImage';
 
-export const EditeDelete = () => {
-    const [isOpenDelete, setIsOpenDelete] = useState(false);
-    const [isOpenEdit, setIsOpenEdit] = useState(false);
+type AddOrEdit = {
+    type: "Editar" | "Adicionar";
+};
 
-    const onCloseEdite = () => {
-        setIsOpenEdit(false);
-    }
+export const EditeDelete = ({ type }: AddOrEdit) => {
+    const [activePopup, setActivePopup] = useState<"delete" | "edit" | "add" | null>(null);
 
-    const onCloseDelete = () => {
-        setIsOpenDelete(false);
-    }
+    const closePopup = () => setActivePopup(null);
+
+    const openPopup = (popup: "delete" | "edit" | "add") => setActivePopup(popup);
+
+    const handleImageUpload = (image: File) => {
+        console.log('Imagem enviada:', image);
+        closePopup(); 
+    };
 
     return (
-        <>
-            <div className="flex flex-col gap-2 w-32 rounded-md items-center justify-start p-2 absolute right-2 top-14 bg-white shadow-lg border border-gray-300">
-                <button className="flex items-center gap-2 p-1 w-full" onClick={() => setIsOpenEdit(true)}>
+        <div id="btnEditCancel">
+            <div className="flex flex-col gap-2  lg:w-32 rounded-md items-center justify-start p-2 absolute right-2 top-14 bg-white shadow-lg border border-gray-300">
+                <button
+                    className="flex items-center gap-2 p-1 w-full"
+                    onClick={() => openPopup(type === "Adicionar" ? "add" : "edit")}
+                >
                     <img src={Editar} alt="Icone de editar" className="w-5 h-5" />
-                    <p className="text-black">Editar</p>
+                    <p className="text-black hidden lg:block">{type}</p>
                 </button>
-                <div className='border-t border-gray-300 w-full'></div>
-                <button className="flex items-center gap-2 p-1 w-full" onClick={() => setIsOpenDelete(true)}>
+                <div className="border-t border-gray-300 w-full"></div>
+                <button
+                    className="flex items-center gap-2 p-1 w-full"
+                    onClick={() => openPopup("delete")}
+                >
                     <img src={Excluir} alt="Icone de excluir" className="w-5 h-5" />
-                    <p className="text-black">Excluir</p>
+                    <p className="hidden lg:block lg:text-black">Excluir</p>
                 </button>
             </div>
 
-            {isOpenDelete && <PopDel onClose={onCloseDelete} />}
-            {isOpenEdit && <FormPopUp onClose={onCloseEdite} type="tasks" title="Editar Tarefa" descriptionLabel="Descrição" namePlaceholder="Título" descriptionPlaceholder="Descrição" />}
-        </>
+            {activePopup === "delete" && <PopDel onClose={closePopup} />}
+            {activePopup === "add" && <PopUpImage closePopup={closePopup} handleImageUpload={handleImageUpload} />}
+            {activePopup === "edit" && (
+                <FormPopUp
+                    onClose={closePopup}
+                    type="tasks"
+                    title="Editar Tarefa"
+                    descriptionLabel="Descrição"
+                    namePlaceholder="Título"
+                    descriptionPlaceholder="Descrição"
+                />
+            )}
+        </div>
     );
-}
+};

@@ -3,6 +3,8 @@ import { ButtonMenu } from "../button-menu/ButtonMenu";
 import clsx from "clsx";
 import axios from "axios";
 import { NotificacaoItem } from "../notificacao-itens/NotificacaoItens";
+import { NotificationPopup } from "../pop-up/popUpNotificacao";
+import PersonDefault from "./assets/Default-Profile.png";
 
 interface NotificationsProps {
     id: number;
@@ -17,6 +19,9 @@ export const Notification = () => {
     const [notification, setNotification] = useState(false);
     const [notifications, setNotifications] = useState<NotificationsProps[]>([]);
     const [temNotificacao, setTemNotificacao] = useState(false);
+
+    const [showPopup, setShowPopup] = useState(false);
+    const [selectedNotification, setSelectedNotification] = useState<NotificationsProps | null>(null);
 
     useEffect(() => {
         axios.get("http://localhost:3001/notifications")
@@ -62,6 +67,16 @@ export const Notification = () => {
         }
     }, [notifications])
 
+    const handleNotificationClick = (notification: NotificationsProps) => {
+        setSelectedNotification(notification);
+        setShowPopup(true);
+    };
+
+    const closePopup = () => {
+        setShowPopup(false);
+        setSelectedNotification(null);
+    };
+
     return (
         <div className="hidden lg:block">
             <div className={clsx(
@@ -78,9 +93,12 @@ export const Notification = () => {
                             titulo={notification.name}
                             time={notification.time}
                             descricao={notification.description}
-                            imagem={notification.img}
+                            imagem={!notification.img ? notification.img: PersonDefault}
                             isRead={notification.isRead}
-                            onClick={()=>handleMarkAsRead(notification.id)}
+                            onClick={() => {
+                                handleNotificationClick(notification)
+                                handleMarkAsRead(notification.id)
+                            }} // Atualizado para abrir o popup
                         />
                     ))}
                 </div>
@@ -96,6 +114,16 @@ export const Notification = () => {
                     )}
                 />
             </div>
+
+            {showPopup && selectedNotification && (
+                <NotificationPopup
+                    onClose={closePopup}
+                    titulo={selectedNotification.name}
+                    time={selectedNotification.time}
+                    descricao={selectedNotification.description}
+                    imagem={selectedNotification.img}
+                />
+            )}
         </div>
     );
 };

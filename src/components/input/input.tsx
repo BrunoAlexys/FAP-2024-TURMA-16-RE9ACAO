@@ -44,8 +44,8 @@ export const Input = <T extends FieldValues>({ type, placeholder, label, registe
             {type === "UF" ? (
                 <select
                     className={twMerge(
-                        'border-b lg:border-2 border-colorMenuSecondary lg:rounded-full px-4 py-2 w-full focus:outline-none lg:focus:border-2 focus:border-colorMenuPrimary appearance-none relative',
-                        'custom-select', error[name] ? 'border-red-500' : ''
+                        'border-b lg:border-2 border-colorMenuSecondary lg:rounded-full px-4 py-2 w-full focus:outline-none lg:focus:border-2 focus:border-colorMenuPrimary appearance-none relative custom-select-black',
+                        error[name] ? 'border-red-500' : ''
                     )}
                     {...register(name)}
                 >

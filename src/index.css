@@ -32,7 +32,8 @@
   font-family: "Montserrat", sans-serif;
 }
 
-html, body{
+html,
+body {
   height: 100%;
 }
 
@@ -44,7 +45,14 @@ html, body{
 }
 
 .custom-select {
-  background-image: url("components/input/assets/seta-baixo.png"); /* Adicione o ícone desejado */
+  background-image: url("/src/components/input/assets/seta-baixo.png"); /* Adicione o ícone desejado */
+  background-position: right 1rem center; /* Posiciona a seta */
+  background-repeat: no-repeat;
+  background-size: 16px;
+}
+
+.custom-select-black {
+  background-image: url("/src/components/input/assets/seta-preta.png"); /* Adicione o ícone desejado */
   background-position: right 1rem center; /* Posiciona a seta */
   background-repeat: no-repeat;
   background-size: 16px;

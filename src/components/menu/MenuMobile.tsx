@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
@@ -69,7 +70,7 @@ export const MenuMobile = () => {
                         <li key={i} className="w-16 relative">
                             <Link
                                 to={menu.id}
-                                className="flex flex-col items-center pt-6 pb-6"
+                                className={clsx(`flex flex-col items-center py-6`)}
                                 onClick={() => {
                                     setActive(i);
                                 }}
