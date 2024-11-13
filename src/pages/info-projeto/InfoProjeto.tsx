@@ -37,7 +37,7 @@ export const InfoProjeto = () => {
     }, [id]);
 
     return (
-        <div className="w-full lg:max-h-screen lg:overflow-y-auto">
+        <section id="infoProjeto" className="w-full h-full max-h-[calc(100vh-92px)] px-4 py-2 lg:px-16 lg:max-h-screen overflow-auto">
             <div className="flex flex-col">
                 <div className="relative w-full h-48">
                     <img
@@ -47,7 +47,7 @@ export const InfoProjeto = () => {
                     />
                     <div className="w-full h-full flex justify-end items-start absolute top-0 right-0">
                         <div className="mx-6 my-5">
-                            <button className="cursor-pointer text-xl bg-white p-3 shadow-lg shadow-black-500/50  rounded-full" onClick={() => setIsOpenImagePopup(true)}>
+                            <button className="cursor-pointer text-xl bg-white p-3 shadow-lg shadow-black-500/50 rounded-full" onClick={() => setIsOpenImagePopup(true)}>
                                 <img src={editaIcon} alt="" />
                             </button>
                             {isOpenImagePopup && (
@@ -59,17 +59,17 @@ export const InfoProjeto = () => {
                         </div>
                     </div>
                 </div>
-                <div className="lg:p-6">
-                    <h1 className="text-3xl font-bold">{project?.name}</h1>
-                    <p className="text-lg font-medium mt-2">{project?.description}</p>
-                    <div className="border-2 border-b-gray-200 mt-4"></div>
+                <div className="lg:p-6 mt-4 lg:mt-0">
+                    <h1 className="text-xl lg:text-3xl font-bold">{project?.name}</h1>
+                    <p className="text-md lg:text-lg font-medium mt-2">{project?.description}</p>
+                    <div className="border border-gray-200 mt-4"></div>
                 </div>
             </div>
-            <div className="flex flex-col gap-6">
-                <div className="flex justify-between mx-16 gap-4 mb-4">
+            <div className="flex mt-4 lg:mt-0 flex-col gap-6">
+                <div className="flex flex-col-reverse items-center lg:flex-row justify-between lg:mx-16 gap-4 lg:mb-4">
                     <div className="flex flex-col gap-4">
                         <div className="flex justify-between">
-                            <Filter />
+                            <Filter onFilter={()=>console.log('debug')} />
                             <BotaoPadrao nome="Nova Tarefa" icone="add" onClick={() => setIsOpenNewTask(true)} />
                             {isOpenNewTask && (
                                 <FormPopUp
@@ -82,7 +82,7 @@ export const InfoProjeto = () => {
                                 />
                             )}
                         </div>
-                        <div className="flex flex-col gap-4">
+                        <div className="flex flex-col gap-4 w-full">
                             {project?.tasks && project.tasks.length > 0 ? (
                                 project.tasks.map((task) => (
                                     <CardComentario
@@ -114,6 +114,6 @@ export const InfoProjeto = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };

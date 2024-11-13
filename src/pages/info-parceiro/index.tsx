@@ -28,17 +28,17 @@ export const InfoParceiro = () => {
     }, [])
 
     return (
-        <div className="w-full lg:max-h-screen lg:overflow-y-auto">
+        <div className="w-full h-full max-h-[calc(100vh-92px)] overflow-auto lg:max-h-screen">
             <div className="flex flex-col">
                 <div className="w-full h-48 bg-gray-400"></div>
-                <div className="lg:p-6">
-                    <h1 className="text-3xl font-bold">{parceiro?.name}</h1>
-                    <p className="text-lg font-medium mt-2">{parceiro?.description}</p>
+                <div className="lg:p-6 px-4">
+                    <h1 className="text-xl lg:text-3xl font-medium">{parceiro?.name}</h1>
+                    <p className="text-md lg:text-lg font-normal mt-2">{parceiro?.description}</p>
                     <div className="border-2 border-b-gray-200 mt-4"></div>
                 </div>
             </div>
-            <div className="flex flex-col gap-6">
-                <div className="flex justify-between mx-16 gap-4 mb-4">
+            <div className="flex flex-col gap-6 px-4">
+                <div className="flex justify-between flex-col lg:flex-row lg:mx-16 gap-4 mb-4">
                     <div className="flex flex-col gap-4">
                         <div className="flex justify-between">
                             <h3 className="text-xl font-bold">Cursos cadastrados</h3>
@@ -64,7 +64,7 @@ export const InfoParceiro = () => {
                         </div>
 
                     </div>
-                    <div className="flex flex-col gap-4 mb-10">
+                    <div className="flex flex-col gap-4 mb-10 items-center justify-center">
                         <div>
                             <CardParticipante
                                 item={parceiro?.professor || []}
