@@ -50,3 +50,10 @@ body {
   background-repeat: no-repeat;
   background-size: 16px;
 }
+
+.custom-select-black {
+  background-image: url("/src/components/input/assets/seta-preta.png"); /* Adicione o ícone desejado */
+  background-position: right 1rem center; /* Posiciona a seta */
+  background-repeat: no-repeat;
+  background-size: 16px;
+}
