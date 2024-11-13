@@ -15,7 +15,9 @@ import { CadastrosEmpresa } from "../pages/cadastro-empresa/CadastrosEmpresa";
 import { CadastrosInstituicao } from "../pages/cadastro-instituicao/CadastrosInstituicao";
 import { CadastrosProfessor } from "../pages/cadastro-professor/CadastrosProfessor";
 import { InfoParceiro } from "../pages/info-parceiro";
-import { RecuperacaoDeSenha } from "../pages/recuperacao-senha/informe-email/Email";
+import { RecuperacaoDeSenhaP1 } from "../pages/recuperacao-senha/informe-email/Email";
+import { RecuperacaoDeSenhaP2 } from "../pages/recuperacao-senha/digite-codigo/Codigo-Validacao";
+import { RecuperacaoDeSenhaP3 } from "../pages/recuperacao-senha/nova-senha/Nova-Senha";
 
 
 export const MainRouter = () => {
@@ -34,7 +36,9 @@ export const MainRouter = () => {
         { path: "/cadastro-aluno", element: <CadastrosAluno /> }, // Rota pública
         { path: "/cadastro-professor", element: <CadastrosProfessor /> }, //Rota pública
         { path: "/", element: <Login /> }, // Rota pública
-        { path: "/recuperacao", element: <RecuperacaoDeSenha /> }, //Rota pública
+        { path: "/recuperacaop1", element: <RecuperacaoDeSenhaP1 /> }, //Rota pública
+        { path: "/recuperacaop2", element: <RecuperacaoDeSenhaP2 /> }, //Rota pública
+        { path: "/recuperacaop3", element: <RecuperacaoDeSenhaP3 /> }, //Rota pública
         { path: "*", element: <NotFound /> },// Rota para o erro
     ]);
 
