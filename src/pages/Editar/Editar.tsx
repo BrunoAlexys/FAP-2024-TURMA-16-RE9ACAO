@@ -27,7 +27,7 @@ export const Editar = () => {
                 <h1 className="text-xl lg:text-3xl font-medium">Configurações de Perfil</h1>
                 <div className="border border-black"></div>
             </div>
-            <div className="flex flex-col-reverse items-center lg:flex-row gap-4 lg:gap-40">
+            <div className="flex flex-col-reverse items-center xl:items-start lg:items-start lg:flex-row gap-4 lg:gap-40">
                 <div className="w-full lg:w-[60%]">
                     <form className="flex flex-col gap-3">
                         <div>
@@ -68,7 +68,7 @@ export const Editar = () => {
                 <div className="w-[40%] flex flex-col gap-2 items-center">
                     <h3 className="font-semibold">Alterar foto de perfil</h3>
                     <div className="w-52 h-52 rounded-full bg-gray-300 relative flex items-center justify-center shadow-lg shadow-black-500/50">
-                        <img 
+                        <img
                             src={profileImage || imageDefault}
                             alt="Imagem de perfil"
                             className="w-full h-full rounded-full object-cover"

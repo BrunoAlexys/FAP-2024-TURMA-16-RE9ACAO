@@ -13,7 +13,7 @@ import editaIcon from "./Assets/editar.png";
 
 export const InfoProjeto = () => {
     const [isOpenImagePopup, setIsOpenImagePopup] = useState(false);
-    const [bannerImage, setBannerImage] = useState<string>(bannerDefault); 
+    const [bannerImage, setBannerImage] = useState<string>(bannerDefault);
     const { id } = useParams<{ id: string }>();
     const [project, setProject] = useState<Project | null>(null);
     const [isOpenNewTask, setIsOpenNewTask] = useState(false);
@@ -66,10 +66,10 @@ export const InfoProjeto = () => {
                 </div>
             </div>
             <div className="flex mt-4 lg:mt-0 flex-col gap-6">
-                <div className="flex flex-col-reverse items-center lg:flex-row justify-between lg:mx-16 gap-4 lg:mb-4">
+                <div className="flex flex-col items-center lg:flex-row justify-between lg:mx-16 gap-4 lg:mb-4">
                     <div className="flex flex-col gap-4">
                         <div className="flex justify-between">
-                            <Filter onFilter={()=>console.log('debug')} />
+                            <Filter onFilter={() => console.log('debug')} />
                             <BotaoPadrao nome="Nova Tarefa" icone="add" onClick={() => setIsOpenNewTask(true)} />
                             {isOpenNewTask && (
                                 <FormPopUp
