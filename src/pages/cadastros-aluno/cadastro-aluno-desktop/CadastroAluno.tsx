@@ -40,7 +40,9 @@ export const CadastroAluno = () => {
                 throw new Error('Erro ao enviar o formulário');
             }
             reset();
-            navigate('/');
+            setTimeout(() => {
+                navigate('/');
+            }, 2000);
         } catch (error) {
             const axiosError = error as AxiosError;
             if (axiosError.response) {

@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import { ButtonMenu } from '../button-menu/ButtonMenu';
 import { useAuth } from '../../contexts/AuthProvider';
+import PerfilDefault from "./assets/Default-Profile.png";
 
 type MenuItems = {
     name?: string,
@@ -52,15 +53,19 @@ export const MenuDesktop = () => {
                     menu ? 'w-72' : 'w-28'
                 )}
             >
-                <div className="flex flex-col items-center gap-16 flex-1 mt-10">
+                <div className="flex flex-col items-center gap-10 flex-1 mt-10">
                     <div
                         className={clsx(
                             'bg-white rounded-full transition-all duration-500',
                             menu ? 'w-[100px] h-[100px] opacity-100' : 'w-[50px] h-[50px] opacity-0'
                         )}
                     >
-                        <img src={''} alt="" />
+                        <img src={PerfilDefault} alt="Foto de perfil" />
                     </div>
+                    <h2 className={clsx(
+                        'text-white text-xl font-bold transition-all duration-500',
+                        menu ? 'opacity-100' : 'opacity-0'
+                    )}>R9AÇÃO</h2>
                     <div
                         className={clsx(
                             'border-b-2 border-white transition-all duration-500',

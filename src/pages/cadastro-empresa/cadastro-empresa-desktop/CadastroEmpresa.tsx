@@ -41,6 +41,9 @@ export const CadastroEmpresa = () => {
                 throw new Error('Erro ao enviar o formulário');
             }
             reset();
+            setTimeout(() => {
+                navigate('/');
+            }, 2000);
         } catch (error) {
             const axiosError = error as AxiosError;
             if (axiosError.response) {
