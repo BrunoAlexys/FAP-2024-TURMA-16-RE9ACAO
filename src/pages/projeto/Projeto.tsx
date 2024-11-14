@@ -66,7 +66,7 @@ export const Projeto = () => {
                     <p className="text-center text-gray-500 mt-72">Nenhum projeto cadastrado</p>
                 )}
             </div>
-            {create && <FormPopUp
+            {create && <FormPopUp 
                 onClose={() => setCreate(false)}
                 type="projects"
                 title="Criar Projeto"
