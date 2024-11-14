@@ -45,7 +45,7 @@ export const FormPopUp = ({
 
     return (
         <form onSubmit={handleSubmit(handleSave)} className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-            <div className="w-[600px] bg-popup rounded-lg shadow-lg p-6 flex flex-col">
+            <div className="w-[600px] sm:w-[400px] sm:h-[340px] bg-popup rounded-lg shadow-lg p-6 flex flex-col m-3">
                 <div>
                     <h1 className="text-lg font-semibold mb-4">{title}</h1>
                     <input
@@ -60,7 +60,7 @@ export const FormPopUp = ({
                 <div>
                     <h1 className="text-lg font-semibold mb-4">{descriptionLabel}</h1>
                     <textarea
-                        className="w-full p-3 border border-gray-300 rounded-lg h-28 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="w-full p-3 border border-gray-300 rounded-lg h-28 sm:h-20 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
                         placeholder={descriptionPlaceholder}
                         {...register('description')}
                     ></textarea>

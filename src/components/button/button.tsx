@@ -6,10 +6,11 @@ type ButtonProps = {
     children: ReactNode;
     type: 'submit' | 'button';
     size?: 'small' | 'medium' | 'large';
+    className?: string;
     onClick?: () => void;
 };
 
-export const Button = ({ children, variant, type, size = 'medium', onClick }: ButtonProps) => {
+export const Button = ({ children, variant, type, size = 'medium', className, onClick }: ButtonProps) => {
     const baseStyles = 'rounded-xl font-semibold';
     const solidStyles = 'bg-blue-600 text-white hover:bg-blue-700';
     const outlineStyles = 'bg-transparent text-blue-600';
@@ -25,7 +26,8 @@ export const Button = ({ children, variant, type, size = 'medium', onClick }: Bu
             className={twMerge(
                 baseStyles,
                 sizeStyles[size], // Aplica o estilo com base no tamanho
-                variant === 'solid' ? solidStyles : outlineStyles
+                variant === 'solid' ? solidStyles : outlineStyles,
+                className
             )}
             type={type}
             onClick={onClick}
