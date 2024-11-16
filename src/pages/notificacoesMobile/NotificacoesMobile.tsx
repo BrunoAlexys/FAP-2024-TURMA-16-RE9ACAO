@@ -87,7 +87,7 @@ export const NotificacoesMobile = () => {
     };
 
     return (
-        <div className="lg:hidden px-4 py-2 flex flex-col items-center gap-6 max-h-[calc(100vh-92px)] lg:max-h-screen overflow-auto">
+        <div className="px-4 py-2 flex flex-col items-center gap-6 max-h-[calc(100vh-92px)] lg:max-h-screen overflow-auto">
             {notifications.map((notification) => (
                 <NotificacaoItem
                     key={notification.id}
