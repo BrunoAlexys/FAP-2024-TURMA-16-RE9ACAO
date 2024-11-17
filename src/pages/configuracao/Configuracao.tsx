@@ -17,7 +17,7 @@ export const Configuracao = () => {
                             <h1 className="text-xl lg:text-3xl font-semibold">R9ação - Soluções Integradas</h1>
                         </div>
                     </div>
-                    <div className="max-w-[100%] text-justify lg:text-left md:font-semibold xl:font-semibold font-medium px-2">
+                    <div className="max-w-[100%] text-justify lg:text-left md:font-semibold xl:font-semibold font-medium text-sm px-2">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe modi quis maiores molestiae doloribus esse tenetur amet optio praesentium rem, expedita atque quia ratione quasi sunt assumenda accusantium sequi nihil.</p>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A enim optio, labore commodi exercitationem facilis, aliquid sunt possimus numquam soluta consequuntur incidunt repellendus qui reprehenderit laboriosam nisi quaerat corporis. Asperiores.</p>
                     </div>
