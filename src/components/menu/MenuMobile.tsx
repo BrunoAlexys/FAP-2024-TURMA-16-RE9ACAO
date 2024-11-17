@@ -1,28 +1,45 @@
 import clsx from "clsx";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 export const MenuMobile = () => {
 
     const location = useLocation()
 
-    function setarSelecionado(location: string){
-        switch(location){
-            case "/dashboard":
-                return 0
-            case "/projetos":
-                return 1
-            case "/parceiros":
-                return 2
-            case "/notificacoes":
-                return 3
-            case "/perfil":
-                return 4
-            default:
-                return 0
+    const setarSelecionado = (pathname: string) => {
+        if (/^\/projetos(\/\d+)?$/.test(pathname)) {
+            return 1; // Índice do menu "Projetos"
         }
-    }
-    const [active, setActive] = useState(setarSelecionado(location.pathname));
+
+        if (/^\/parceiros(\/\d+)?$/.test(pathname)) {
+            return 2; // Índice do menu "Parceiros"
+        }
+
+        if (/^\/projeto\/\d+$/.test(pathname)) {
+            return 1; // Projetos com ID
+        }
+
+        if (/^\/parceiro\/\d+$/.test(pathname)) {
+            return 2; // Parceiros com ID
+        }
+
+        switch (pathname) {
+            case "/dashboard":
+                return 0;
+            case "/notificacoes":
+                return 3;
+            case "/perfil":
+                return 4;
+            case "/editar":
+                return 4;
+            default:
+                return 0; // Padrão para rotas desconhecidas
+        }
+    };
+
+
+    const [active, setActive] = useState(() => setarSelecionado(location.pathname));
+
     const Menus = [
         {
             name: "Dashboard",
@@ -56,6 +73,10 @@ export const MenuMobile = () => {
         },
     ];
 
+    useEffect(() => {
+        setActive(setarSelecionado(location.pathname));
+    }, [location.pathname]);
+
     return (
         <div className="w-full bg-gradient-to-r absolute bottom-0 from-colorMenuPrimary to-colorMenuSecondary px-6 mt-1.5 rounded-t-xl lg:hidden">
             <div className="flex justify-center">
@@ -72,18 +93,22 @@ export const MenuMobile = () => {
                                 to={menu.id}
                                 className={clsx(`flex flex-col items-center py-6`)}
                                 onClick={() => {
-                                    setActive(i);
+                                    setActive(setarSelecionado(menu.id));
                                 }}
                             >
                                 <span
-                                    className={`cursor-pointer duration-500 ${
+                                    className={clsx(
+                                        "cursor-pointer duration-500 flex justify-center items-center",
                                         i === active && "-mt-6"
-                                    }`}
+                                    )}
                                 >
                                     <img
-                                        className="w-6"
+                                        className={clsx(
+                                            "transition-all duration-500",
+                                            i === 4 && active === 4 ? "w-10 h-10 -mt-2" : "w-6 h-6"
+                                        )}
                                         src={`src/components/menu/assets/${menu.icon}`}
-                                        alt="djkalsjf"
+                                        alt={menu.name}
                                     />
                                 </span>
                             </Link>

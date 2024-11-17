@@ -37,7 +37,7 @@ export const InfoProjeto = () => {
     }, [id]);
 
     return (
-        <section id="infoProjeto" className="w-full h-full max-h-[calc(100vh-92px)] lg:px- lg:max-h-screen overflow-auto">
+        <section id="infoProjeto" className="w-full h-full max-h-[calc(100vh-92px)] lg:max-h-screen overflow-auto">
             <div className="flex flex-col">
                 <div className="relative w-full h-48">
                     <img

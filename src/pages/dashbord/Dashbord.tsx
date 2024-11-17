@@ -40,7 +40,7 @@ export const Dashboard = () => {
     return (
         <section id="dashboard" className="px-2 lg:px-20 h-full overflow-auto">
             <div id="projetos" className="flex flex-col border-b-2 py-2 lg:py-4">
-                <h2 className="font-extrabold py-2 my-5 lg:text-3xl">
+                <h2 className="font-extrabold py-2 my-5 ml-4 md:text-2xl lg:text-3xl">
                     Projetos
                 </h2>
                 <div className="flex flex-row w-full gap-4 flex-wrap justify-center xl:justify-start items-center p-6">
@@ -51,7 +51,7 @@ export const Dashboard = () => {
                 </div>
             </div>
             <div id="parceiros" className="mb-20">
-                <h2 className="font-extrabold py-2 my-5 lg:text-3xl">
+                <h2 className="font-extrabold py-2 my-5 ml-4 md:text-2xl lg:text-3xl">
                     Parceiros
                 </h2>
                 <div className="flex w-full gap-4 flex-wrap justify-center xl:justify-start items-center p-6">
