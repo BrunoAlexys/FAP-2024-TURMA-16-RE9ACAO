@@ -1,9 +1,14 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "../../components/button/button";
 import PerfilDefault from "./Assets/Default-Profile.png";
+import { Edite } from "./edite/edite";
 
 export const Configuracao = () => {
     const navigate = useNavigate();
+    const [descricao, setDescricao] = useState<string>(`Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe modi quis maiores molestiae doloribus esse tenetur amet optio praesentium rem, expedita atque quia ratione quasi sunt assumenda accusantium sequi nihil.
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit. A enim optio, labore commodi exercitationem facilis, aliquid sunt possimus numquam soluta consequuntur incidunt repellendus qui reprehenderit laboriosam nisi quaerat corporis. Asperiores.`);
 
     return (
         <section id="configuracao" className="w-full max-h-[calc(100vh-92px)] lg:max-h-screen flex flex-col lg:justify-between md:justify-between lg:p-12 overflow-auto md:h-screen md:px-2 ">
@@ -18,8 +23,10 @@ export const Configuracao = () => {
                         </div>
                     </div>
                     <div className="max-w-[100%] text-justify lg:text-left md:font-semibold xl:font-semibold font-medium text-sm px-2">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe modi quis maiores molestiae doloribus esse tenetur amet optio praesentium rem, expedita atque quia ratione quasi sunt assumenda accusantium sequi nihil.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A enim optio, labore commodi exercitationem facilis, aliquid sunt possimus numquam soluta consequuntur incidunt repellendus qui reprehenderit laboriosam nisi quaerat corporis. Asperiores.</p>
+                        <p>{descricao}</p>
+                    </div>
+                    <div className="">
+                        <Edite description={descricao} setDescricao={setDescricao} />
                     </div>
                 </div>
 
