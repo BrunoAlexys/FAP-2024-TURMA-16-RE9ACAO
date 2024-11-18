@@ -79,15 +79,15 @@ export const Login: React.FC = () => {
             
             <DiagonalSection text="Login" />
 
-            <div className="absolute flex mt-[150px] md:mt-[200px] lg:mt-[245px] w-full">
-                <div className="flex flex-col justify-center items-center flex-1 gap-4 lg:border-r-2 border-gray-400">
+            <div className="absolute flex mt-[150px] md:mt-[250px] lg:mt-[245px] w-full">
+                <div className="flex flex-col justify-center items-center flex-1 gap-2 lg:border-r-2 border-gray-400">
                     <div>
-                        <img src={Logo} alt="Logo da empresa" width={250} />
+                        <img src={Logo} alt="Logo da empresa" className="w-[200px] md:w-[350px] xl:w-[260px]" />
                     </div>
 
                     <div className="mt-4">
                         <select
-                            className="bg-colorMenuPrimary p-2 w-48 rounded-lg text-white appearance-none relative custom-select"
+                            className="bg-colorMenuPrimary p-2 w-48 md:w-56 md:p-3 font-medium rounded-lg text-white appearance-none relative custom-select"
                             value={selectedOption}
                             onChange={e => {
                                 const value = e.target.value;
@@ -104,7 +104,7 @@ export const Login: React.FC = () => {
 
                     <form onSubmit={handleSubmit(handleLogin)} className="sm:w-[70%] md:w-1/2 lg:w-[60%] flex flex-col gap-2">
                         <div className="flex flex-col gap-2">
-                            <label className="text-xl font-bold ml-4">Login</label>
+                            <label className="text-xl font-bold ml-4 md:text-2xl">Login</label>
                             <input
                                 type="text"
                                 className={`border-2 border-colorMenuSecondary rounded-full px-4 py-2 w-full focus:outline-none ${errors.email ? 'border-red-500' : 'focus:border-colorMenuPrimary'}`}
@@ -113,19 +113,19 @@ export const Login: React.FC = () => {
                             {errors.email && <span className="text-red-500 ml-4 text-xs">{errors?.email?.message}</span>}
                         </div>
                         <div className="flex flex-col gap-2">
-                            <label className="text-xl font-bold ml-4">Senha</label>
+                            <label className="text-xl font-bold ml-4 md:text-2xl">Senha</label>
                             <input
                                 type="password"
-                                className={`border-2 border-colorMenuSecondary rounded-full px-4 py-2 w-full focus:outline-none ${errors.password ? 'border-red-500' : 'focus:border-colorMenuPrimary'}`}
+                                className={`border-2 border-colorMenuSecondary rounded-full px-4  py-2 w-full focus:outline-none ${errors.password ? 'border-red-500' : 'focus:border-colorMenuPrimary'}`}
                                 {...register('password')}
                             />
                             {errors.password && <span className="text-red-500 ml-4 text-xs">{errors?.password?.message}</span>}
-                            <a href="#" className="text-xs ml-4">Esqueceu sua senha?</a>
+                            <a href="#" className="text-xs ml-4 font-medium md:text-lg">Esqueceu sua senha?</a>
                         </div>
 
                         <div className="flex flex-col items-center gap-2">
-                            <Button type="submit" variant="solid" children="Login" size="large" />
-                            <button className="text-[10px]" onClick={handleRegisterRedirect}>ou cadastre-se</button>
+                            <Button type="submit" variant="solid" children="Login" className="h-9 w-32 text-lg md:h-11 md:w-36 md:text-xl" />
+                            <button className="text-[10px] font-medium md:text-lg " onClick={handleRegisterRedirect}>ou cadastre-se</button>
                         </div>
                     </form>
                 </div>

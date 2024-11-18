@@ -22,7 +22,7 @@ export const Editar = () => {
     };
 
     return (
-        <section id="editarPerfil" className="bg-corDeFundo flex flex-col gap-12 h-full max-h-calc[100vh-92px] lg:max-h-screen overflow-auto p-6">
+        <section id="editarPerfil" className="bg-corDeFundo flex flex-col gap-12 max-h-[calc(100vh-92px)] lg:max-h-screen overflow-auto p-6">
             <div className="lg:mt-24 flex flex-col gap-3">
                 <h1 className="text-xl lg:text-3xl font-medium">Configurações de Perfil</h1>
                 <div className="border border-black"></div>
@@ -65,8 +65,8 @@ export const Editar = () => {
                         </div>
                     </form>
                 </div>
-                <div className="w-[40%] flex flex-col gap-2 items-center">
-                    <h3 className="font-semibold">Alterar foto de perfil</h3>
+                <div className="lg:w-[40%] flex flex-col w-full gap-2 items-center">
+                    <h3 className="font-semibold w-full text-center">Alterar foto de perfil</h3>
                     <div className="w-52 h-52 rounded-full bg-gray-300 relative flex items-center justify-center shadow-lg shadow-black-500/50">
                         <img
                             src={profileImage || imageDefault}

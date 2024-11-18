@@ -30,10 +30,10 @@ export const Card = (props: CardProps) => {
         >
             <div className={clsx("w-full rounded-t-xl py-2 px-2 flex justify-between items-center gap-2", tipar(props.tipo))}>
                 <img src={props.img} alt={props.projectName} />
-                <h2 className="text-white font-medium text-lg max-w-full text-right text-nowrap truncate">{props.projectName}</h2>
+                <h2 className="text-white font-medium text-lg max-w-full text-right text-nowrap truncate pr-3">{props.projectName}</h2>
             </div>
             <div className="px-4 py-2">
-                <p className="text-justify text-wrap truncate">{props.children}</p>
+                <p className="text-justify  text-wrap truncate">{props.children}</p>
             </div>
         </button>
     )
