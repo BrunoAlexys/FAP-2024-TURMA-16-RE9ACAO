@@ -50,7 +50,7 @@ export const Projeto = () => {
                 <div className="flex justify-between items-center w-full lg:w-1/2 gap-2">
                     <Search onSearchChange={handleSearchChange} />
                 </div>
-                <div className="flex gap-2">
+                <div className="flex gap-1 items-center">
                     <Filter onFilter={handleFilter} />
                     <BotaoPadrao nome="Criar" icone="add" onClick={handleCreate} />
                 </div>

@@ -70,7 +70,7 @@ export const InfoParceiro = () => {
                     <div className="flex flex-col gap-4">
                         <div className="flex justify-between">
                             <h3 className="text-xl font-bold">Cursos cadastrados</h3>
-                            <BotaoPadrao nome="Nova curso" icone="add" onClick={() => setIsOpenNewTask(true)} />
+                            <BotaoPadrao nome="Curso" icone="add" onClick={() => setIsOpenNewTask(true)} />
                             {/* Chamar novo pop-up */}
                             {isOpenNewTask && <FormPopUp onClose={onCloseNewTask} type="curso" title="Novo Curso" descriptionLabel="Descrição" namePlaceholder="Título" descriptionPlaceholder="Descrição" />}
                         </div>

@@ -71,7 +71,7 @@ export const InfoProjeto = () => {
                     <div className="flex flex-col gap-4">
                         <div className="flex justify-between">
                             <Filter onFilter={() => console.log('debug')} />
-                            <BotaoPadrao nome="Nova Tarefa" icone="add" onClick={() => setIsOpenNewTask(true)} />
+                            <BotaoPadrao nome="Tarefa" icone="add" onClick={() => setIsOpenNewTask(true)} />
                             {isOpenNewTask && (
                                 <FormPopUp
                                     onClose={onCloseNewTask}
