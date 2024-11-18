@@ -45,7 +45,7 @@ export const FormPopUp = ({
 
     return (
         <form onSubmit={handleSubmit(handleSave)} className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-            <div className="w-[600px] bg-popup rounded-lg shadow-lg p-6 flex flex-col">
+            <div className="w-[600px] bg-popup rounded-lg shadow-lg p-6 flex flex-col mx-4">
                 <div>
                     <h1 className="text-lg font-semibold mb-4">{title}</h1>
                     <input

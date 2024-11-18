@@ -21,7 +21,7 @@ export const AdicionarPopup = ({ nome, onClose }: AdicionarPopupProps) => {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-85 flex items-center justify-center z-50">
-      <div className="bg-white w-96 rounded-xl transform transition-transform duration-300 scale-100 opacity-100">
+      <div className="bg-white w-96 rounded-xl transform transition-transform duration-300 scale-100 opacity-100 mx-4">
         <div className="flex items-center justify-center p-5 bg-gradient-to-r from-colorMenuPrimary to-colorMenuSecondary rounded-t-lg">
           <h1 className="text-white font-bold">Adicionar {nome}</h1>
         </div>
