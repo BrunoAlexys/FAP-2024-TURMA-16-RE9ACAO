@@ -25,9 +25,9 @@ export const RecuperacaoDeSenhaP2 = () => {
     };
 
     return (
-        <div className="bg-[#F9FAFB] min-h-screen flex flex-col px-4 sm:px-0">
+        <div>
             <DiagonalSection text="Redefinir" subtext="Senha" />
-            <div className="bg-white border-[2px] border-[#3C68C5] shadow-[4px_4px_10px_rgba(0,0,0,0.25)] rounded-3xl p-6 sm:p-8  w-full max-w-[350px] aspect-[521/609] mx-auto text-center">
+            <div className="bg-white border-[2px] border-[#3C68C5] shadow-[4px_4px_10px_rgba(0,0,0,0.25)] rounded-3xl p-6 sm:p-6  w-full max-w-[350px] xl:mt-auto mt-14 sm:mt-32 aspect-[521/609] mx-auto text-center">
 
                 {/* Logo */}
                 <div className="flex justify-center mb-4">
