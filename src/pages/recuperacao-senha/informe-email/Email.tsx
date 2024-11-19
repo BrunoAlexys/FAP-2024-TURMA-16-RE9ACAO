@@ -4,9 +4,9 @@ import { DiagonalSection } from '../../../components/diagonal-section/DiagonalSe
 
 export const RecuperacaoDeSenhaP1 = () => {
     return (
-        <div className="bg-[#F9FAFB] min-h-screen flex flex-col px-4 sm:px-0">
+        <div >
             <DiagonalSection text="Redefinir" subtext="Senha" />
-            <div className="bg-white border-[2px] border-[#3C68C5] shadow-[4px_4px_10px_rgba(0,0,0,0.25)] rounded-3xl p-6 sm:p-8  w-full max-w-[350px] aspect-[521/609] mx-auto text-center">
+            <div className="flex flex-col justify-center items-center bg-white border-[2px] border-[#3C68C5] shadow-[4px_4px_10px_rgba(0,0,0,0.25)] rounded-3xl p-6 sm:p-6  w-full max-w-[350px] xl:mt-auto mt-14 sm:mt-32 aspect-[521/609] mx-auto text-center">
                 
                 {/* Logo */}
                 <div className="mb-2 flex justify-center ">
@@ -35,7 +35,7 @@ export const RecuperacaoDeSenhaP1 = () => {
                 <div className="flex justify-end gap-2">
                     <button className="text-[#0C3EA6] font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                         Cancelar
-                    </button>""
+                    </button>
                     <button className="bg-blue-900 text-white font-bold py-2 px-4 rounded-xl focus:outline-none focus:shadow-outline hover:bg-blue-700">
                         Enviar
                     </button>

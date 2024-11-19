@@ -7,7 +7,7 @@ import axios from "axios";
 import { Parceiro } from "../../types/parceiro";
 import { Curso } from "./curso";
 import bannerDefault from "./curso/assets/Banner.png"
-import editaIcon from "./curso/Assets/editar.png";
+import editaIcon from "./curso/assets/editar.png";
 import { PopUpImage } from "../../components/popup-image/PopUpImage";
 
 export const InfoParceiro = () => {
