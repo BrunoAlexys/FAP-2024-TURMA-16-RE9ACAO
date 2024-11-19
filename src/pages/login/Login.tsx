@@ -76,7 +76,7 @@ export const Login: React.FC = () => {
                     <AlertMobile type={alertMobile.type} message={alertMobile.message} onClose={closeAlert} />
                 </>
             )}
-            
+
             <DiagonalSection text="Login" />
 
             <div className="absolute flex mt-[150px] md:mt-[250px] lg:mt-[245px] w-full">
@@ -120,7 +120,12 @@ export const Login: React.FC = () => {
                                 {...register('password')}
                             />
                             {errors.password && <span className="text-red-500 ml-4 text-xs">{errors?.password?.message}</span>}
-                            <a href="#" className="text-xs ml-4 font-medium md:text-lg">Esqueceu sua senha?</a>
+                            <button
+                                className="text-xs ml-4 font-medium md:text-lg"
+                                onClick={() => navigate('/recuperacaop1')}
+                            >
+                                Esqueceu sua senha?
+                            </button>
                         </div>
 
                         <div className="flex flex-col items-center gap-2">
