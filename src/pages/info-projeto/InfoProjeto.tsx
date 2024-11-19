@@ -69,7 +69,7 @@ export const InfoProjeto = () => {
             <div className="flex mt-4 lg:mt-0 flex-col gap-6 px-2">
                 <div className="flex flex-col items-center lg:flex-row justify-between lg:mx-16 gap-4 lg:mb-4">
                     <div className="flex flex-col gap-4">
-                        <div className="flex justify-between">
+                        <div className="flex items-center justify-between">
                             <Filter onFilter={() => console.log('debug')} />
                             <BotaoPadrao nome="Tarefa" icone="add" onClick={() => setIsOpenNewTask(true)} />
                             {isOpenNewTask && (

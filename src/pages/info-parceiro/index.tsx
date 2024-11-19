@@ -39,7 +39,7 @@ export const InfoParceiro = () => {
     return (
         <div className="w-full h-full max-h-[calc(100vh-92px)] overflow-auto lg:max-h-screen">
             <div className="flex flex-col">
-            <div className="relative w-full h-48">
+                <div className="relative w-full h-48">
                     <img
                         src={bannerImage}
                         alt="Banner do Perfil"
@@ -68,7 +68,7 @@ export const InfoParceiro = () => {
             <div className="flex flex-col gap-6 px-4 sm:pt-2">
                 <div className="flex justify-between flex-col lg:flex-row lg:mx-16 gap-4 mb-4 lg:gap-10">
                     <div className="flex flex-col gap-4">
-                        <div className="flex justify-between">
+                        <div className="flex items-center justify-between">
                             <h3 className="text-xl font-bold">Cursos cadastrados</h3>
                             <BotaoPadrao nome="Curso" icone="add" onClick={() => setIsOpenNewTask(true)} />
                             {/* Chamar novo pop-up */}

@@ -42,7 +42,7 @@ export const Configuracao = () => {
                 </div>
             </div>
 
-            <div className="p-5 mr-3 md:mb-8 flex justify-between lg:justify-end xl:justify-end xl:pt-8 md:py-6">
+            <div className="p-5 mr-3 md:mb-8 xl:mb-0 flex justify-between lg:justify-end xl:justify-end xl:pt-8 md:py-6">
                 <button
                     className="flex justify-center items-center gap-2 lg:hidden xl:hidden"
                     onClick={() => {
