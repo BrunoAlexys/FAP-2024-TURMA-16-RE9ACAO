@@ -2,13 +2,14 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "../../components/button/button";
 import PerfilDefault from "./Assets/Default-Profile.png";
+import Sair from './Assets/sair.png';
 import { Edite } from "./edite/edite";
+import { useAuth } from "../../contexts/AuthProvider";
 
 export const Configuracao = () => {
     const navigate = useNavigate();
     const [descricao, setDescricao] = useState<string>(`Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe modi quis maiores molestiae doloribus esse tenetur amet optio praesentium rem, expedita atque quia ratione quasi sunt assumenda accusantium sequi nihil.
-
-Lorem ipsum dolor sit amet consectetur adipisicing elit. A enim optio, labore commodi exercitationem facilis, aliquid sunt possimus numquam soluta consequuntur incidunt repellendus qui reprehenderit laboriosam nisi quaerat corporis. Asperiores.`);
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. A enim optio, labore commodi exercitationem facilis, aliquid sunt possimus numquam soluta consequuntur incidunt repellendus qui reprehenderit laboriosam nisi quaerat corporis. Asperiores.`);
     const { logout } = useAuth();
 
     return (
