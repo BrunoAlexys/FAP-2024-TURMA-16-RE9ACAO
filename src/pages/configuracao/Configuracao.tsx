@@ -1,9 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import { Button } from "../../components/button/button";
 import PerfilDefault from "./Assets/Default-Profile.png";
+import Sair from './Assets/sair.png';
+import { useAuth } from "../../contexts/AuthProvider";
 
 export const Configuracao = () => {
     const navigate = useNavigate();
+    const { logout } = useAuth();
 
     return (
         <section id="configuracao" className="w-full max-h-[calc(100vh-92px)] lg:max-h-screen flex flex-col lg:justify-between md:justify-between lg:p-12 overflow-auto md:h-screen md:px-2 ">
@@ -33,7 +36,17 @@ export const Configuracao = () => {
                 </div>
             </div>
 
-            <div className="px-3 flex justify-end xl:pt-8 md:py-6">
+            <div className="p-5 mr-3 md:mb-8 flex justify-between lg:justify-end xl:justify-end xl:pt-8 md:py-6">
+                <button
+                    className="flex justify-center items-center gap-2 lg:hidden xl:hidden"
+                    onClick={() => {
+                        logout();
+                        navigate('/');
+                    }}
+                >
+                    <img src={Sair} alt="Sair" className="md:w-10 md:h-10" />
+                    <span className="text-[#A2A3A3] font-semibold">Sair</span>
+                </button>
                 <Button className="md:h-12 md:w-32 md:text-xl xl:h-9 xl:w-32 xl:text-lg" children='Editar' variant="solid" type="button" onClick={() => navigate('/editar')} />
             </div>
         </section>
