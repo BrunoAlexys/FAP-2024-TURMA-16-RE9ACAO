@@ -1283,6 +1283,24 @@
       "registration": "987456",
       "password": "Ff123456@",
       "confirmPassword": "Ff123456@"
+    },
+    {
+      "id": "ca3a",
+      "name": "bruno",
+      "cpf": "00000000000",
+      "email": "brunoalexysmoura@gmail.com",
+      "confirmEmail": "brunoalexysmoura@gmail.com",
+      "phone": "(00) 00000-0000",
+      "uf": "ES",
+      "cep": "55636000",
+      "city": "Chã Grande",
+      "neighborhood": "Dom helder camara",
+      "street": "Joaquim Francisco dos Santos",
+      "course": "Sistemas de informações",
+      "period": "6",
+      "registration": "798465",
+      "password": "Tt@123456789",
+      "confirmPassword": "Tt@123456789"
     }
   ],
   "professor": [
