@@ -39,8 +39,11 @@ export const PopUpImage = ({ closePopup, handleImageUpload }: PopUpImageProps) =
               <div className="text mb-2 flex items-center justify-center">
                 <img src={cloudimage} alt="Arraste e solte o arquivo" />
               </div>
-              <p className="bg-colorAlertImg rounded-md text-lg font-bold text-white mx-2 p-2">
+              <p className="bg-colorAlertImg hidden lg:block rounded-md text-lg font-bold text-white mx-2 p-2">
                 Clique ou arraste uma imagem para selecionar sua foto
+              </p>
+              <p className="bg-colorAlertImg lg:hidden rounded-md text-lg font-bold text-white mx-2 p-2">
+                Clique e selecione uma imagem para selecionar sua foto
               </p>
             </div>
           ) : (
