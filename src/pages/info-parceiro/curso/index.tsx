@@ -8,7 +8,7 @@ type CursoProps = {
 
 export const Curso = ({ name, img, contador }: CursoProps) => {
     return (
-        <div className="flex w-full max-w-[665px] h-28 rounded-lg relative bg-[#D9D9D9] items-center justify-between px-6 border border-black">
+        <div className="flex w-full h-28 rounded-lg relative bg-[#D9D9D9] items-center justify-between px-6 border border-black">
             <div className="flex items-center space-x-4 w-full">
                 <div className="w-14 h-14 rounded-full bg-white overflow-hidden flex items-center justify-center">
                     <img src={img} alt={name} className="object-cover w-full h-full" />
