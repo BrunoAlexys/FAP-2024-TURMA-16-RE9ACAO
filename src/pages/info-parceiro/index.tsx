@@ -95,12 +95,14 @@ export const InfoParceiro = () => {
                     <div className="flex flex-col sm:flex-row lg:flex-col gap-4 mb-10 md:mt-4  items-center justify-center">
                         <div>
                             <CardParticipante
+                                key={parceiro?.id}
                                 item={parceiro?.professor || []}
                                 title="Professores"
                             />
                         </div>
                         <div>
                             <CardParticipante
+                                key={parceiro?.id}
                                 item={parceiro?.alunos || []}
                                 title="Alunos"
                             />

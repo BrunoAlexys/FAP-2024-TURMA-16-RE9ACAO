@@ -35,7 +35,7 @@ const Alert = ({ type, text, onClose }: AlertProps) => {
         <div className={clsx(
             "h-40 w-400  border-l-8 mt-4 flex p-7 fixed top-0 right-0 transition-transform duration-500 ease-in-out z-20",
             {
-                'translate-y-[-150%]': !isVisible,
+                'translate-y-[-150%]': isExiting,
                 'translate-y-0': isVisible,
                 'bg-[#fdf9e8] border-x-[#F2C94C]': type === 'alerta',
                 'bg-[#ffeeef] border-x-[#EB5757]': type === 'error',

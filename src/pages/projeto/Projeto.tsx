@@ -55,7 +55,7 @@ export const Projeto = () => {
                     <BotaoPadrao nome="Criar" icone="add" onClick={handleCreate} />
                 </div>
             </div>
-            <div id="projetosContainer" className="flex flex-col w-full gap-6 lg:flex-row lg:flex-wrap lg:justify-center">
+            <div id="projetosContainer" className="flex flex-col w-full gap-6 lg:flex-row lg:flex-wrap lg:justify-start xl:justify-center">
                 {filteredproject.length > 0 ? (
                     filteredproject.map((project) => (
                         <Card key={project.id} img={imagem} projectName={project.name} tipo={project.tipo} onClick={() => navigate(`/projeto/${project.id}`)}>
@@ -66,7 +66,7 @@ export const Projeto = () => {
                     <p className="text-center text-gray-500 mt-72">Nenhum projeto cadastrado</p>
                 )}
             </div>
-            {create && <FormPopUp 
+            {create && <FormPopUp
                 onClose={() => setCreate(false)}
                 type="projects"
                 title="Criar Projeto"
