@@ -113,19 +113,28 @@ export const CadastroAlunoMobile: React.FC = () => {
                             errors={methods.formState.errors}
                         />
                     </div>
-                    <div className="relative bottom-2 flex justify-around items-center">
+                    <div className="relative bottom-2 md:mb-10 flex justify-around items-center">
                         {step > 0 && (
                             <button
-                                className="font-medium text-colorMenuPrimary"
+                                className="font-medium text-colorMenuPrimary text-2xl"
                                 type="button"
                                 onClick={() => setStep(step - 1)}
                             >
                                 Voltar
                             </button>
                         )}
+                        {step === 0 && (
+                            <button
+                                className="font-medium text-colorMenuPrimary text-2xl"
+                                type="button"
+                                onClick={() => navigate(-1)} // Navega para a página anterior
+                            >
+                                Voltar
+                            </button>
+                        )}
                         {step < steps.length - 1 ? (
                             <button
-                                className="text-white bg-colorMenuPrimary px-4 py-2 rounded-2xl font-medium"
+                                className="text-white text-xl bg-colorMenuPrimary px-4 md:px-8 py-2 md:py-3 rounded-2xl font-medium"
                                 type="button"
                                 onClick={handleNextStep}
                             >
@@ -140,6 +149,7 @@ export const CadastroAlunoMobile: React.FC = () => {
                             </button>
                         )}
                     </div>
+
                 </form>
             </FormProvider>
         </div>

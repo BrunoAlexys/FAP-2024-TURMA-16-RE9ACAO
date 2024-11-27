@@ -35,7 +35,7 @@ const AlertMobile = ({ type, message, onClose }: AlertProps) => {
         <div className={clsx(
             "h-14 w-11/12 flex items-center p-4 rounded-lg fixed top-2 right-2 transition-all duration-500 ease-in-out z-20",
             {
-                'translate-y-[-150%]': !isVisible, 
+                'translate-y-[-150%]': isExiting,
                 'translate-y-0': isVisible,
                 'bg-[#fae4c1]': type === 'alerta',
                 'bg-[#fabdc2]': type === 'error',
@@ -50,7 +50,7 @@ const AlertMobile = ({ type, message, onClose }: AlertProps) => {
                     'bg-[#ff2d56]': type === 'error',
                     'bg-[#6c00f9]': type === 'info',
                     'bg-[#00d998]': type === 'sucesso',
-                    
+
                 }
             )}>
                 <img className={clsx(

@@ -22,7 +22,7 @@ export const CardParticipante = ({ item, title }: CardParticipanteProps) => {
     }
 
     return (
-        <div className="w-[240px]">
+        <div className="w-full">
             <div className="w-full h-16 rounded-t-2xl flex items-center justify-center text-white font-semibold bg-gradient-to-r from-colorMenuPrimary to-colorMenuSecondary">
                 <h2>{title}</h2>
             </div>
