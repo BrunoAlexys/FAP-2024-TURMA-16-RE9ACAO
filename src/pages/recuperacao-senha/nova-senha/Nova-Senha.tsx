@@ -1,4 +1,3 @@
-import React from 'react';
 import Logo from './assets/logo.png';
 import { DiagonalSection } from '../../../components/diagonal-section/DiagonalSection';
 import { useNavigate } from 'react-router-dom';
