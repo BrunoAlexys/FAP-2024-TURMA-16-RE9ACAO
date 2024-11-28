@@ -20,7 +20,7 @@ export const Edite = ({description, setDescricao }: EditeProps) => {
 
     return (
         <div id="btnEdite">
-            <div className="flex flex-col gap-2 lg:w-12 rounded-full items-center justify-start p-2 absolute right-10 top-52 bg-white shadow-lg border border-gray-300">
+            <div className="flex flex-col gap-2 max-w-12 lg:w-12 rounded-full items-center justify-start p-2 right-10 top-52 bg-white shadow-lg border border-gray-300">
                 <button
                     className="flex items-center gap-2 p-1 w-full"
                     onClick={() => openPopup("edit")}
