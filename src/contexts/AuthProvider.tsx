@@ -1,6 +1,5 @@
 import { createContext, ReactNode, useContext, useState } from "react";
 import { User } from "../types/User";
-import axios from "axios";
 import { AlertState } from "../types/AlertState";
 import Alert from "../components/alerts/alertDesktop";
 import AlertMobile from "../components/alerts/alertMobile";
@@ -18,33 +17,47 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-const authenticateUser = async (email: string, password: string, userType: string) => {
-    try {
-        const response = await axios.get(`http://localhost:3001/${userType === 'instituição' ? 'instituicao' : userType}`, {
-            params: {
-                email,
-                password
-            }
-        });
+// Dados fixos para autenticação
+const FIXED_USERS: User[] = [
+    {
+        id: 1,
+        email: "admin@gmail.com",
+        password: "Admin@123",
+        userType: "aluno"
+    },
+    {
+        id: 2,
+        email: "admin@gmail.com",
+        password: "Admin@123",
+        userType: "professor"
+    },
+    {
+        id: 3,
+        email: "admin@gmail.com",
+        password: "Admin@123",
+        userType: "empresa"
+    },
+    {
+        id: 4,
+        email: "admin@gmail.com",
+        password: "Admin@123",
+        userType: "instituição"
+    }
+];
 
-        const user = response.data;
-        if (user && user.length > 0) {
-            const foundUser = user[0];
-            if (foundUser.email === email && foundUser.password === password) {
-                return foundUser;
-            } else {
-                console.error('Email ou senha incorretos');
-                return null;
-            }
-        } else {
-            console.error('Usuário não encontrado');
-            return null;
-        }
-    } catch (error) {
-        console.error('Erro ao autenticar usuário:', error);
+const authenticateUser = async (email: string, password: string, userType: string) => {
+    // Simula a verificação local com os dados fixos
+    const user = FIXED_USERS.find(
+        u => u.email === email && u.password === password && u.userType === userType
+    );
+
+    if (user) {
+        return user;
+    } else {
+        console.error('Credenciais inválidas');
         return null;
     }
-}
+};
 
 export const AuthProvider = ({ children }: AuthProviderProps) => {
     const [user, setUser] = useState<User | null>(null);
@@ -54,8 +67,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         setAlert({ type, message });
     };
 
-
-    const login = async (loginData: { email: string, password: string, userType: string }): Promise<boolean> => {
+    const login = async (loginData: { email: string; password: string; userType: string }): Promise<boolean> => {
         try {
             const userData = await authenticateUser(loginData.email, loginData.password, loginData.userType);
 
@@ -75,7 +87,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 
     const closeAlert = () => {
         setAlert(null);
-    }
+    };
 
     const logout = () => {
         setUser(null);
@@ -99,7 +111,6 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         </AuthContext.Provider>
     );
 };
-
 
 export const useAuth = (): AuthContextType => {
     const context = useContext(AuthContext);
